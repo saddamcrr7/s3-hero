@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #COLOR-VARIABLES
+   ========================================================================== */
+
+  $primary-01:    #3A1768;
+  $primary-02:    #795F95;
+  $primary-03:    #CBB5D4;
+  $primary-04:    #F8F5FF;
+  $secondary-01:  #FFC400;
+  $secondary-02:  #FFD64E;
+  $white:         #FFFFFF;
+  $black:         #000000;
+  $grey-dark:     #4F4F4F;
+  $grey:          #828282;
+  $grey-light:    #E0E0E0;
+  $green:         #27AE60;
+
+  $primary:       $primary-01;
+  $secondary:     $secondary-01;
+
+  $Gradient-01:   linear-gradient(71.96deg, $primary-01 42.9%, $primary-02 100%);
+  $Gradient-02:   linear-gradient(180deg, $secondary-01 0%, $secondary-02 100%);
+  $Gradient-03:   radial-gradient(71.04% 71.04% at 71.82% 85.8%, #F3E9FE 0%, #FBF7FF 42.71%, #FDFBFF 76.04%, #FCF9FF 100%);
+  $Gradient-04:   linear-gradient(77.41deg, #F8F5FF 0.47%, rgba(248, 245, 255, 0) 113.76%);
+  $Gradient-05:   linear-gradient(3.55deg, rgba(255, 214, 78, 0) 21.39%, rgba(255, 214, 78, 0.87) 82.12%);

@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #FONTS-MIXIN
+   ========================================================================== */
+
+   $assets-fonts-path : '../fonts/';
+
+   @mixin font-face($name, $filename) {
+     @font-face {
+       font-family: $name;
+       src: url("#{$assets-fonts-path}/#{$filename}/#{$filename}.eot");
+       src: url("#{$assets-fonts-path}/#{$filename}/#{$filename}.eot?#iefix") format("embedded-opentype"),
+       url("#{$assets-fonts-path}/#{$filename}/#{$filename}.woff") format("woff"),
+       url("#{$assets-fonts-path}/#{$filename}/#{$filename}.ttf") format("truetype");
+       text-rendering: optimizeLegibility;
+     }
+   }
+
+   /* ==========================================================================
+   #LOAD FONTS
+   ========================================================================== */
+
+  //  @include font-face('SuperiorTitle', 'SuperiorTitle-Black');
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');

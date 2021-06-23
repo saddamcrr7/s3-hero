@@ -1,0 +1,17 @@
+h1 {
+  @include media-breakpoint-down(md) {
+    font-size: rem(30px);
+  }
+}
+
+h2 {
+  @include media-breakpoint-down(md) {
+    font-size: rem(26px);
+  }
+}
+
+h3 {
+  @include media-breakpoint-down(md) {
+    font-size: rem(23px);
+  }
+}
