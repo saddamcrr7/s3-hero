@@ -30,4 +30,4 @@ function slider() {
 }
 
 
-setInterval(slider, 4000)
+setInterval(slider, 4750)
