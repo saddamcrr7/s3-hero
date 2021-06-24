@@ -2,10 +2,11 @@
    #TYPOGRAPHY-VARIABLES
    ========================================================================== */
 
-  $RubikFontFamily:             'Rubik', sans-serif;
+  $PlayfairDisplayFontFamily:             'Playfair Display', serif;
+  $RobotoFontFamily:             'Roboto', serif;
 
-  $font-family-base:            $RubikFontFamily !default;
-  $headings-font-family:        $RubikFontFamily !default;
+  $font-family-base:            $RobotoFontFamily !default;
+  $headings-font-family:        $PlayfairDisplayFontFamily !default;
 
   $font-weight-light:           300 !default;
   $font-weight-normal:          400 !default;
