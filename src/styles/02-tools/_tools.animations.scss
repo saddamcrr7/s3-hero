@@ -20,3 +20,18 @@
 
   transition: $value;
 }
+
+
+@keyframes zoom {
+  0% {
+      transform: scale(1.0);
+  }
+
+  96% {
+      transform: scale(1.3);
+  }
+
+  100% {
+      transform: scale(5.0);
+  }
+}

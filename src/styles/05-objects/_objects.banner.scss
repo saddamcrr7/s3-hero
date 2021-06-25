@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   transition: 2s;
+  transition-timing-function: cubic-bezier(1,.06,.05,1);
   transform-origin: center;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 
@@ -18,8 +19,11 @@
     width: 100vw;
     height: 100vh;
     white-space: nowrap;
-    transition: 10s;
-    transition-timing-function: cubic-bezier(1,.06,.05,1);
+    animation-duration: 11s;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190); ;
+    // transition-timing-function: cubic-bezier(1,.06,.05,1);
   }
 
   &__image-wrap {
@@ -67,7 +71,7 @@
 
     #{$root} {
       &__inner {
-        transform: scale(2.2);
+        animation-name: zoom;
       }
     }
   }

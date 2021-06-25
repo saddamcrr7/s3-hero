@@ -14,6 +14,7 @@ function slider() {
   sliderItems[index].classList.add('is-active')
   banners[index].classList.add('is-active')
 
+
   let prevIndex = index - 1
 
   if (prevIndex == -1) {
@@ -22,11 +23,14 @@ function slider() {
     sliderItems[prevIndex].classList.remove('is-active')
   }
 
+  const bannerInnerprev = banners[prevIndex].querySelector('.o-banner__inner')
+
   setTimeout(() => {
     sliderItems[prevIndex].classList.remove('is-active')
     banners[prevIndex].classList.remove('is-active')
   }, 1000)
 }
 
-
-setInterval(slider, 4750)
+if(banners) {
+  setInterval(slider, 10000)
+}
