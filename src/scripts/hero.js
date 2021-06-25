@@ -20,7 +20,6 @@ function slider() {
     prevIndex = sliderItems.length - 1
 
     sliderItems[prevIndex].classList.remove('is-active')
-    banners[prevIndex].classList.remove('is-active')
   }
 
   setTimeout(() => {
