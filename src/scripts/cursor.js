@@ -1,6 +1,7 @@
 const $cursor = document.querySelector('.c-cursor')
+const $main = document.querySelector('#main')
 
-document.addEventListener('mousemove', (e) => {
+$main.addEventListener('mousemove', (e) => {
   $cursor.setAttribute('style',
     `top: ${e.pageY-10}px; left: ${e.pageX-10}px`)
 })
@@ -12,7 +13,6 @@ beBig(['.o-header__toggler', '.c-brand',])
 function beSmall(domArr) {
   domArr.forEach(element => {
     const $elms = document.querySelectorAll(element)
-    console.log( $elms);
     if ($elms) {
       $elms.forEach($elm => {
         $elm.addEventListener('mouseenter', () => {

@@ -7,8 +7,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 2s;
-  transition-timing-function: cubic-bezier(1,.06,.05,1);
+  transition: 2.4s;
+  transition-timing-function: ease;
   transform-origin: center;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 
@@ -18,12 +18,13 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    white-space: nowrap;
+    padding-top: rem(90px);
     animation-duration: 11s;
     animation-fill-mode: forwards;
     transform-origin: center;
-    animation-timing-function: cubic-bezier(0.36, 0.1, 0.68, 0.19);
+    animation-timing-function: cubic-bezier(0.12, 0.15, 1, 0.99);
   }
+
 
   &__image-wrap {
     position: absolute;
@@ -41,7 +42,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba($black, 0.6);
+      background: rgba($black, 0.5);
     }
   }
 
@@ -77,9 +78,47 @@
 
   &__title {
     color: $white;
+    font-weight: $font-weight-normal;
+    margin-bottom: 0;
   }
 
   &__text {
+    color: $primary;
+    margin-top: rem(10px);
+    margin-bottom: 0;
+  }
+
+  &__cta {
+    font-size: rem(13px);
     color: $white;
+    padding: 8px 16px;
+    margin-top: 10px;
+    display: inline-block;
+    border: 1px solid #d3d3d3;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      width: 200%;
+      height: 500%;
+      background-color: $primary;
+      position: absolute;
+      top: 0;
+      right: 100%;
+      transform: rotate(45deg);
+      z-index: -1;
+      transition: 0.3s;
+      animation-timing-function: cubic-bezier(0.12, 0.15, 1, 0.99);
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $white;
+
+      &::after {
+        right: -70%;
+      }
+    }
   }
 }

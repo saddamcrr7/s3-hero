@@ -1,5 +1,5 @@
 {
-  "name": "payout",
+  "name": "s3",
   "version": "1.0.0",
   "description": "",
   "author": "",
@@ -38,7 +38,7 @@
     "@babel/polyfill": "^7.7.0",
     "bootstrap": "^4.6.0",
     "core-js": "3",
-    "swiper": "^6.7.1"
+    "gsap": "^3.7.0"
   },
   "browserslist": [
     "> 1%",

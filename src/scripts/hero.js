@@ -26,9 +26,9 @@ function slider() {
   setTimeout(() => {
     sliderItems[prevIndex].classList.remove('is-active')
     banners[prevIndex].classList.remove('is-active')
-  }, 1000)
+  }, 1200)
 }
 
 if(banners) {
-  setInterval(slider, 10000)
+  setInterval(slider, 8000)
 }
