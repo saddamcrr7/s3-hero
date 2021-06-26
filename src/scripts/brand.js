@@ -18,5 +18,5 @@ const tl = gsap.timeline({
   }
 });
 
-tl.to(split1, {translateX: 200, translateY: 200, duration: 50})
-tl.to(split2, {translateX: -200, translateY: -200, duration: 50, delay: -50})
+tl.to(split1, {translateX: 100, translateY: 200, duration: 1})
+tl.to(split2, {translateX: -100, translateY: -200, duration: 1, delay: -1})

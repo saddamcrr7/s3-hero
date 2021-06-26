@@ -1,7 +1,7 @@
 const $cursor = document.querySelector('.c-cursor')
-const $main = document.querySelector('#main')
+const $viewport = document.querySelector('#viewport')
 
-$main.addEventListener('mousemove', (e) => {
+$viewport.addEventListener('mousemove', (e) => {
   $cursor.setAttribute('style',
     `top: ${e.pageY-10}px; left: ${e.pageX-10}px`)
 })
