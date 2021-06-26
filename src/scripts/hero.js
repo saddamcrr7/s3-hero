@@ -23,8 +23,6 @@ function slider() {
     sliderItems[prevIndex].classList.remove('is-active')
   }
 
-  const bannerInnerprev = banners[prevIndex].querySelector('.o-banner__inner')
-
   setTimeout(() => {
     sliderItems[prevIndex].classList.remove('is-active')
     banners[prevIndex].classList.remove('is-active')

@@ -1,0 +1,58 @@
+.c-cursor {
+  $root: &;
+
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+
+  &__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: rem(15px);
+    height: rem(15px);
+    border: 1px solid $black;
+    border-radius: rem(200px);
+    backface-visibility: hidden;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: 0.2s ease;
+    transition-timing-function: cubic-bezier(.645, .045, .355, 1);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.5px;
+      left: 0.5px;
+      right: 0.5px;
+      bottom: 0.5px;
+      border: 1px solid $white;
+      border-radius: rem(200px);
+      transition: 0.2s ease;
+      transition-timing-function: cubic-bezier(.645, .045, .355, 1);
+    }
+  }
+
+
+
+  &--big {
+    #{$root}__inner {
+      width: rem(100px);
+      height: rem(100px);
+    }
+  }
+
+  &--small {
+    #{$root}__inner {
+      width: rem(4px);
+      height: rem(4px);
+      background-color: $black;
+
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+}
