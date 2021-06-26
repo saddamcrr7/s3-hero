@@ -7,8 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 2.4s;
-  transition-timing-function: ease;
   transform-origin: center;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 
@@ -66,8 +64,6 @@
   }
 
   &.is-active {
-    width: 300vw;
-    height: 300vw;
 
     #{$root} {
       &__inner {
