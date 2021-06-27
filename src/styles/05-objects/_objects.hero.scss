@@ -30,5 +30,10 @@
     &.is-active {
       z-index: 2;
     }
+
+    &:first-child .o-banner {
+      width: 300vw;
+      height: 300vw;
+    }
   }
 }

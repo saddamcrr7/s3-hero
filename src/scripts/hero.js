@@ -3,7 +3,7 @@ import { gsap, CustomEase, ExpoScaleEase } from "../scripts/vendor/gsap-member/s
 gsap.registerPlugin(CustomEase, ExpoScaleEase);
 
 
-let index = 0
+let index = -1
 
 const sliderItems = document.querySelectorAll('.o-hero__slider-item')
 const banners = document.querySelectorAll('.o-banner')
@@ -90,11 +90,22 @@ function slider() {
       height: 0,
     })
 
-
 }
 
-slider()
+let interval = null
 
 if (banners) {
-  setInterval(slider, 6000)
+  window.addEventListener('load', ()=> {
+    slider()
+    setInterval(slider, 6000)
+  })
 }
+
+// @todo have to fix Timers Running on Inactive Browser Tabs
+
+document.addEventListener('visibilitychange', function(e) {
+  if(document.hidden) {
+  }
+  else {
+  }
+});
