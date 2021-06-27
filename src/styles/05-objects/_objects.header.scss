@@ -86,8 +86,11 @@
   }
 
   &__menu {
-    z-index: 5;
     visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    transition: 1s cubic-bezier(.39, .58, .28, 1.02) 0s;
+    will-change: visibility, opacity;
   }
 
   &.is-load {
@@ -110,6 +113,7 @@
       }
 
       &__menu {
+        opacity: 1;
         visibility: visible;
       }
     }

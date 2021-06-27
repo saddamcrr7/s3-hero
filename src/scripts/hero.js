@@ -102,6 +102,7 @@ if (banners) {
 }
 
 // @todo have to fix Timers Running on Inactive Browser Tabs
+// @hints https://stackoverflow.com/questions/48572176/how-to-get-the-remaining-time-out-of-setinterval-function/48572318
 
 document.addEventListener('visibilitychange', function(e) {
   if(document.hidden) {

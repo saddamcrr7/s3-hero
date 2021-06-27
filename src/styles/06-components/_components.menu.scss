@@ -16,6 +16,7 @@
 
   &__row {
     @include make-row();
+    justify-content: space-between;
   }
 
   &__col {
@@ -27,6 +28,9 @@
 
     &--social {
       @include make-col(4);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
   }
 
@@ -101,6 +105,23 @@
   &__social {
     width: 50px;
     display: block;
+    opacity: 0;
+    transform: translate(-50px, 50px);
+    transition: transform .4s cubic-bezier(0, 0, .11, .99) 0ms, opacity .2s, -webkit-transform .4s cubic-bezier(0, 0, .11, .99) 0ms;
+    will-change: transform opacity;
+
+
+    &:nth-child(1) {
+      transition-delay: .15s;
+    }
+
+    &:nth-child(2) {
+      transition-delay: .25s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: .35s;
+    }
 
     &+& {
       margin-top: rem(95px);
@@ -113,7 +134,7 @@
 
   &.is-active {
     #{$root} {
-      &__item {
+      &__item, &__social {
         transform: translate(0);
         opacity: 1;
       }
