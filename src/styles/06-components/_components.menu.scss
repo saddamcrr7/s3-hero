@@ -5,7 +5,9 @@
   top: 100%;
   left: 0;
   right: 0;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding-top: rem(40px);
 
   &__container {
     @include make-container();
@@ -85,7 +87,7 @@
     font-size: rem(57px);
     line-height: rem(57px);
     font-family: $headings-font-family;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-bolder;
     margin-bottom: 0;
   }
 
@@ -94,6 +96,19 @@
     margin-top: rem(10px);
     margin-bottom: 0;
     font-weight: $font-weight-bold;
+  }
+
+  &__social {
+    width: 50px;
+    display: block;
+
+    &+& {
+      margin-top: rem(95px);
+    }
+
+    > img {
+      width: 100%;
+    }
   }
 
   &.is-active {

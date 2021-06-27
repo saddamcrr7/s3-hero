@@ -3,7 +3,7 @@ const $viewport = document.querySelector('#viewport')
 
 $viewport.addEventListener('mousemove', (e) => {
   $cursor.setAttribute('style',
-    `top: ${e.pageY-10}px; left: ${e.pageX-10}px`)
+    `top: ${e.clientY-7}px; left: ${e.clientX-7}px`)
 })
 
 beSmall(['.js-link', 'button'])
