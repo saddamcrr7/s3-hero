@@ -9,6 +9,7 @@
   align-items: center;
   transform-origin: center;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  will-change: width, height;
 
   &__inner {
     position: absolute;
@@ -17,10 +18,7 @@
     width: 100vw;
     height: 100vh;
     padding-top: rem(90px);
-    animation-duration: 11s;
-    animation-fill-mode: forwards;
-    transform-origin: center;
-    animation-timing-function: cubic-bezier(0.12, 0.15, 1, 0.99);
+    will-change: transform;
   }
 
 
@@ -67,7 +65,7 @@
 
     #{$root} {
       &__inner {
-        animation-name: zoom;
+        // animation-name: zoom;
       }
     }
   }
