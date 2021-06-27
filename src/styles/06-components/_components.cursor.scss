@@ -6,6 +6,8 @@
   position: absolute;
   pointer-events: none;
   z-index: 1000;
+  mix-blend-mode: difference;
+  backface-visibility: hidden;
 
   &__inner {
     position: absolute;
@@ -13,30 +15,14 @@
     left: 50%;
     width: rem(14px);
     height: rem(14px);
-    border: 1px solid $black;
+    border: 1px solid $white;
+    background-color: $black;
     border-radius: rem(200px);
-    backface-visibility: hidden;
-    mix-blend-mode: difference;
     transform: translate(-50%, -50%);
     transition: 0.2s ease;
     transition-timing-function: cubic-bezier(.645, .045, .355, 1);
     overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0.5px;
-      left: 0.5px;
-      right: 0.5px;
-      bottom: 0.5px;
-      border: 1px solid $white;
-      border-radius: rem(200px);
-      transition: 0.2s ease;
-      transition-timing-function: cubic-bezier(.645, .045, .355, 1);
-    }
   }
-
-
 
   &--big {
     #{$root}__inner {
@@ -49,11 +35,6 @@
     #{$root}__inner {
       width: rem(4px);
       height: rem(4px);
-      background-color: $black;
-
-      &::before {
-        opacity: 0;
-      }
     }
   }
 }
