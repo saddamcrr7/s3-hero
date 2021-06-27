@@ -70,6 +70,7 @@
         border-radius: none;
         transform-origin: center;
         transform: scale(0.0);
+        will-change: width, height;
       }
 
     }
