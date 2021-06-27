@@ -31,42 +31,57 @@ function slider() {
   setTimeout(() => {
     sliderItems[prevIndex].classList.remove('is-active')
     banners[prevIndex].classList.remove('is-active')
-  }, 1200)
+  }, 2000)
 
   let tl = gsap.timeline();
 
   const activeInner = sliderItems[index].querySelector('.o-banner__inner')
   const prevInner = sliderItems[prevIndex].querySelector('.o-banner__inner')
-
+  const activeInnerImage = sliderItems[index].querySelector('.o-banner__image')
+  const prevInnerImage = sliderItems[prevIndex].querySelector('.o-banner__image')
+  const activeInnerContent = sliderItems[index].querySelector('.o-banner__content')
+  const prevInnerContent = sliderItems[prevIndex].querySelector('.o-banner__content')
 
   tl.to(banners[index], {
       duration: 2,
       width: window.innerWidth * 3,
       height: window.innerWidth * 3,
     })
-    .to(activeInner, {
+    .to(activeInnerImage, {
       delay: -2,
       duration: 1.5,
       scale: 1.1,
-      ease: "expoScale(1.1, 1.07, power3.out)",
-
+      ease: "expoScale(1, 1.1, power3.out)",
     })
-    .to(activeInner, {
+    .to(activeInnerContent, {
+      delay: -2,
+      duration: 1.5,
+      scale: 1,
+      ease: "expoScale(0.9, 1, power3.out)",
+    })
+    .to(activeInnerImage, {
       delay: -.5,
-      duration: 4,
+      duration: 4.5,
       scale: 1.2,
-      ease: "expoScale(1.07, 1.2)",
+      ease: "expoScale(1.1, 1.2)",
     })
     .to(activeInner, {
-      delay: .2,
-      duration: 2.1,
+      duration: 2,
       scale: 7,
-      ease: "expoScale(1.2, 7)",
+      ease: "expoScale(1, 7)",
     })
     .to(prevInner, {
       delay: -4,
       duration: 0,
       scale: 1,
+    })
+    .to(prevInnerImage, {
+      duration: 0,
+      scale: 1,
+    })
+    .to(prevInnerContent, {
+      duration: 0,
+      scale: .9,
     })
     .to(banners[prevIndex], {
       delay: 2,

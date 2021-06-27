@@ -6,8 +6,8 @@ $viewport.addEventListener('mousemove', (e) => {
     `top: ${e.pageY-10}px; left: ${e.pageX-10}px`)
 })
 
-beSmall(['a', 'button'])
-beBig(['.o-header__toggler', '.c-brand',])
+beSmall(['.js-link', 'button'])
+beBig(['.o-header__toggler', '.o-header__brand',])
 
 
 function beSmall(domArr) {
