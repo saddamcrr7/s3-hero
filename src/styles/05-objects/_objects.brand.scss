@@ -28,4 +28,40 @@
       display: contents;
     }
   }
+
+  &__cta {
+    font-size: rem(18px);
+    line-height: rem(18px);
+    width: 162px;
+    padding: 20px 0;
+    display: block;
+    text-align: center;
+    position: relative;
+    margin-top: rem(120px);
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: $font-weight-bold;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      transform: translate3d(0, 97%, 0);
+      background-color: $primary;
+      z-index: -1;
+      transition:all 200ms ease-in-out;
+    }
+
+    &:hover {
+      color: $white;
+
+      &::after {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
 }
