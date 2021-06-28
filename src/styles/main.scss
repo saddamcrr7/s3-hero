@@ -48,12 +48,14 @@
 @import '05-objects/objects.hero';
 @import '05-objects/objects.banner';
 @import '05-objects/objects.slogan';
+@import '05-objects/objects.brand';
 @import '05-objects/objects.main';
 
 // 06. Components
 
 @import './06-components/components.brand';
 @import './06-components/components.menu';
+@import './06-components/components.brand-card';
 @import './06-components/components.cursor';
 
 // 99. Utilities

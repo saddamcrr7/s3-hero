@@ -2,4 +2,8 @@ a {
   @include basic-transition(color);
   color: $primary;
   cursor: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
