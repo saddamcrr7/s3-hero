@@ -15,7 +15,6 @@ const tl = gsap.timeline({
     start: "2px top",
     end: `3000px bottom`,
     scrub: true,
-    markers: true
   }
 });
 
