@@ -11,17 +11,15 @@
   }
 
   &__container {
-    @include make-container();
-
-    max-width: rem(1800px + $grid-gutter-width);
+    width: 100%;
   }
 
   &__row {
-    @include make-row();
+    @include make-row($gutter: 0);
   }
 
   &__col {
-    @include make-col-ready();
+    @include make-col-ready($gutter: 0);
     @include make-col(4);
 
     > .js-link {
