@@ -1,0 +1,35 @@
+.o-customers {
+  display: block;
+  padding-top: rem(54px + 27px);
+  padding-bottom: rem(54px + 27px);
+
+  &__container {
+    @include make-container();
+
+    max-width: rem(1200px + $grid-gutter-width);
+  }
+
+  &__container-projects {
+    width: 100%;
+    overflow: hidden;
+    margin-top: rem(27px);
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__title {
+    font-weight: $font-weight-bold;
+    margin-bottom: 0;
+  }
+
+  &__subtitle {
+    font-size: rem(18px);
+    font-weight: $font-weight-bold;
+    margin-top: rem(10px);
+    margin-bottom: 0;
+  }
+
+
+}
