@@ -24,6 +24,10 @@
 
     > .js-link {
       display: contents;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
