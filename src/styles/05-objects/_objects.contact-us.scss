@@ -1,0 +1,66 @@
+.o-contact-us {
+  display: block;
+  position: relative;
+  padding-top: rem(110px + 27px);
+  padding-bottom: rem(110px + 27px);
+
+  &__bg {
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+  }
+
+  &__container {
+    @include make-container();
+
+    max-width: rem(1080 + $grid-gutter-width);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__text {
+    color: $white;
+    font-size: rem(24px);
+    line-height: rem(43px);
+    font-weight: $font-weight-bold;
+  }
+
+  &__name {
+    color: $white;
+    font-weight: $font-weight-bold;
+    margin-top: rem(24px);
+    margin-bottom: 0;
+
+  }
+
+  &__title {
+    color: $primary-03;
+    font-size: rem(60px);
+    line-height: 60px;
+    font-weight: $font-weight-bold;
+    margin-top: rem(45px);
+    margin-bottom: 0;
+
+  }
+
+  &__cta {
+    display: inline-block;
+    color: $white;
+    font-size: rem(20px);
+    margin-top: rem(24px);
+    padding: rem(7px) rem(50px);
+    font-size: rem(20px);
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    border: 2px solid $white;
+    border-radius: 2px;
+    transition: 0.3s ease;
+    transition-property: color, backdrop-filter, background-color;
+    margin-top: rem(40px);
+
+    &:hover {
+      color: $white;
+      backdrop-filter: blur(5px);
+      background-color: rgba($white, 0.2);
+    }
+  }
+}

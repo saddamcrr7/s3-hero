@@ -104,7 +104,7 @@ $content-width:  $card-width / 2;
     border: 2px solid $white;
     border-radius: 2px;
     transition: 0.3s ease;
-    transition-property: color backdrop-filter background-color;
+    transition-property: color, backdrop-filter, background-color;
 
     &:hover {
       color: $white;
