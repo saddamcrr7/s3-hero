@@ -1,0 +1,37 @@
+.o-visionaries {
+  display: block;
+  position: relative;
+
+  &__container {
+    @include make-container();
+
+    padding-top: rem(83px);
+    padding-bottom: rem(83px);
+    background: $white;
+    position: relative;
+    mix-blend-mode: screen;
+    z-index: 2;
+  }
+
+  &__title {
+    color:   $grey;
+    font-size: rem(314px);
+    line-height: rem(314px);
+    letter-spacing: -15px;
+    font-family: $font-family-base;
+    font-weight: $font-weight-bolder;
+  }
+
+  &__symbol {
+    width: rem(398px);
+    position: absolute;
+    top: 50%;
+    right: 150px;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    > img {
+      max-width: 100%;
+    }
+  }
+}
