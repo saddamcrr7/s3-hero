@@ -1,0 +1,148 @@
+.o-footer {
+  $root: &;
+
+  padding-top: rem(37px);
+  margin-bottom: rem(10px);
+  background-color: $black;
+
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: rem(27px);
+    padding-bottom: rem(37px);
+    border-bottom: 1px solid $grey;
+  }
+
+  &__logo {
+    max-width: rem(270px);
+    width: 100%;
+  }
+
+  &__nav {
+    padding-top: rem(27px);
+    padding-bottom: rem(45px);
+    border-bottom: 1px solid $grey;
+  }
+
+  &__nav-container {
+    @include make-container();
+
+    max-width: rem(1080px + $grid-gutter-width);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav-link {
+    margin-bottom: rem(27px);
+    text-align: center;
+
+    &:hover {
+      #{$root} {
+        &__nav-title, &__nav-sub {
+          color: $primary-03;
+        }
+      }
+    }
+  }
+
+  &__nav-title {
+    color: $grey;
+    font-size: rem(40px);
+    line-height: rem(36px);
+    font-family: $headings-font-family;
+    font-weight: $font-weight-bold;
+    transition: 0.3s ease;
+  }
+
+  &__nav-sub {
+    color: $white;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    transition: 0.3s ease;
+  }
+
+  &__bottom {
+    padding: rem(15px) 0;
+  }
+
+  &__bottom-container {
+    @include make-container();
+
+    max-width: rem(1080px + $grid-gutter-width);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__office {
+    padding: rem(15px) 0;
+  }
+
+  &__office-title {
+    color: $primary;
+    margin-bottom: 0;
+  }
+
+  &__office-address {
+    color: $white;
+    font-size: rem(12px);
+    font-weight: $font-weight-bold;
+    margin-top: rem(10px);
+    margin-bottom: 0;
+  }
+
+  &__ctas {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: rem(15px) 0;
+  }
+
+  &__cta {
+    color: $white;
+    margin-right: rem(30px);
+
+
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+  }
+
+  &__social {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background-color: #999999;
+    border-radius: 2px;
+    transition: 0.3s ease;
+
+    &:hover {
+      background-color: $primary-02;
+    }
+
+    &+& {
+      margin-left: rem(8px);
+    }
+  }
+
+  &__social-icon {
+    max-width: 100%;
+    height: 100%;
+  }
+
+}
