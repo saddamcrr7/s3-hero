@@ -1,12 +1,11 @@
 $card-width: rem(1120px);
-$content-width:  $card-width / 2;
+$content-width: $card-width / 2;
+
 .c-project-card {
   $root: &;
 
   position: relative;
-  width: calc(100vw / 6);
   height: rem(665px);
-  transition: 1s ease-in-out;
   overflow: hidden;
 
   &__inner {
@@ -86,7 +85,8 @@ $content-width:  $card-width / 2;
     margin-bottom: 0;
   }
 
-  &__text, &__companey {
+  &__text,
+  &__companey {
     color: $white;
     font-weight: $font-weight-medium;
   }
@@ -113,17 +113,7 @@ $content-width:  $card-width / 2;
     }
   }
 
-
-  &:focus-within,
-  &:hover {
-    width: $card-width;
-    flex: 0 0  $card-width;
-
-    &~#{$root} {
-      width: calc(100vw / 12);
-      flex: 0 0  calc(100vw / 12);
-    }
-
+  &.is-active {
     #{$root}__content {
       width: $content-width;
     }
@@ -132,8 +122,6 @@ $content-width:  $card-width / 2;
       opacity: 1;
     }
 
-
   }
-
 
 }

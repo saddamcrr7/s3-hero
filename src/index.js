@@ -9,3 +9,12 @@ import './scripts/cursor'
 import './scripts/slogan'
 import './scripts/parallax-bg'
 import './scripts/value-counter'
+import './scripts/project-cards'
+
+
+
+import PanelSlider from './scripts/project-cards'
+
+
+const b = new PanelSlider('.c-project-card', '.o-customers__row')
+
