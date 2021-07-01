@@ -12,6 +12,7 @@
 
   &__container {
     width: 100%;
+    text-align: center;
   }
 
   &__row {
@@ -34,9 +35,8 @@
   &__cta {
     font-size: rem(18px);
     line-height: rem(18px);
-    width: 162px;
-    padding: 20px 0;
-    display: block;
+    padding: rem(20px) rem(50px);
+    display: inline-block;
     text-align: center;
     position: relative;
     margin-top: rem(120px);
