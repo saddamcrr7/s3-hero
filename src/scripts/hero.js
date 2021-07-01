@@ -90,23 +90,24 @@ function slider() {
       height: 0,
     })
 
+    if(index == sliderItems.length-1) {
+     setTimeout(()=> {
+       tl.pause()
+     }, 3000)
+    }
+
 }
 
-let interval = null
 
 if (banners) {
   window.addEventListener('load', ()=> {
     slider()
-    setInterval(slider, 6000)
+    let interval = setInterval(()=> {
+    slider()
+      if(index == sliderItems.length-1) {
+        clearInterval(interval)
+      }
+    }, 6000)
   })
 }
 
-// @todo have to fix Timers Running on Inactive Browser Tabs
-// @hints https://stackoverflow.com/questions/48572176/how-to-get-the-remaining-time-out-of-setinterval-function/48572318
-
-document.addEventListener('visibilitychange', function(e) {
-  if(document.hidden) {
-  }
-  else {
-  }
-});
