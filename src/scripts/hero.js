@@ -1,4 +1,10 @@
-import { gsap, CustomEase, ExpoScaleEase } from "../scripts/vendor/gsap-member/src/all";
+import {
+  gsap,
+  CustomEase,
+  ExpoScaleEase
+} from "../scripts/vendor/gsap-member/src/all";
+import RecurringTimer from './utils/RecurringTimer'
+
 
 gsap.registerPlugin(CustomEase, ExpoScaleEase);
 
@@ -13,7 +19,7 @@ function slider() {
   index++
 
   if (index == sliderItems.length) {
-    index = 0
+    index = sliderItems.length
   }
 
   sliderItems[index].classList.add('is-active')
@@ -38,9 +44,12 @@ function slider() {
   const activeInner = sliderItems[index].querySelector('.o-banner__inner')
   const prevInner = sliderItems[prevIndex].querySelector('.o-banner__inner')
   const activeInnerImage = sliderItems[index].querySelector('.o-banner__image')
-  const prevInnerImage = sliderItems[prevIndex].querySelector('.o-banner__image')
-  const activeInnerContent = sliderItems[index].querySelector('.o-banner__content')
-  const prevInnerContent = sliderItems[prevIndex].querySelector('.o-banner__content')
+  const prevInnerImage = sliderItems[prevIndex].querySelector(
+    '.o-banner__image')
+  const activeInnerContent = sliderItems[index].querySelector(
+    '.o-banner__content')
+  const prevInnerContent = sliderItems[prevIndex].querySelector(
+    '.o-banner__content')
 
   tl.to(banners[index], {
       duration: 2,
@@ -90,24 +99,49 @@ function slider() {
       height: 0,
     })
 
-    if(index == sliderItems.length-1) {
-     setTimeout(()=> {
-       tl.pause()
-     }, 3000)
-    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden || index == sliderItems.length - 1) {
+        tl.pause()
+      } else {
+        tl.resume()
+      }
+    })
+
+  if (index == sliderItems.length - 1) {
+    setTimeout(() => {
+      tl.pause()
+    }, 3000)
+  }
 
 }
+
+
 
 
 if (banners) {
-  window.addEventListener('load', ()=> {
+  window.addEventListener('load', () => {
+
     slider()
-    let interval = setInterval(()=> {
-    slider()
-      if(index == sliderItems.length-1) {
-        clearInterval(interval)
+
+    let interval = new RecurringTimer(() => {
+      slider()
+    }, 6000)
+
+    let interval1 = new RecurringTimer(() => {
+      if (index == sliderItems.length - 1) {
+        interval.pause()
+        interval1.pause()
       }
     }, 6000)
+
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden || index == sliderItems.length - 1) {
+        interval.pause()
+      } else {
+        interval.resume()
+      }
+    });
+
   })
 }
-

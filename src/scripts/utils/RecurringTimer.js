@@ -1,24 +1,35 @@
+function RecurringTimer(callback, interval) {
+  var timerId, startTime, remaining = 0;
+  var state = 0; //  0 = idle, 1 = running, 2 = paused, 3= resumed
 
-function RecurringTimer(callback, delay) {
-  var timerId, start, remaining = delay;
+  this.pause = function () {
+      if (state != 1) return;
 
-  this.pause = function() {
-      window.clearTimeout(timerId);
-      remaining -= new Date() - start;
+      remaining = interval - (new Date() - startTime);
+      window.clearInterval(timerId);
+      state = 2;
   };
 
-  var resume = function() {
-      start = new Date();
-      timerId = window.setTimeout(function() {
-          remaining = delay;
-          resume();
-          callback();
-      }, remaining);
+  this.resume = function () {
+      if (state != 2) return;
+
+      state = 3;
+      window.setTimeout(this.timeoutCallback, remaining);
   };
 
-  this.resume = resume;
+  this.timeoutCallback = function () {
+      if (state != 3) return;
 
-  this.resume();
+      callback();
+
+      startTime = new Date();
+      timerId = window.setInterval(callback, interval);
+      state = 1;
+  };
+
+  startTime = new Date();
+  timerId = window.setInterval(callback, interval);
+  state = 1;
 }
 
 
