@@ -99,13 +99,17 @@ function slider() {
       height: 0,
     })
 
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden || index == sliderItems.length - 1) {
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      tl.pause()
+    } else {
+      if (index == sliderItems.length - 1) {
         tl.pause()
       } else {
         tl.resume()
       }
-    })
+    }
+  })
 
   if (index == sliderItems.length - 1) {
     setTimeout(() => {
@@ -136,10 +140,14 @@ if (banners) {
 
 
     document.addEventListener('visibilitychange', () => {
-      if (document.hidden || index == sliderItems.length - 1) {
+      if (document.hidden) {
         interval.pause()
       } else {
         interval.resume()
+
+        if (index == sliderItems.length - 1) {
+          interval.pause()
+        }
       }
     });
 
