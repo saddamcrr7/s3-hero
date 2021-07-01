@@ -32,6 +32,16 @@
     }
   }
 
+  &__text {
+    @include make-container();
+
+    font-size: rem(18px);
+    max-width: rem(1080px);
+    text-align: center;
+    margin-top: rem(80px);
+    padding-bottom: 0;
+  }
+
   &__cta {
     font-size: rem(18px);
     line-height: rem(18px);
@@ -39,7 +49,7 @@
     display: inline-block;
     text-align: center;
     position: relative;
-    margin-top: rem(120px);
+    margin-top: rem(40px);
     margin-left: auto;
     margin-right: auto;
     font-weight: $font-weight-bold;
