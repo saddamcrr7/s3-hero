@@ -1,7 +1,10 @@
 import {
   gsap,
   ScrollTrigger,
+  ScrollToPlugin
 } from "../scripts/vendor/gsap-member/src/all";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 class StickySection {
   constructor(elms, options) {
@@ -33,19 +36,14 @@ class StickySection {
 
   animation() {
     this.$elms.forEach((spacer, i) => {
-      gsap.to(spacer, {
-        scrollTrigger: {
-          trigger: spacer,
+      const st = ScrollTrigger.create({
+        trigger: spacer,
           start: "top top",
           end: "bottom top",
-          scrub: 1,
-          markers: true,
+          scrub: true,
           pin: true,
-          pinSpacing: false
-        },
-        ease: "none",
-      })
-
+          pinSpacing: false,
+      });
     });
   }
 

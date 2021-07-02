@@ -1,7 +1,13 @@
 .js-sticky-section {
   // position: fixed;
   // left: 0;
-  // width: 100%;
+  max-width: 100% !important;
+  width: 100% !important;
   // z-index: 50;
   background-color: $white;
+  will-change: transform;
+}
+
+.pin-spacer {
+  width: 100% !important;
 }

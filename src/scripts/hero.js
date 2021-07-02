@@ -136,7 +136,7 @@ if (banners) {
         interval.pause()
         interval1.pause()
       }
-    }, 6000)
+    }, 100)
 
 
     document.addEventListener('visibilitychange', () => {
