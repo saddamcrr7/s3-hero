@@ -143,10 +143,10 @@ if (banners) {
       if (document.hidden) {
         interval.pause()
       } else {
-        interval.resume()
-
         if (index == sliderItems.length - 1) {
           interval.pause()
+        }else {
+          interval.resume()
         }
       }
     });
