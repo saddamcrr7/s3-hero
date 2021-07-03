@@ -15,15 +15,21 @@
 
   &__title {
     color:   $grey;
-    font-size: rem(314px);
-    line-height: rem(314px);
+    font-size: rem(220px);
+      line-height: rem(220px);
     letter-spacing: -15px;
     font-family: $font-family-base;
     font-weight: $font-weight-bolder;
+
+    @include media-breakpoint-up(xl) {
+
+      font-size: rem(314px);
+      line-height: rem(314px);
+    }
   }
 
   &__symbol {
-    width: rem(398px);
+    width: rem(298px);
     position: absolute;
     top: 50%;
     right: 150px;
@@ -32,6 +38,11 @@
 
     > img {
       max-width: 100%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: rem(398px);
+      right: 150px;
     }
   }
 }

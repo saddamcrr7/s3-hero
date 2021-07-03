@@ -1,7 +1,12 @@
 .o-trusted {
   display: block;
-  padding-top: rem(250px);
-  padding-bottom: rem(32px);
+  padding-top: rem(150px);
+  padding-bottom: rem(50px);
+
+  @include media-breakpoint-up(xl) {
+    padding-top: rem(250px);
+    padding-bottom: rem(32px);
+  }
 
   &__container {
     @include make-container();
@@ -11,7 +16,12 @@
   &__top {
     position: relative;
     padding-left: rem(100px);
-    margin-bottom: rem(133px);
+    margin-bottom: rem(100px);
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: rem(133px);
+    }
+
   }
 
   &__symbol {
