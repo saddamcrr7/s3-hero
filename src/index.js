@@ -19,3 +19,4 @@ import StickySection from './scripts/sticky-section'
 const b = new PanelSlider('.c-project-card', '.o-customers__row')
 
 const stickySection =  new StickySection('.js-sticky-section')
+
