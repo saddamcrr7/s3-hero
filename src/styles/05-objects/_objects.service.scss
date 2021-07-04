@@ -1,0 +1,55 @@
+.o-service {
+  display: block;
+  position: relative;
+
+
+  &__container {
+    @include make-container();
+
+    max-width: rem(1200 + $grid-gutter-width);
+    padding-top: rem(100px);
+    padding-bottom: rem(100px);
+    position: relative;
+    z-index: 2;
+  }
+
+  &__row {
+    @include make-row();
+  }
+
+  &__col {
+    @include make-col-ready();
+    @include make-col(6);
+  }
+
+
+
+
+  &__title {
+    position: relative;
+    padding: rem(20px);
+  }
+
+  &__title-text {
+    font-size: rem(65px);
+    position: relative;
+    z-index: 2;
+    color: $white;
+    margin-bottom: 0;
+  }
+
+  &__symbol{
+    width: 300px;
+    height: 300px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__header {
+    display: flex;
+  }
+
+}

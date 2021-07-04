@@ -122,7 +122,7 @@ function slider() {
 
 
 
-if (banners) {
+if (banners.length) {
   window.addEventListener('load', () => {
 
     slider()

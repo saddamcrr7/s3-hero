@@ -1,0 +1,81 @@
+.o-simple-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: -1px -1px -1px -1px;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 0 0;
+      background: rgba($black, 0.5);
+
+    }
+  }
+
+  &__bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__container {
+    @include make-container();
+
+    max-width: rem(1200px + $grid-gutter-width);
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    color: $white;
+    font-size: rem(100px);
+    font-weight: $font-weight-light;
+  }
+
+  &__text {
+    color: $primary;
+    font-size: rem(24px);
+  }
+
+  &__cta {
+    position: relative;
+    font-size: rem(20px);
+    color: $white;
+    display: inline-block;
+    padding: 6px 20px;
+    border: 1px solid $white;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      width: 200%;
+      height: 500%;
+      background-color: $primary;
+      position: absolute;
+      top: 0;
+      right: 100%;
+      transform: rotate(45deg);
+      z-index: -1;
+      transition: 0.3s;
+      animation-timing-function: cubic-bezier(0.12, 0.15, 1, 0.99);
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $white;
+
+      &::after {
+        right: -80%;
+      }
+    }
+  }
+}
