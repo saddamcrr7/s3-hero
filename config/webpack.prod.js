@@ -97,6 +97,10 @@ module.exports = {
       filename: "index.html"
     }),
 
+    new HtmlWebpackPlugin({
+      template: "./src/templates/services.html",
+      filename: "services.html"
+    }),
     // ComppresionPlugin will Prepare compressed versions of assets to serve them with Content-Encoding.
     // In this case we use gzip
     // But, you can also use the newest algorithm like brotli, and it's supperior than gzip

@@ -71,5 +71,11 @@ module.exports = {
       filename: "index.html"
     }),
 
+
+    new HtmlWebpackPlugin({
+      template: "./src/templates/services.html",
+      filename: "services.html"
+    }),
+
   ]
 };

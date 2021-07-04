@@ -5,8 +5,8 @@
   &__container {
     @include make-container();
 
-    padding-top: rem(83px);
-    padding-bottom: rem(83px);
+    padding-top: rem(100px);
+    padding-bottom: rem(100px);
     background: $white;
     position: relative;
     mix-blend-mode: screen;
@@ -15,24 +15,24 @@
 
   &__title {
     color:   $grey;
-    font-size: rem(220px);
-      line-height: rem(220px);
+    font-size: rem(200px);
+    line-height: rem(180px);
     letter-spacing: -15px;
+    padding-left: rem(150px);
     font-family: $font-family-base;
     font-weight: $font-weight-bolder;
 
     @include media-breakpoint-up(xl) {
-
-      font-size: rem(314px);
-      line-height: rem(314px);
+      font-size: rem(260px);
+      line-height: rem(250px);
     }
   }
 
   &__symbol {
-    width: rem(298px);
     position: absolute;
+    width: 60%;
     top: 50%;
-    right: 150px;
+    left: 0;
     transform: translateY(-50%);
     z-index: 5;
 
@@ -41,8 +41,6 @@
     }
 
     @include media-breakpoint-up(xl) {
-      width: rem(398px);
-      right: 150px;
     }
   }
 }
