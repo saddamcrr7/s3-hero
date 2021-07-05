@@ -5,8 +5,8 @@
   &__container {
     @include make-container();
 
-    padding-top: rem(100px);
-    padding-bottom: rem(100px);
+    padding-top: rem(70px);
+    padding-bottom: rem(70px);
     background: $white;
     position: relative;
     mix-blend-mode: screen;
@@ -15,16 +15,15 @@
 
   &__title {
     color:   $grey;
-    font-size: rem(200px);
-    line-height: rem(180px);
+    font-size: rem(240px);
+    line-height: rem(240px);
     letter-spacing: -5px;
-    padding-left: rem(150px);
     font-family: $font-family-base;
     font-weight: $font-weight-bolder;
 
     @include media-breakpoint-up(xl) {
-      font-size: rem(260px);
-      line-height: rem(250px);
+      font-size: rem(314px);
+      line-height: rem(314px);
     }
   }
 
