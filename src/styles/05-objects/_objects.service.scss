@@ -1,6 +1,22 @@
 .o-service {
+  --main-bg-color: #{$primary-03};
+  --bg-color: #{$white};
+  --subtitle-color: #{$black};
+  --title-underline-color: #{$primary-03};
+  --icon-bg-color: #{$white};
+  --subtitle-bg-color: #{$white};
+
   display: block;
   position: relative;
+  background-color: var(--main-bg-color) !important;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: var(--bg-color);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%);
+  }
 
 
   &__container {
@@ -22,12 +38,25 @@
     @include make-col(6);
   }
 
-
+  &__content {
+    padding-left: rem(100px);
+  }
 
 
   &__title {
     position: relative;
     padding: rem(20px);
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -60px;
+      width: rem(160px);
+      height: 25px;
+      background: var(--title-underline-color);
+      clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+    }
   }
 
   &__title-text {
@@ -38,9 +67,10 @@
     margin-bottom: 0;
   }
 
-  &__symbol{
+  &__symbol {
     width: 300px;
     height: 300px;
+    margin-left: auto;
 
     img {
       max-width: 100%;
@@ -50,6 +80,31 @@
 
   &__header {
     display: flex;
+    align-items: center;
   }
 
+  &__icon {
+    padding: rem(10px);
+    margin-right: rem(10px);
+    background-color: var(--icon-bg-color);
+  }
+
+  &__subtitle {
+    color: var(--subtitle-color);
+    padding: rem(10px) rem(20px);
+    background-color: var(--subtitle-bg-color);
+  }
+
+  &__text {
+    margin-top: rem(20px);
+  }
+
+  &--primary {
+    --main-bg-color: #{$white};
+    --bg-color: #{$primary-03};
+    --subtitle-color: #{$white};
+    --title-underline-color: #{$black};
+    --icon-bg-color: #{$primary};
+    --subtitle-bg-color: #{$primary};
+  }
 }
