@@ -39,6 +39,19 @@
     color: $white;
     font-size: rem(100px);
     font-weight: $font-weight-light;
+    position: relative;
+    padding-top: rem(30px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: rem(30px);
+      width: rem(60px);
+      height: rem(10px);
+      background: $primary;
+      clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+    }
   }
 
   &__text {

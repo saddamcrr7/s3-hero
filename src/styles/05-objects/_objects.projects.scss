@@ -1,0 +1,27 @@
+.o-projects {
+  display: block;
+  padding: rem(100px) 0;
+  position: relative;
+
+  &__container {
+    @include make-container();
+
+    max-width: rem(1080px + $grid-gutter-width);
+  }
+
+  &__row {
+    @include make-row();
+  }
+
+  &__col {
+    @include make-col-ready();
+
+    &--4 {
+      @include make-col(4);
+    }
+
+    &--6 {
+      @include make-col(6);
+    }
+  }
+}
