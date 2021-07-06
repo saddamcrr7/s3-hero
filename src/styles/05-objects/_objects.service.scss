@@ -1,10 +1,13 @@
 .o-service {
-  --main-bg-color: #{$primary-03};
+  --main-bg-color: #{#ebebeb};
   --bg-color: #{$white};
   --subtitle-color: #{$black};
   --title-underline-color: #{$primary-03};
   --icon-bg-color: #{$white};
   --subtitle-bg-color: #{$white};
+  --text-color : #{$black};
+
+  $root: &;
 
   display: block;
   position: relative;
@@ -53,7 +56,7 @@
       left: 0;
       bottom: -60px;
       width: rem(160px);
-      height: 25px;
+      height: 20px;
       background: var(--title-underline-color);
       clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
     }
@@ -97,6 +100,7 @@
 
   &__text {
     margin-top: rem(20px);
+    color: var(--text-color);
   }
 
   &--primary {
@@ -106,5 +110,33 @@
     --title-underline-color: #{$black};
     --icon-bg-color: #{$primary};
     --subtitle-bg-color: #{$primary};
+    --text-color : #{$black};
+
+  }
+
+  &--grey {
+    --main-bg-color: #{$primary-03};
+    --bg-color: #{#ebebeb};
+    --subtitle-color: #{$black};
+    --title-underline-color: #{$primary};
+    --icon-bg-color: #{none};
+    --subtitle-bg-color: #{none};
+    --text-color : #{$black};
+
+  }
+
+  &--black {
+    --main-bg-color: #{$white};
+    --bg-color: #{$black};
+    --subtitle-color: #{$white};
+    --title-underline-color: #{$white};
+    --icon-bg-color: #{none};
+    --subtitle-bg-color: #{none};
+    --text-color : #{$white};
+
+
+    #{$root}__symbol {
+      filter: invert(1);
+    }
   }
 }
