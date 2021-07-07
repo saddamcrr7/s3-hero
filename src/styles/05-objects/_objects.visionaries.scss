@@ -15,11 +15,13 @@
 
   &__title {
     color:   $grey;
-    font-size: rem(240px);
-    line-height: rem(240px);
+    font-size: rem(190px);
+    line-height: rem(190px);
     letter-spacing: -5px;
     font-family: $font-family-base;
     font-weight: $font-weight-bolder;
+    mix-blend-mode: darken;
+    background-color: $white;
 
     @include media-breakpoint-up(xl) {
       font-size: rem(314px);
@@ -33,7 +35,7 @@
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    z-index: 5;
+    z-index: 0;
 
     > img {
       max-width: 100%;
