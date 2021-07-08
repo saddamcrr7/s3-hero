@@ -1,8 +1,11 @@
 .o-cover {
+  $root: &;
+
   display: block;
   position: relative;
   padding-top: rem(300px);
   padding-bottom: rem(300px);
+  overflow: hidden;
 
   &__content {
     @include make-container();
@@ -23,6 +26,30 @@
 
     &+& {
       margin-left: rem(20px);
+    }
+  }
+
+  &--faq {
+    padding-top: rem(200px);
+    padding-bottom: rem(200px);
+    position: relative;
+
+    &::before {
+      content: '';
+      width: rem(80px);
+      height: rem(80px);
+      position: absolute;
+      top: -(80px / 2);
+      left: 200px;
+      transform: rotate(45deg);
+      background-color: $white;
+      z-index: 5;
+    }
+
+    #{$root} {
+      &__bg::after {
+        background-color: rgba($primary, 0.7);
+      }
     }
   }
 }

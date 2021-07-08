@@ -1,28 +1,47 @@
 .c-faq {
+  $root: &;
+
   position: relative;
-  max-width: rem(356px);
+  max-width: rem(400px);
   width: 100%;
   padding: rem(20px);
+  perspective: 1200px;
 
   &+& {
     margin-left: rem(65px);
   }
 
-  &__header {
+  &__inner {
+    transition: transform 1.25s cubic-bezier(.23, 1, .32, 1);
+    transform-style: preserve-3d;
+  }
+
+  &__front,
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  &__front {
     position: relative;
     text-align: center;
     margin-bottom: rem(20px);
   }
 
-  &__icon {
-    max-width: 100%;
-    margin-bottom: rem(20px);
+  &__back {
+    text-align: center;
+    transform: rotateY(180deg);
   }
 
-  &__body {
-    text-align: center;
-    height: 0px;
-    overflow: hidden;
+  &__icon {
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: rem(20px);
   }
 
   &__title {
@@ -37,6 +56,48 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  &.is-from-right, &.is-from-left {
+    #{$root} {
+      &__back {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+  &.is-from-top {
+    #{$root} {
+      &__back {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+
+  &:hover {
+    &.is-from-right {
+      #{$root} {
+        &__inner {
+          transform: rotateY(-180deg);
+        }
+      }
+    }
+
+    &.is-from-left {
+      #{$root} {
+        &__inner {
+          transform: rotateY(180deg);
+        }
+      }
+    }
+
+    &.is-from-top {
+      #{$root} {
+        &__inner {
+          transform: rotateX(-180deg);
+        }
+      }
     }
   }
 }
