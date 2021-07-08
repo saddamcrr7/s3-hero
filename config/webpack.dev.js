@@ -81,5 +81,10 @@ module.exports = {
       filename: "projects.html"
     }),
 
+    new HtmlWebpackPlugin({
+      template: "./src/templates/meet.html",
+      filename: "meet.html"
+    }),
+
   ]
 };

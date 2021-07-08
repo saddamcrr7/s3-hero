@@ -59,6 +59,7 @@
 @import '05-objects/objects.visionaries';
 @import '05-objects/objects.projects';
 @import '05-objects/objects.cover';
+@import '05-objects/objects.collaborators';
 @import '05-objects/objects.footer';
 @import '05-objects/objects.sections';
 @import '05-objects/objects.main';
@@ -70,6 +71,8 @@
 @import './06-components/components.brand-card';
 @import './06-components/components.project-card';
 @import './06-components/components.project';
+@import './06-components/components.collaborator';
+@import './06-components/components.faq';
 @import './06-components/components.cursor';
 
 // 99. Utilities

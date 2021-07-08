@@ -1,0 +1,25 @@
+.o-collaborators {
+  display: block;
+  position: relative;
+  padding: rem(85px) 0;
+
+  &__container {
+    @include make-container ();
+
+    max-width: rem(1200px + $grid-gutter-width);
+  }
+
+  &__title {
+    font-weight: $font-weight-bold;
+    margin-bottom: rem(65px);
+  }
+
+  &__row {
+    @include make-row($gutter: 60px);
+  }
+
+  &__col {
+    @include make-col-ready($gutter: 60px);
+    @include make-col(4);
+  }
+}

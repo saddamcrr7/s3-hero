@@ -1,0 +1,42 @@
+.c-faq {
+  position: relative;
+  max-width: rem(356px);
+  width: 100%;
+  padding: rem(20px);
+
+  &+& {
+    margin-left: rem(65px);
+  }
+
+  &__header {
+    position: relative;
+    text-align: center;
+    margin-bottom: rem(20px);
+  }
+
+  &__icon {
+    max-width: 100%;
+    margin-bottom: rem(20px);
+  }
+
+  &__body {
+    text-align: center;
+    height: 0px;
+    overflow: hidden;
+  }
+
+  &__title {
+    color: $white;
+    font-size: rem(52px);
+    font-weight: $font-weight-bolder;
+  }
+
+  &__text {
+    color: $white;
+    font-weight: $font-weight-bold;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

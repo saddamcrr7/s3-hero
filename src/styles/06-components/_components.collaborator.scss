@@ -1,0 +1,27 @@
+.c-collaborator {
+  margin-bottom: rem(60px);
+
+  &__body {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__image {
+    width: 100%;
+    height: rem(220px);
+    object-fit: cover;
+    margin-bottom: rem(15px);
+  }
+
+  &__name{
+    margin-bottom: 0;
+  }
+
+  &__position {
+    font-size: rem(18px);
+    color: $primary;
+    margin-top: rem(15px);
+    margin-bottom: 0;
+    font-weight: $font-weight-bold;
+  }
+}
