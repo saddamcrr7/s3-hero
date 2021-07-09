@@ -10,6 +10,8 @@ import './scripts/slogan'
 import './scripts/parallax-bg'
 import './scripts/value-counter'
 import './scripts/project-cards'
+import './scripts/collaborator-tab'
+import './scripts/collaborator-modal'
 
 
 

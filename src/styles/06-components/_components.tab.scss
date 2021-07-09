@@ -1,0 +1,59 @@
+.c-tab {
+  width: 100%;
+  position: relative;
+
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__body {
+    position: relative;
+    margin-top: rem(24px);
+    height: 200px;
+    will-change: height;
+    transition: 0.3s ease;
+  }
+
+  &__panel {
+    position: absolute;
+    inset: 0 0 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+
+  &__btn {
+    padding: rem(4px) rem(30px);
+    color: $primary;
+    font-size: rem(20px);
+    font-family: $headings-font-family;
+    font-weight: $font-weight-bold;
+    background-color: $white;
+    border: 3px solid $primary;
+    transition: 0.5s ease;
+
+    &.is-active {
+      color: $black;
+      border: 3px solid $black;
+    }
+
+    &+& {
+      margin-left: rem(15px);
+    }
+  }
+
+  &__text {
+    font-weight: $font-weight-bold;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

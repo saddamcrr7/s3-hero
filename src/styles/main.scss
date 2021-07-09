@@ -41,6 +41,7 @@
 @import '04-elements/elements.heading';
 @import '04-elements/elements.html';
 @import '04-elements/elements.links';
+@import '04-elements/elements.button';
 
 // 05. Objects
 
@@ -72,7 +73,9 @@
 @import './06-components/components.project-card';
 @import './06-components/components.project';
 @import './06-components/components.collaborator';
+@import './06-components/components.collaborator-modal';
 @import './06-components/components.faq';
+@import './06-components/components.tab';
 @import './06-components/components.cursor';
 
 // 99. Utilities

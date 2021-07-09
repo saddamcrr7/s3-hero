@@ -7,7 +7,7 @@ $viewport.addEventListener('mousemove', (e) => {
 })
 
 beSmall(['.js-link', 'button'])
-beBig(['.o-header__toggler', '.o-header__brand',])
+beBig(['.o-header__toggler', '.o-header__brand', '.c-collaborator-modal__close'])
 
 
 function beSmall(domArr) {
