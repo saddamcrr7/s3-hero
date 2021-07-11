@@ -1,0 +1,108 @@
+.o-timeline {
+  $root: &;
+
+  background: linear-gradient(90deg, #dedede 50%, #eeeeee 0%) !important;
+
+  &__container {
+    @include make-container();
+
+    max-width: rem(735px + $grid-gutter-width);
+    padding-top: rem(100px);
+    padding-bottom: rem(100px);
+    position: relative;
+  }
+
+
+  &__progress {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 5px;
+    background-color: $grey;
+    transform: translateX(-50%);
+  }
+
+  &__progress-bar {
+    width: 100%;
+    height: 0;
+    background-color: $primary;
+  }
+
+  &__line {
+    width: 100%;
+    max-width: calc(50% + 65px);
+
+    padding-top: 40px;
+    padding-bottom: rem(40px);
+
+
+    &--left {
+      #{$root} {
+        &__line-inner {
+          flex-direction: row-reverse;
+        }
+
+        &__year-text {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    &--right {
+      margin-left: auto;
+
+      #{$root} {
+
+        &__year {
+          flex-direction: row-reverse;
+        }
+
+        &__year-text {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+
+  &__line-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__year {
+    display: flex;
+  }
+
+  &__year-icon {
+    width: 20px;
+    height: 20px;
+    background-color: $red;
+  }
+
+  &__content {
+    width: 100%;
+    max-width: rem(340px);
+    padding: rem(20px);
+    padding-bottom: rem(80px);
+    position: relative;
+    background-color: $white;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__big-year {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: rem(70px);
+    line-height: rem(70px);
+    color: #dedede;
+    font-weight: $font-weight-heavy;
+  }
+
+}

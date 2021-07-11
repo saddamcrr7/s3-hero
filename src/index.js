@@ -12,6 +12,7 @@ import './scripts/value-counter'
 import './scripts/project-cards'
 import './scripts/collaborator-tab'
 import './scripts/collaborator-modal'
+import './scripts/timeline'
 
 
 

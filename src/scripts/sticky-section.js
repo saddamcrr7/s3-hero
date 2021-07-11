@@ -1,10 +1,9 @@
 import {
   gsap,
-  ScrollTrigger,
-  ScrollToPlugin
+  ScrollTrigger
 } from "../scripts/vendor/gsap-member/src/all";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 class StickySection {
   constructor(elms, options) {
