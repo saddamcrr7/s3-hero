@@ -30,7 +30,7 @@ function timeline() {
     line.year = line.querySelector('.o-timeline__year')
 
     gsap.to(line.year, {
-      y: '100%',
+      y: line.clientHeight - 50,
       ease: 'none',
 
       scrollTrigger: {
@@ -38,6 +38,8 @@ function timeline() {
         start: "top center",
         end: "bottom center",
         scrub: true,
+        onEnter: ()=> {line.year.classList.add('is-active')},
+        onLeaveBack: ()=> {line.year.classList.remove('is-active')},
       }
 
     });
