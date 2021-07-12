@@ -1,13 +1,19 @@
 const $cursor = document.querySelector('.c-cursor')
 const $viewport = document.querySelector('#viewport')
 
-$viewport.addEventListener('mousemove', (e) => {
-  $cursor.setAttribute('style',
-    `top: ${e.clientY-7}px; left: ${e.clientX-7}px`)
+window.addEventListener('load', () => {
+  $viewport.addEventListener('mousemove', (e) => {
+    $cursor.setAttribute('style',
+      `top: ${e.clientY-7}px; left: ${e.clientX-7}px`)
+  })
+
+  beSmall(['.js-link', 'button', '.c-collaborator'])
+  beBig(['.o-header__toggler', '.o-header__brand',
+    '.c-collaborator-modal__close'
+  ])
 })
 
-beSmall(['.js-link', 'button'])
-beBig(['.o-header__toggler', '.o-header__brand', '.c-collaborator-modal__close'])
+
 
 
 function beSmall(domArr) {

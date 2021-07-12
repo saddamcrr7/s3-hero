@@ -7,8 +7,7 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 
-smoothScroll("#main");
-
+window.addEventListener('load', ()=> {smoothScroll("#main");})
 
 
 function smoothScroll(content, viewport, smoothness) {

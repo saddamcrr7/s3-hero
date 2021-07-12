@@ -6,17 +6,24 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const split1 = document.querySelector('.c-brand__split--1 .c-brand__image')
-const split2 = document.querySelector('.c-brand__split--2 .c-brand__image')
+window.addEventListener('load', () => {
+  brand()
+})
 
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#main",
-    start: "2px top",
-    end: `3000px bottom`,
-    scrub: true,
-  }
-});
+function brand() {
+  const split1 = document.querySelector('.c-brand__split--1 .c-brand__image')
+  const split2 = document.querySelector('.c-brand__split--2 .c-brand__image')
 
-tl.to(split1, {translateX: 100, translateY: 100, duration: 1})
-tl.to(split2, {translateX: -100, translateY: -100, duration: 1, delay: -1})
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#main",
+      start: "2px top",
+      end: `3000px bottom`,
+      scrub: true,
+    }
+  });
+
+  tl.to(split1, {translateX: 100, translateY: 100, duration: 1})
+  tl.to(split2, {translateX: -100, translateY: -100, duration: 1, delay: -1})
+}
+

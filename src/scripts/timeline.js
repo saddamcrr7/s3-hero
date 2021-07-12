@@ -6,7 +6,7 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
-timeline()
+window.addEventListener('load', ()=> {timeline()})
 
 function timeline() {
 
