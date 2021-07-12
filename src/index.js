@@ -20,7 +20,17 @@ import StickySection from './scripts/sticky-section'
 
 window.addEventListener('load', ()=> {
   const b = new PanelSlider('.c-project-card', '.o-customers__row')
-  const stickySection =  new StickySection('.js-sticky-section')
+
+  function myFunction(x) {
+    if (x.matches) {
+      const stickySection =  new StickySection('.js-sticky-section')
+    }
+  }
+
+  let x = window.matchMedia("(min-width: 768px)")
+  myFunction(x)
+  x.addListener(myFunction)
+
 })
 
 

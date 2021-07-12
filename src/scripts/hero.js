@@ -53,8 +53,8 @@ function slider() {
 
   tl.to(banners[index], {
       duration: 2,
-      width: window.innerWidth * 3,
-      height: window.innerWidth * 3,
+      width: window.innerWidth * 3.7,
+      height: window.innerWidth * 3.7,
     })
     .to(activeInnerImage, {
       delay: -2,

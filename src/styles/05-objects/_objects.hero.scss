@@ -13,6 +13,14 @@
     display: flex;
     align-items: center;
     transition-property: transform;
+
+    @include media-breakpoint-down(lg) {
+      height: rem(600px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: rem(500px);
+    }
   }
 
 

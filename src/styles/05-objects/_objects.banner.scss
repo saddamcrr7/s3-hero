@@ -19,6 +19,14 @@
     height: 100vh;
     padding-top: rem(90px);
     will-change: transform;
+
+    @include media-breakpoint-down(lg) {
+      height: rem(600px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: rem(500px);
+    }
   }
 
 

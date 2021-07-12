@@ -21,9 +21,12 @@
 
   &__col {
     @include make-col-ready($gutter: 0);
-    @include make-col(4);
 
-    > .js-link {
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
+
+    >.js-link {
       display: contents;
 
       &:hover {
@@ -65,7 +68,7 @@
       transform: translate3d(0, 97%, 0);
       background-color: $primary;
       z-index: -1;
-      transition:all 200ms ease-in-out;
+      transition: all 200ms ease-in-out;
     }
 
     &:hover {
