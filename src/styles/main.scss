@@ -22,6 +22,10 @@
 @import "~bootstrap/scss/_type";
 @import "~bootstrap/scss/_transitions";
 
+// preloader
+@import './06-components/components.preloader';
+
+
 // 02.Tools
 @import '02-tools/tools.animations';
 @import '02-tools/tools.clearfix';
