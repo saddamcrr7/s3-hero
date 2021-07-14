@@ -11,7 +11,7 @@ function parallaxBg() {
     section.bg = section.querySelector(".o-bg__image");
 
     section.bg.style.objectPosition =
-    `50% ${-section.clientHeight}px`;
+    `50% ${-section.clientHeight/2}px`;
 
     gsap.to(section.bg, {
       objectPosition: `50% ${section.clientHeight/2}px`,

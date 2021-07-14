@@ -4,7 +4,7 @@ const $viewport = document.querySelector('#viewport')
 window.addEventListener('load', () => {
   $viewport.addEventListener('mousemove', (e) => {
     $cursor.setAttribute('style',
-      `top: ${e.clientY-7}px; left: ${e.clientX-7}px`)
+    `transform: translate(${e.clientX-7}px, ${e.clientY-7}px);`)
   })
 
   beSmall(['.js-link', 'button', '.c-collaborator'])

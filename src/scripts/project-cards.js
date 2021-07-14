@@ -32,8 +32,8 @@ class PanelSlider {
 
   setWidth() {
     this.$elms.forEach(element => {
-      element.style.width =
-        `${this.$prentElm.clientWidth /  this.$elms.length}px`
+      // element.style.width =
+      //   `${this.$prentElm.clientWidth /  this.$elms.length}px`
       element.style.flex =
         `0 0 ${this.$prentElm.clientWidth /  this.$elms.length}px`
 
@@ -53,7 +53,7 @@ class PanelSlider {
 
       gsap.to(elm, {
         duration: 1,
-        width: `${(this.$prentElm.clientWidth - $inner.clientWidth) /( this.$elms.length - 1)}px`,
+        // width: `${(this.$prentElm.clientWidth - $inner.clientWidth) /( this.$elms.length - 1)}px`,
         flex: `0 0 ${(this.$prentElm.clientWidth - $inner.clientWidth) /( this.$elms.length - 1)}px`
       })
 
@@ -61,7 +61,7 @@ class PanelSlider {
 
     gsap.to(this.$elms[index], {
       duration: 1,
-      width: `${$inner.clientWidth}px`,
+      // width: `${$inner.clientWidth}px`,
       flex: `0 0 ${$inner.clientWidth}px`
     })
   }
@@ -72,7 +72,7 @@ class PanelSlider {
 
       gsap.to(elm, {
         duration: 1,
-        width: `${this.$prentElm.clientWidth / (this.$elms.length)}px`,
+        // width: `${this.$prentElm.clientWidth / (this.$elms.length)}px`,
         flex: `0 0 ${this.$prentElm.clientWidth / (this.$elms.length)}px`
       })
     })

@@ -44,6 +44,7 @@
     opacity: 0;
     transform: translate(-50px, 20px);
     transition: transform .4s cubic-bezier(0, 0, .11, .99) 0ms, opacity .2s, -webkit-transform .4s cubic-bezier(0, 0, .11, .99) 0ms;
+    will-change: transform, opacity;
 
 
     &:nth-child(1) {
@@ -112,7 +113,7 @@
     opacity: 0;
     transform: translate(-50px, 50px);
     transition: transform .4s cubic-bezier(0, 0, .11, .99) 0ms, opacity .2s, -webkit-transform .4s cubic-bezier(0, 0, .11, .99) 0ms;
-    will-change: transform opacity;
+    will-change: transform, opacity;
 
 
     &:nth-child(1) {

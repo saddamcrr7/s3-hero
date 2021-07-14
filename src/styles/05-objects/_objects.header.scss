@@ -59,16 +59,16 @@
       &::after {
         content: '';
         position: absolute;
-        bottom: calc(0px - 250vw);
-        right: calc(3px - 250vw);
-        width: 500vw;
-        height: 500vw;
+        bottom: calc(0px - 50px);
+        right: calc(3px - 50px);
+        width: 100px;
+        height: 100px;
         background-color: $primary-01;
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         border-radius: none;
         transform-origin: center;
         transform: scale(0.0);
-        will-change: width, height;
+        will-change: transform;
       }
 
     }
@@ -107,7 +107,7 @@
     #{$root} {
       &__toggler-dot--bg {
         &::after {
-          transform: scale(1);
+          transform: scale(100);
           background-color: $primary-02;
         }
       }

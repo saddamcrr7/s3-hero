@@ -7,6 +7,7 @@ $content-width: $card-width / 2;
   position: relative;
   height: rem(665px);
   overflow: hidden;
+  will-change: flex;
 
   &__inner {
     width: $card-width;
@@ -47,6 +48,7 @@ $content-width: $card-width / 2;
     width: 0px;
     overflow: hidden;
     transition: 1s ease;
+    will-change: width;
   }
 
   &__content-inner {
@@ -62,6 +64,7 @@ $content-width: $card-width / 2;
     transition: 1s ease;
     position: relative;
     z-index: 2;
+    will-change: opacity;
 
   }
 
