@@ -9,6 +9,10 @@
   margin-bottom: rem($grid-gutter-width);
   position: relative;
 
+  &__images {
+    display: none;
+  }
+
   &__bg {
     position: absolute;
     inset: 0 0 0 0;

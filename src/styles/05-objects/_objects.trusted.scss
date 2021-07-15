@@ -1,10 +1,10 @@
 .o-trusted {
   display: block;
-  padding-top: rem(150px);
+  padding-top: rem(120px);
   padding-bottom: rem(50px);
 
   @include media-breakpoint-up(xl) {
-    padding-top: rem(250px);
+    padding-top: rem(200px);
     padding-bottom: rem(32px);
   }
 
@@ -59,6 +59,10 @@
     justify-content: center;
     filter: saturate(0%);
     transition: filter 300ms ease 0ms;
+
+    @include media-breakpoint-down(lg) {
+      height: rem(120px);
+    }
 
     &:nth-child(n+4) {
       border-top: 1px solid rgba(51,51,51,0.27);

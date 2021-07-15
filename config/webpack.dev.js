@@ -86,5 +86,10 @@ module.exports = {
       filename: "meet.html"
     }),
 
+    new HtmlWebpackPlugin({
+      template: "./src/templates/contact-us.html",
+      filename: "contact-us.html"
+    }),
+
   ]
 };
