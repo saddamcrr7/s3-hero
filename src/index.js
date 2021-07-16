@@ -21,17 +21,17 @@ import PanelSlider from './scripts/project-cards'
 import StickySection from './scripts/sticky-section'
 
 window.addEventListener('load', ()=> {
-  const b = new PanelSlider('.c-project-card', '.o-customers__row')
 
-  function myFunction(x) {
+  function displayMd(x) {
     if (x.matches) {
       const stickySection =  new StickySection('.js-sticky-section')
+      const b = new PanelSlider('.c-project-card', '.o-customers__row')
     }
   }
 
-  let x = window.matchMedia("(min-width: 768px)")
-  myFunction(x)
-  x.addListener(myFunction)
+  let xMd = window.matchMedia("(min-width: 1024px)")
+  displayMd(xMd)
+  xMd.addListener(displayMd)
 
 })
 

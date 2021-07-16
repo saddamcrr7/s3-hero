@@ -22,4 +22,11 @@
     height: rem(90px);
     transition: 0.5s ease;
   }
+
+  @include media-breakpoint-down(sm) {
+    &,&__image, &__split {
+      width: rem(80px);
+      height: rem(65px);
+    }
+  }
 }

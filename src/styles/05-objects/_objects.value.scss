@@ -6,7 +6,10 @@
   padding-bottom: rem(54px + 27px);
 
   @include media-breakpoint-down(sm) {
-    height: rem(650px);
+    height: rem(550px);
+    padding-top: rem(50px);
+    padding-bottom: rem(50px);
+
   }
 
   &__bg {
@@ -41,6 +44,7 @@
     @include media-breakpoint-down(sm) {
       align-items: start;
       flex-direction: column;
+      margin-top: 0;
     }
   }
 

@@ -9,10 +9,25 @@ $content-width: $card-width / 2;
   overflow: hidden;
   will-change: flex;
 
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    height: rem(400px);
+
+    &+& {
+      margin-top: $grid-gutter-width;
+    }
+  }
+
   &__inner {
     width: $card-width;
     height: rem(665px);
     position: relative;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      height: rem(400px);
+
+    }
   }
 
   &__image-wrap {
@@ -28,6 +43,10 @@ $content-width: $card-width / 2;
       top: 0;
       left: 0;
       background-color: rgba($black, 0.6);
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
 
     }
   }
@@ -49,6 +68,10 @@ $content-width: $card-width / 2;
     overflow: hidden;
     transition: 1s ease;
     will-change: width;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
   }
 
   &__content-inner {
@@ -66,12 +89,24 @@ $content-width: $card-width / 2;
     z-index: 2;
     will-change: opacity;
 
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      opacity: 1;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(16px);
+    }
   }
 
   &__subtitle {
     color: $primary;
     font-size: rem(18px);
     margin-bottom: rem(40px);
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: rem(15px);
+    }
   }
 
   &__title {
@@ -82,6 +117,11 @@ $content-width: $card-width / 2;
     text-transform: uppercase;
     padding-bottom: rem(20px);
     margin-bottom: rem(20px);
+
+    @include media-breakpoint-down(md) {
+      padding-bottom: 0;
+      font-size: rem(24px);
+    }
   }
 
   &__text {
@@ -108,6 +148,10 @@ $content-width: $card-width / 2;
     border-radius: 2px;
     transition: 0.3s ease;
     transition-property: color, backdrop-filter, background-color;
+
+    @include media-breakpoint-down(md) {
+      font-size: rem(16px);
+    }
 
     &:hover {
       color: $white;

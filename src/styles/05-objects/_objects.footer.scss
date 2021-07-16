@@ -18,6 +18,10 @@
   &__logo {
     max-width: rem(270px);
     width: 100%;
+
+    @include media-breakpoint-down(sm) {
+      max-width: rem(150px);
+    }
   }
 
   &__nav {
@@ -34,6 +38,11 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
   }
 
   &__nav-link {

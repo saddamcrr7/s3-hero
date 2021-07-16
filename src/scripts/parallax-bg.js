@@ -14,11 +14,7 @@ function parallaxBg() {
     section.bgOB = section.querySelector(".o-bg__image--obpyb");
 
     if (section.bgOB) {
-
-
-
-
-      function myFunction(x) {
+      function myFunction(x, x2) {
         if (x.matches) {
           section.bgOB.style.objectPosition =
             `50% ${-section.clientHeight * 2.2}px`;
@@ -26,12 +22,18 @@ function parallaxBg() {
           section.bgOB.style.objectPosition =
             `50% ${-section.clientHeight * 3}px`;
         }
+
+        if (x2.matches) {
+          section.bgOB.style.objectPosition =
+            `50% ${-section.clientHeight}px`;
+        }
       }
 
       let x = window.matchMedia("(max-width: 1440px)")
-      myFunction(x)
+      let x2 = window.matchMedia("(max-width: 786px)")
+      myFunction(x, x2)
       x.addListener(myFunction)
-
+      x2.addListener(myFunction)
 
       gsap.to(section.bgOB, {
         objectPosition: `50% ${section.clientHeight}px`,
@@ -43,7 +45,6 @@ function parallaxBg() {
           scrub: true
         }
       });
-
 
     } else {
       section.bg.style.objectPosition =

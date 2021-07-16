@@ -8,6 +8,10 @@
     padding-bottom: rem(32px);
   }
 
+  @include media-breakpoint-down(sm) {
+    padding-top: rem(50px);
+  }
+
   &__container {
     @include make-container();
     max-width: rem(1200px);
@@ -32,9 +36,17 @@
     left: -0;
     z-index: 1;
 
-    > img {
+    >img {
       max-width: 100%;
       height: 100%;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: rem(120px);
+      height: rem(108px);
+      top: -51px;
+      left: 55px;
+
     }
   }
 
@@ -64,18 +76,24 @@
       height: rem(120px);
     }
 
+    @include media-breakpoint-down(md) {
+      height: auto;
+    }
+
     &:nth-child(n+4) {
-      border-top: 1px solid rgba(51,51,51,0.27);
-      border-bottom: 1px solid rgba(51,51,51,0.27);
+      border-top: 1px solid rgba(51, 51, 51, 0.27);
+      border-bottom: 1px solid rgba(51, 51, 51, 0.27);
     }
 
     &:nth-child(n+7) {
       border: none;
     }
 
-    &:nth-child(5) , &:nth-child(2), &:nth-child(8) {
-      border-left: 1px solid rgba(51,51,51,0.27);
-      border-right: 1px solid rgba(51,51,51,0.27);
+    &:nth-child(5),
+    &:nth-child(2),
+    &:nth-child(8) {
+      border-left: 1px solid rgba(51, 51, 51, 0.27);
+      border-right: 1px solid rgba(51, 51, 51, 0.27);
     }
 
     &:hover {
