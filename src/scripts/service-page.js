@@ -34,13 +34,13 @@ if ($hero) {
       start: "top+=50 center",
       end: "500 center",
       scrub: 0.7,
-      markers: true
     }
 
   });
 
-
-  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.defaults({
+    toggleActions: "restart pause resume pause"
+  });
 
   const firstElem = document.querySelector(".o-service");
 
@@ -49,10 +49,10 @@ if ($hero) {
       scrollTo: {
         y: i * innerHeight + firstElem.offsetTop,
         autoKill: false,
-        overwrite: true,
+        // overwrite: true,
       },
       // duration: 1,
-      // ease: 'none'
+      ease: 'none'
     });
 
     if (anim) {
@@ -60,17 +60,18 @@ if ($hero) {
     }
   }
 
-  gsap.utils.toArray(".o-service").forEach((panel, i) => {
-    ScrollTrigger.create({
-      trigger: panel,
-      onEnter: () => goToSection(i)
-    });
+  $services.forEach((panel, i) => {
+    // ScrollTrigger.create({
+    //   trigger: panel,
+    //   onEnter: () => goToSection(i)
+    // });
 
-    ScrollTrigger.create({
-      trigger: panel,
-      start: "bottom bottom",
-      onEnterBack: () => goToSection(i),
-    });
+    // ScrollTrigger.create({
+    //   trigger: panel,
+    //   start: "bottom bottom",
+    //   onEnterBack: () => goToSection(i),
+    // });
+
   });
 
 }
