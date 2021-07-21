@@ -14,6 +14,7 @@ import './scripts/collaborator-tab'
 import './scripts/collaborator-modal'
 import './scripts/timeline'
 import './scripts/project-viewer'
+import './scripts/service-page'
 
 
 
