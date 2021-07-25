@@ -9,17 +9,24 @@
 
   $root: &;
 
+  height: 100vh;
   display: block;
   position: relative;
-  height: 100vh;
-  background-color: var(--main-bg-color) !important;
 
-  &::before {
-    content: '';
+  &__bg {
+    height: 100vh;
     position: absolute;
     inset: 0 0 0 0;
-    background-color: var(--bg-color);
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%);
+    // transform: translateY(100%);
+    background-color: var(--main-bg-color) !important;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 0 0;
+      background-color: var(--bg-color);
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%);
+    }
   }
 
 
@@ -30,7 +37,7 @@
     padding-top: rem(100px);
     padding-bottom: rem(100px);
     position: relative;
-    z-index: 2;
+    z-index: 4;
   }
 
   &__row {

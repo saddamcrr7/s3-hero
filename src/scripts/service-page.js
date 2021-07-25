@@ -38,57 +38,57 @@ function servicesSctions() {
 
     });
 
-    ScrollTrigger.defaults({
-      toggleActions: "restart pause resume pause"
-    });
 
-
-    function goToSection(section, i, anim) {
-
-
-      console.log(i);
+    function goToSection(i, anim) {
       gsap.to(window, {
         scrollTo: {
-          y: i * section.clientHeight,
-          autoKill: false
+          y: (i + 1) * $services[i].clientHeight,
         },
+        duration: 0,
         ease: 'none'
       });
+
       if (anim) {
         anim.restart();
       }
     }
 
-
-    $services.forEach((section, i) => {
-      const $serviceContent = section.querySelector('.o-service__content')
-
-      i += 1
-
-
+    gsap.utils.toArray(".o-service").forEach((panel, i) => {
       ScrollTrigger.create({
-        trigger: section,
-        pinSpacing: false,
-
-        onEnter: () => goToSection(section, i)
-      });
-
-      ScrollTrigger.create({
-        trigger: section,
-        start: "bottom bottom",
-        pinSpacing: false,
-
-        onEnterBack: () => goToSection(section, i),
-      });
-
-      ScrollTrigger.create({
-        trigger: section,
+        trigger: panel,
         start: "top top",
         end: "bottom top",
         scrub: false,
         pin: true,
         pinSpacing: false,
+        anticipatePin: 1
       });
+
+      ScrollTrigger.create({
+        trigger: panel,
+        scroller: window,
+        invalidateOnRefresh: true,
+        onEnter: () => {
+          goToSection(i)
+        }
+      });
+
+      ScrollTrigger.create({
+        scroller: window,
+        invalidateOnRefresh: true,
+        trigger: panel,
+        start: "bottom bottom",
+        onEnterBack: () => goToSection(i),
+        markers: true
+      });
+    });
+
+
+    $services.forEach((section, i) => {
+      const $serviceContent = section.querySelector('.o-service__content')
+      const $serviceBg = section.querySelector('.o-service__bg')
+
+
 
 
       gsap.to($serviceContent, {
@@ -96,10 +96,9 @@ function servicesSctions() {
 
         scrollTrigger: {
           trigger: section,
-          start: "top center",
+          start: "top 100px",
           end: "bottom bottom",
-          scrub: true,
-          markers: true
+          scrub: 1,
         }
 
       });

@@ -42,6 +42,8 @@ class StickySection {
           scrub: true,
           pin: true,
           pinSpacing: false,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
       });
     });
   }
