@@ -4,8 +4,7 @@
   position: fixed;
   z-index: 3;
   overflow: hidden;
-
-
+  will-change: top, left;
 
   &__bg {
     position: absolute;

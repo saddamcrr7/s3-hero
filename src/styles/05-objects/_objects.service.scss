@@ -11,6 +11,7 @@
   display: block;
   position: relative;
   z-index: 2;
+  will-change: transform;
 
 
   &__container {
@@ -36,6 +37,7 @@
     padding-left: rem(100px);
     opacity: 0;
     transition: 0.3s;
+    will-change: opacity;
   }
 
 
@@ -113,7 +115,7 @@
 
 
     #{$root}__symbol {
-      filter: invert(1);
+      // filter: invert(1);
     }
   }
 }

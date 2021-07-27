@@ -94,16 +94,30 @@ function servicesSctions() {
       }
     })
 
-    gsap.to(service.querySelector('.o-service__content'), {
+    const $serviceContent = service.querySelector('.o-service__content')
+
+    gsap.to($serviceContent, {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: service,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        invalidateOnRefresh: true
+      }
+    })
+
+    gsap.to($serviceContent, {
       opacity: 1,
       scrollTrigger: {
         trigger: service,
         start: "top top+=20",
         end: "top+=200 top+=200",
         scrub: true,
-        markers: true
+        invalidateOnRefresh: true
       }
     })
+
 
   });
 
