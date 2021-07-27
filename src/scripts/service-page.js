@@ -23,7 +23,7 @@ function servicesSctions() {
   $heroTiltle.style.left = `${getPosition($heroTitleSpacer).left - 20}px`
 
   $heroTiltleBg.style.top = `-${getPosition($heroTitleSpacer).top}px`
-  $heroTiltleBg.style.left = `-${getPosition($heroTitleSpacer).left-16}px`
+  $heroTiltleBg.style.left = `-${getPosition($heroTitleSpacer).left-12}px`
 
   gsap.to($heroTiltle, {
     top: 100,
