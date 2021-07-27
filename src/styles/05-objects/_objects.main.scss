@@ -1,6 +1,7 @@
 .o-main {
   width: 100%;
-  background-color: $white;
   overflow: hidden !important;
   will-change: transform;
+  position: relative;
+  z-index: 2;
 }

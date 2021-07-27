@@ -1,0 +1,43 @@
+.o-service-bg {
+  --main-bg-color: #{#ebebeb};
+  --bg-color: #{$white};
+
+
+  &__panel {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    z-index: 1;
+
+    background-color: var(--main-bg-color) !important;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 0 0;
+      background-color: var(--bg-color);
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%);
+    }
+
+
+    &--primary {
+      --main-bg-color: #{$white};
+      --bg-color: #{$primary-03};
+    }
+
+    &--grey {
+      --main-bg-color: #{$primary-03};
+      --bg-color: #{#ebebeb};
+
+    }
+
+    &--black {
+      --main-bg-color: #{$white};
+      --bg-color: #{$black};
+    }
+
+  }
+}

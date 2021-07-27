@@ -3,8 +3,6 @@
   --bg-color: #{$white};
   --subtitle-color: #{$black};
   --title-underline-color: #{$primary-03};
-  --icon-bg-color: #{$white};
-  --subtitle-bg-color: #{$white};
   --text-color : #{$black};
 
   $root: &;
@@ -12,22 +10,7 @@
   height: 100vh;
   display: block;
   position: relative;
-
-  &__bg {
-    height: 100vh;
-    position: absolute;
-    inset: 0 0 0 0;
-    // transform: translateY(100%);
-    background-color: var(--main-bg-color) !important;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0 0 0 0;
-      background-color: var(--bg-color);
-      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%);
-    }
-  }
+  z-index: 2;
 
 
   &__container {
@@ -52,6 +35,7 @@
   &__content {
     padding-left: rem(100px);
     opacity: 0;
+    transition: 0.3s;
   }
 
 
@@ -90,13 +74,11 @@
   &__icon {
     padding: rem(10px);
     margin-right: rem(10px);
-    background-color: var(--icon-bg-color);
   }
 
   &__subtitle {
     color: var(--subtitle-color);
     padding: rem(10px) rem(20px);
-    background-color: var(--subtitle-bg-color);
   }
 
   &__text {
@@ -109,8 +91,6 @@
     --bg-color: #{$primary-03};
     --subtitle-color: #{$white};
     --title-underline-color: #{$black};
-    --icon-bg-color: #{$primary};
-    --subtitle-bg-color: #{$primary};
     --text-color : #{$black};
 
   }
@@ -120,8 +100,6 @@
     --bg-color: #{#ebebeb};
     --subtitle-color: #{$black};
     --title-underline-color: #{$primary};
-    --icon-bg-color: #{none};
-    --subtitle-bg-color: #{none};
     --text-color : #{$black};
 
   }
@@ -131,8 +109,6 @@
     --bg-color: #{$black};
     --subtitle-color: #{$white};
     --title-underline-color: #{$white};
-    --icon-bg-color: #{none};
-    --subtitle-bg-color: #{none};
     --text-color : #{$white};
 
 
