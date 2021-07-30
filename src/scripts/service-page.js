@@ -36,7 +36,9 @@ function servicesSctions() {
       start: "top center+=400",
       end: "10 center",
       scrub: true,
-    }
+    },
+    onUpdate: ScrollTrigger.update
+
 
   });
 
@@ -50,7 +52,9 @@ function servicesSctions() {
       start: "top+=100 center",
       end: "480 center",
       scrub: true,
-    }
+    },
+
+    onUpdate: ScrollTrigger.update
 
   });
 
@@ -61,7 +65,8 @@ function servicesSctions() {
         y: (i + 1) * $services[i].clientHeight,
       },
       duration: 0,
-      ease: 'none'
+      ease: 'none',
+      onUpdate: ScrollTrigger.update
     });
 
     if (anim) {
@@ -104,7 +109,9 @@ function servicesSctions() {
         start: "top bottom",
         end: "bottom bottom",
         scrub: true,
-      }
+      },
+
+      onUpdate: ScrollTrigger.update
     })
 
     const $serviceContent = service.querySelector('.o-service__content')
@@ -117,7 +124,8 @@ function servicesSctions() {
         end: "bottom top",
         scrub: true,
         invalidateOnRefresh: true
-      }
+      },
+      onUpdate: ScrollTrigger.update
     })
 
     gsap.to($serviceContent, {
@@ -128,7 +136,8 @@ function servicesSctions() {
         end: "top+=200 top+=200",
         scrub: true,
         invalidateOnRefresh: true
-      }
+      },
+      onUpdate: ScrollTrigger.update
     })
 
 

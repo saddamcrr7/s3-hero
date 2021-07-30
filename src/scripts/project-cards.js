@@ -80,7 +80,6 @@ class PanelSlider {
     window.addEventListener('resize',()=> {
       if(innerWidth > 1024) {
         tl2.pause()
-        console.log('ea');
       }else {
         tl2.restart()
       }

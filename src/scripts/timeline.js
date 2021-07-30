@@ -40,7 +40,9 @@ function timeline() {
         scrub: true,
         onEnter: ()=> {line.year.classList.add('is-active')},
         onLeaveBack: ()=> {line.year.classList.remove('is-active')},
-      }
+      },
+
+      onUpdate: ScrollTrigger.update
 
     });
 

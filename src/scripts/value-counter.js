@@ -23,6 +23,7 @@ window.addEventListener('load', () => {
       scrollTrigger: $count,
       onUpdate: function () {
         $count.innerHTML = zero.val.toFixed(decimals)
+        ScrollTrigger.update
       }
     });
   })

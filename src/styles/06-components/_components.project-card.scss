@@ -36,13 +36,14 @@ $content-width: $card-width / 2;
     z-index: 1;
 
     &::before {
-      width: $content-width;
+      width: 70%;
       height: 100%;
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       background-color: rgba($black, 0.6);
+      clip-path: polygon(0 0, 60% 0%, 100% 100%, 0% 100%);
 
       @include media-breakpoint-down(md) {
         width: 100%;

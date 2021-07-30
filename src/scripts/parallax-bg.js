@@ -43,7 +43,8 @@ function parallaxBg() {
           start: "top bottom",
           end: "bottom top-=100%",
           scrub: true
-        }
+        },
+        onUpdate: ScrollTrigger.update
       });
 
     } else {
@@ -58,7 +59,8 @@ function parallaxBg() {
           start: "top bottom",
           end: "bottom top-=100%",
           scrub: true
-        }
+        },
+        onUpdate: ScrollTrigger.update
       });
     }
 
