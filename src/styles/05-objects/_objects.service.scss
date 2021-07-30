@@ -30,7 +30,10 @@
 
   &__col {
     @include make-col-ready();
-    @include make-col(6);
+
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
   }
 
   &__content {

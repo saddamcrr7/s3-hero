@@ -8,7 +8,11 @@ body {
   &.is-blocked,
   &.is-modal-open,
   &.is-gradpanel-open,
-  &.is-nav-mobile-open  {
+  &.is-nav-mobile-open {
     overflow: hidden;
+  }
+
+  #viewport {
+    background-color: $white;
   }
 }

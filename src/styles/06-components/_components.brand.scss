@@ -1,6 +1,7 @@
 .c-brand {
   width:  rem(120px);
   height:  rem(90px);
+  position: relative;
 
   &__split {
     position: absolute;
@@ -21,6 +22,13 @@
     width: rem(120px);
     height: rem(90px);
     transition: 0.5s ease;
+  }
+
+  &__menu{
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.3s ease;
   }
 
   @include media-breakpoint-down(sm) {

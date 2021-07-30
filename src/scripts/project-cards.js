@@ -32,8 +32,8 @@ class PanelSlider {
 
   setWidth() {
     this.$elms.forEach(element => {
-      // element.style.width =
-      //   `${this.$prentElm.clientWidth /  this.$elms.length}px`
+      element.style.width =
+        `${this.$prentElm.clientWidth /  this.$elms.length}px`
       element.style.flex =
         `0 0 ${this.$prentElm.clientWidth /  this.$elms.length}px`
 
@@ -51,18 +51,39 @@ class PanelSlider {
       elm.classList.remove('is-active');
       this.$elms[index].classList.add('is-active');
 
-      gsap.to(elm, {
+      let tl = gsap.timeline();
+
+      tl.to(elm, {
         duration: 1,
-        // width: `${(this.$prentElm.clientWidth - $inner.clientWidth) /( this.$elms.length - 1)}px`,
+        width: `${(this.$prentElm.clientWidth - $inner.clientWidth) /( this.$elms.length - 1)}px`,
         flex: `0 0 ${(this.$prentElm.clientWidth - $inner.clientWidth) /( this.$elms.length - 1)}px`
+      })
+
+      window.addEventListener('resize',()=> {
+        if(innerWidth > 1024) {
+          tl.pause()
+        }else {
+          tl.restart()
+        }
       })
 
     })
 
-    gsap.to(this.$elms[index], {
+    let tl2 = gsap.timeline();
+
+    tl2.to(this.$elms[index], {
       duration: 1,
-      // width: `${$inner.clientWidth}px`,
+      width: `${$inner.clientWidth}px`,
       flex: `0 0 ${$inner.clientWidth}px`
+    })
+
+    window.addEventListener('resize',()=> {
+      if(innerWidth > 1024) {
+        tl2.pause()
+        console.log('ea');
+      }else {
+        tl2.restart()
+      }
     })
   }
 
@@ -70,10 +91,20 @@ class PanelSlider {
     this.$elms.forEach((elm, i) => {
       elm.classList.remove('is-active');
 
-      gsap.to(elm, {
+      let tl3 = gsap.timeline();
+
+      tl3.to(elm, {
         duration: 1,
-        // width: `${this.$prentElm.clientWidth / (this.$elms.length)}px`,
+        width: `${this.$prentElm.clientWidth / (this.$elms.length)}px`,
         flex: `0 0 ${this.$prentElm.clientWidth / (this.$elms.length)}px`
+      })
+
+      window.addEventListener('resize',()=> {
+        if(innerWidth > 1024) {
+          tl3.pause()
+        }else {
+          tl3.restart()
+        }
       })
     })
   }
@@ -82,7 +113,9 @@ class PanelSlider {
     this.setWidth()
 
     window.addEventListener('resize', () => {
-      this.setWidth()
+      if (innerWidth > 1024) {
+        this.setWidth()
+      }
     })
 
     this.$elms.forEach((elm, i) => {

@@ -10,24 +10,38 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
 const $hero = document.querySelector('#service-hero')
+const $serviceHeroSpacer = document.querySelector('#service-hero-spacer')
+
+if($hero) {
+  $serviceHeroSpacer.style.height = `${$hero.clientHeight}px`
+}
 
 function servicesSctions() {
   const $heroTiltle = document.querySelector('#service-hero-title')
-  const $heroTiltleBg = $heroTiltle.querySelector('.c-service-hero-title__bg')
   const $heroTitleSpacer = $hero.querySelector('.o-simple-hero__title-spacer')
   const $servicesContainer = document.querySelector('#services-container')
   const $services = document.querySelectorAll('.o-service')
   const $serviceBgs = document.querySelectorAll('.o-service-bg__panel')
 
+
   $heroTiltle.style.top = `${getPosition($heroTitleSpacer).top}px`
   $heroTiltle.style.left = `${getPosition($heroTitleSpacer).left - 20}px`
 
-  $heroTiltleBg.style.top = `-${getPosition($heroTitleSpacer).top}px`
-  $heroTiltleBg.style.left = `-${getPosition($heroTitleSpacer).left-12}px`
+  gsap.to($heroTiltle, {
+    mixBlendMode: 'difference',
+    ease: 'none',
+
+    scrollTrigger: {
+      trigger: $servicesContainer,
+      start: "top center+=400",
+      end: "10 center",
+      scrub: true,
+    }
+
+  });
 
   gsap.to($heroTiltle, {
     top: 100,
-    left: getPosition($heroTitleSpacer).left,
     zIndex: 2,
     ease: 'none',
 
@@ -61,16 +75,15 @@ function servicesSctions() {
       trigger: service,
       start: "top top",
       end: `+=${$servicesContainer.clientHeight}`,
-      scrub: false,
       pin: true,
       pinSpacing: false,
       anticipatePin: 1,
     });
 
     ScrollTrigger.create({
-      trigger: service,
       scroller: window,
       invalidateOnRefresh: true,
+      trigger: service,
       onEnter: () => {
         goToSection(i)
       }
