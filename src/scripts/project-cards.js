@@ -34,8 +34,8 @@ class PanelSlider {
     this.$elms.forEach(element => {
       element.style.width =
         `${this.$prentElm.clientWidth /  this.$elms.length}px`
-      element.style.flex =
-        `0 0 ${this.$prentElm.clientWidth /  this.$elms.length}px`
+      element.style.flexBasis =
+        `${this.$prentElm.clientWidth /  this.$elms.length}px`
 
       this.$elms.forEach((elm, i) => {
         elm.classList.remove('is-active');
@@ -56,7 +56,7 @@ class PanelSlider {
       tl.to(elm, {
         duration: 1,
         width: `${(this.$prentElm.clientWidth - $inner.clientWidth) /( this.$elms.length - 1)}px`,
-        flex: `0 0 ${(this.$prentElm.clientWidth - $inner.clientWidth) /( this.$elms.length - 1)}px`
+        flexBasis: `${(this.$prentElm.clientWidth - $inner.clientWidth) /( this.$elms.length - 1)}px`
       })
 
       window.addEventListener('resize',()=> {
@@ -74,7 +74,7 @@ class PanelSlider {
     tl2.to(this.$elms[index], {
       duration: 1,
       width: `${$inner.clientWidth}px`,
-      flex: `0 0 ${$inner.clientWidth}px`
+      flexBasis: `${$inner.clientWidth}px`
     })
 
     window.addEventListener('resize',()=> {
@@ -95,7 +95,7 @@ class PanelSlider {
       tl3.to(elm, {
         duration: 1,
         width: `${this.$prentElm.clientWidth / (this.$elms.length)}px`,
-        flex: `0 0 ${this.$prentElm.clientWidth / (this.$elms.length)}px`
+        flexBasis: `${this.$prentElm.clientWidth / (this.$elms.length)}px`
       })
 
       window.addEventListener('resize',()=> {

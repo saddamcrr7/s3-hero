@@ -7,7 +7,7 @@ $content-width: $card-width / 2;
   position: relative;
   height: rem(665px);
   overflow: hidden;
-  will-change: flex;
+  will-change: flex-basis, width;
 
   @include media-breakpoint-down(md) {
     width: 100%;
