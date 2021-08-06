@@ -14,7 +14,7 @@
     align-items: center;
     transition-property: transform;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(md) {
       height: rem(600px);
     }
 

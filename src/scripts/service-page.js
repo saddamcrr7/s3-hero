@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const $hero = document.querySelector('#service-hero')
 const $serviceHeroSpacer = document.querySelector('#service-hero-spacer')
 
-if($hero) {
+if ($hero) {
   $serviceHeroSpacer.style.height = `${$hero.clientHeight}px`
 }
 
@@ -34,6 +34,18 @@ function servicesSctions() {
     scrollTrigger: {
       trigger: $servicesContainer,
       start: `top bottom-=200px`,
+      end: "10px center",
+      scrub: true,
+    },
+    onUpdate: ScrollTrigger.update
+  });
+
+  gsap.to('#main', {
+    zIndex: 2,
+
+    scrollTrigger: {
+      trigger: $servicesContainer,
+      start: `top bottom`,
       end: "10px center",
       scrub: true,
     },
@@ -138,7 +150,7 @@ function servicesSctions() {
       onUpdate: ScrollTrigger.update
     })
 
-    if(service.classList.contains('o-service--primary')) {
+    if (service.classList.contains('o-service--primary')) {
       ScrollTrigger.create({
         trigger: service,
         start: "top center",
@@ -161,7 +173,7 @@ function servicesSctions() {
 }
 
 window.addEventListener('load', () => {
-  if($hero) {
+  if ($hero) {
     servicesSctions()
   }
 })

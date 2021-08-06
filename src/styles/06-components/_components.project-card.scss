@@ -23,6 +23,11 @@ $content-width: $card-width / 2;
     height: rem(665px);
     position: relative;
 
+    @include media-breakpoint-down(xxl) {
+      width: rem(1000px);
+      height: 600px;
+    }
+
     @include media-breakpoint-down(md) {
       width: 100%;
       height: rem(400px);
