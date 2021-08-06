@@ -1,12 +1,12 @@
 .c-brand {
-  width:  rem(120px);
-  height:  rem(90px);
+  width:  rem(115px);
+  height:  rem(100px);
   position: relative;
 
   &__split {
     position: absolute;
-    width:  rem(120px);
-    height:  rem(90px);
+    width:  rem(115px);
+    height:  rem(100px);
     overflow: hidden;
 
     &--1 {
@@ -19,8 +19,8 @@
   }
 
   &__image {
-    width: rem(120px);
-    height: rem(90px);
+    width: rem(115px);
+    height: rem(100px);
     transition: 0.5s ease;
   }
 

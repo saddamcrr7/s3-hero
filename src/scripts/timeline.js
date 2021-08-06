@@ -11,7 +11,6 @@ window.addEventListener('load', ()=> {timeline()})
 function timeline() {
 
   const tl = gsap.timeline({
-
     scrollTrigger: {
       trigger: ".o-timeline",
       start: "top center",

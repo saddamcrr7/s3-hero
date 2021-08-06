@@ -33,13 +33,11 @@ function servicesSctions() {
 
     scrollTrigger: {
       trigger: $servicesContainer,
-      start: "top center+=400",
-      end: "10 center",
+      start: `top bottom-=200px`,
+      end: "10px center",
       scrub: true,
     },
     onUpdate: ScrollTrigger.update
-
-
   });
 
   gsap.to($heroTiltle, {
@@ -139,6 +137,23 @@ function servicesSctions() {
       },
       onUpdate: ScrollTrigger.update
     })
+
+    if(service.classList.contains('o-service--primary')) {
+      ScrollTrigger.create({
+        trigger: service,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => {
+          $heroTiltle.style.mixBlendMode = 'normal'
+        },
+        onEnterBack: () => {
+          $heroTiltle.style.mixBlendMode = 'normal'
+        },
+        onLeaveBack: () => {
+          $heroTiltle.style.mixBlendMode = 'difference'
+        }
+      })
+    }
 
 
   });

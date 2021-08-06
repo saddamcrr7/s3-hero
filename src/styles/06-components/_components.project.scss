@@ -8,6 +8,7 @@
   justify-content: center;
   margin-bottom: rem($grid-gutter-width);
   position: relative;
+  overflow: hidden;
 
   &__images {
     display: none;
@@ -17,12 +18,15 @@
     position: absolute;
     inset: 0 0 0 0;
     z-index: 1;
+    transition: 0.4s ease-in-out;
 
     &::after {
       content: '';
       position: absolute;
       inset: 0 0 0 0;
       background-color: rgba($black, 0.5);
+      opacity: 0;
+      transition: 0.4s ease-in-out;
     }
   }
 
@@ -51,6 +55,9 @@
     padding-bottom: rem(20px);
     margin-bottom: 0;
     position: relative;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.4s ease-in-out;
 
     &::before {
       content: '';
@@ -68,6 +75,9 @@
     color: $white;
     margin-top: rem(10px);
     margin-bottom: 0;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: 0.4s ease-in-out;
   }
 
   &__btn {
@@ -78,8 +88,9 @@
     border: 2px solid $white;
     border-radius: 2px;
     background: transparent;
-    transition: 0.3s ease;
-    transition-property: color, backdrop-filter, background-color;
+    transition: 0.4s ease-in-out;
+    transform: translateY(-20px);
+    opacity: 0;
     cursor: none;
 
     &:hover {
@@ -140,4 +151,24 @@
       }
     }
   }
+
+  &:hover {
+    #{$root}{
+      &__title, &__text, &__btn {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      &__bg{
+        transform: scale(1.08);
+
+        &::after {
+          opacity: 1;
+        }
+      }
+
+
+    }
+  }
+
 }

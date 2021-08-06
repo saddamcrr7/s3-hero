@@ -14,16 +14,33 @@ function brand() {
   const split1 = document.querySelector('.c-brand__split--1 .c-brand__image')
   const split2 = document.querySelector('.c-brand__split--2 .c-brand__image')
 
-  const tl = gsap.timeline({
+  gsap.to(split1, {
+    x: 100,
+    y: 100,
+    ease: 'none',
+
     scrollTrigger: {
       trigger: "#main",
       start: "2px top",
-      end: `3000px bottom`,
-      scrub: true,
+      end: `${1000} top`,
+      scrub: 0,
+      scroller: window,
     }
-  });
+  })
 
-  tl.to(split1, {translateX: 100, translateY: 100, duration: 1})
-  tl.to(split2, {translateX: -100, translateY: -100, duration: 1, delay: -1})
+  gsap.to(split2, {
+    x: -180,
+    y: -180,
+    ease: 'none',
+
+    scrollTrigger: {
+      trigger: "#main",
+      start: "2px top",
+      end: `${1000} top`,
+      scrub: 0,
+      scroller: window,
+    }
+  })
+
 }
 

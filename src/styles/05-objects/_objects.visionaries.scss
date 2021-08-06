@@ -2,7 +2,6 @@
   display: block;
   position: relative;
   z-index: 5;
-
   &__container {
     @include make-container();
 
