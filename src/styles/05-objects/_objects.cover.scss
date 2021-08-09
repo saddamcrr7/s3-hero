@@ -8,6 +8,13 @@
   overflow: hidden;
   z-index: 5;
 
+  &--service {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__content {
     @include make-container();
 

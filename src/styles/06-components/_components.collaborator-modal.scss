@@ -77,8 +77,6 @@
   }
 
   &__contacts {
-    display: flex;
-    align-items: center;
     margin-top: rem(27px);
   }
 
@@ -86,6 +84,10 @@
     display: flex;
     align-items: center;
     flex: auto;
+
+    &+& {
+      margin-top: rem(10px);
+    }
   }
 
   &__icon {

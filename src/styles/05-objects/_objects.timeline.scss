@@ -1,7 +1,7 @@
 .o-timeline {
   $root: &;
 
-  background: linear-gradient(90deg, #dedede 50%, #eeeeee 0%) !important;
+  background: $black;
 
   &__container {
     @include make-container();
@@ -19,7 +19,7 @@
     left: 50%;
     height: 100%;
     width: 5px;
-    background-color: $grey;
+    background-color: $white;
     transform: translateX(-50%);
   }
 
@@ -123,10 +123,10 @@
     padding: rem(20px);
     padding-bottom: rem(80px);
     position: relative;
-    background-color: $white;
   }
 
   &__text {
+    color: $white;
     position: relative;
     z-index: 2;
   }

@@ -24,7 +24,7 @@
       content: '';
       position: absolute;
       inset: 0 0 0 0;
-      background-color: rgba($black, 0.5);
+      background-color: rgba($primary, 0.5);
       opacity: 0;
       transition: 0.4s ease-in-out;
     }
@@ -64,10 +64,11 @@
       position: absolute;
       bottom: 0;
       left: -10px;
-      width: rem(50px);
+      width: rem(0px);
       height: rem(7px);
       background: $primary;
       clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+      transition: width 0.3s;
     }
   }
 
@@ -157,6 +158,10 @@
       &__title, &__text, &__btn {
         transform: translateY(0);
         opacity: 1;
+      }
+
+      &__title::before {
+        width: rem(50px);
       }
 
       &__bg{

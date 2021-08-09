@@ -86,14 +86,18 @@ function servicesSctions() {
 
   gsap.utils.toArray(".o-service").forEach((service, i) => {
 
-    ScrollTrigger.create({
-      trigger: service,
-      start: "top top",
-      end: `+=${$servicesContainer.clientHeight}`,
-      pin: true,
-      pinSpacing: false,
-      anticipatePin: 1,
-    });
+    if(!service.classList.contains('is-no-pin')) {
+      ScrollTrigger.create({
+        trigger: service,
+        start: "top top",
+        end: `+=${$servicesContainer.clientHeight}`,
+        pin: true,
+        pinSpacing: false,
+        anticipatePin: 1,
+      });
+    }
+
+
 
     ScrollTrigger.create({
       scroller: window,
@@ -126,6 +130,27 @@ function servicesSctions() {
 
     const $serviceContent = service.querySelector('.o-service__content')
 
+    gsap.set($serviceContent, {
+      opacity: 0,
+      scale: 0.95,
+      y: 10
+    })
+
+    gsap.to($serviceContent, {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      ease: 'back.out',
+      scrollTrigger: {
+        trigger: service,
+        start: "top 70",
+        end: "200 200",
+        scrub: true,
+        invalidateOnRefresh: true
+      },
+      onUpdate: ScrollTrigger.update
+    })
+
     gsap.to($serviceContent, {
       opacity: 0,
       scrollTrigger: {
@@ -138,17 +163,6 @@ function servicesSctions() {
       onUpdate: ScrollTrigger.update
     })
 
-    gsap.to($serviceContent, {
-      opacity: 1,
-      scrollTrigger: {
-        trigger: service,
-        start: "top top+=20",
-        end: "top+=200 top+=200",
-        scrub: true,
-        invalidateOnRefresh: true
-      },
-      onUpdate: ScrollTrigger.update
-    })
 
     if (service.classList.contains('o-service--primary')) {
       ScrollTrigger.create({

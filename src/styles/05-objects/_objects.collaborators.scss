@@ -5,7 +5,7 @@
   &__container {
     @include make-container ();
 
-    max-width: rem(1200px + $grid-gutter-width);
+    max-width: rem(1800px + $grid-gutter-width);
   }
 
   &__title {
@@ -14,11 +14,22 @@
   }
 
   &__row {
-    @include make-row($gutter: 60px);
+    @include make-row($gutter: 15px);
   }
 
   &__col {
-    @include make-col-ready($gutter: 60px);
-    @include make-col(4);
+    @include make-col-ready($gutter: 15px);
+
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(4);
+    }
+
+    @include media-breakpoint-up(xxl) {
+      @include make-col(3);
+    }
   }
 }

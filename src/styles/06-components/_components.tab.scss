@@ -31,17 +31,17 @@
 
   &__btn {
     padding: rem(4px) rem(30px);
-    color: $primary;
+    color: $black;
     font-size: rem(20px);
     font-family: $headings-font-family;
-    font-weight: $font-weight-bold;
     background-color: $white;
-    border: 3px solid $primary;
+    border: 3px solid $black;
     transition: 0.5s ease;
 
     &.is-active {
-      color: $black;
-      border: 3px solid $black;
+      font-weight: $font-weight-bolder;
+      color: $primary;
+      border-color: $primary;
     }
 
     &+& {

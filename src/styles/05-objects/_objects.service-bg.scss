@@ -39,5 +39,10 @@
       --bg-color: #{$black};
     }
 
+    &--no-bg {
+      --main-bg-color: transparent;
+      --bg-color: transparent;
+    }
+
   }
 }

@@ -29,7 +29,9 @@ function projectViewer() {
           })
 
           const options = {
-            index: 0
+            index: 0,
+            bgOpacity: 0.8,
+            shareEl: false,
           };
 
           new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options)

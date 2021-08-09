@@ -5,7 +5,11 @@
   max-width: rem(400px);
   width: 100%;
   padding: rem(20px);
-  perspective: 1200px;
+  perspective: 1500px;
+
+  @include media-breakpoint-down(xxl) {
+    max-width: 23rem;
+  }
 
   &+& {
     margin-left: rem(65px);
