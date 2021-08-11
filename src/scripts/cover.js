@@ -20,7 +20,7 @@ function cover() {
           ease: 'back.out',
           scrollTrigger: {
             trigger: $serviceCover,
-            start: "top center",
+            start: "top 100",
             end: "bottom bottom",
             scrub: true,
           }

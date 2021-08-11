@@ -97,8 +97,6 @@ function servicesSctions() {
       });
     }
 
-
-
     ScrollTrigger.create({
       scroller: window,
       invalidateOnRefresh: true,
@@ -132,30 +130,36 @@ function servicesSctions() {
 
     gsap.set($serviceContent, {
       opacity: 0,
-      scale: 0.95,
-      y: 10
+      scaleX: 0.99,
+      y: 100
     })
 
-    gsap.to($serviceContent, {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      ease: 'back.out',
+    const contentTl = gsap.timeline({
       scrollTrigger: {
         trigger: service,
-        start: "top 70",
-        end: "200 200",
+        start: "top 300",
+        end: "bottom bottom",
         scrub: true,
         invalidateOnRefresh: true
       },
-      onUpdate: ScrollTrigger.update
+    })
+
+    contentTl.to($serviceContent, {
+      y: 0,
+    })
+    .to($serviceContent, {
+      opacity: 1,
+    })
+    .to($serviceContent, {
+      scaleX: 1,
+      ease: 'back.out'
     })
 
     gsap.to($serviceContent, {
       opacity: 0,
       scrollTrigger: {
         trigger: service,
-        start: "top top",
+        start: "center center",
         end: "bottom top",
         scrub: true,
         invalidateOnRefresh: true
@@ -181,7 +185,46 @@ function servicesSctions() {
       })
     }
 
+    const triangles = service.querySelectorAll('.o-service__symbol-tringle')
 
+    if(triangles.length) {
+      gsap.set(triangles[0], {
+        scale: 0.46,
+        x: 47,
+        y: 52
+      })
+
+
+      gsap.set(triangles[1], {
+        rotate: 60,
+        x: 140
+      })
+
+      gsap.set(triangles[2], {
+        x: 87,
+        y: -32
+      })
+
+      const trianglesTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: service,
+          start: "top center",
+          end: "bottom bottom",
+          scrub: true,
+        }
+      })
+
+      trianglesTl.to(triangles[0], {
+       scale: 1,
+       x: 0,
+       y: 0
+      }).to(triangles[1], {
+        rotate: 0,
+        x: 0
+      }).to(triangles[2], {
+        x: 0
+      })
+    }
   });
 
 }
