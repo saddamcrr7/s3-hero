@@ -16,12 +16,23 @@
   &__col {
     @include make-col-ready();
 
-    &--4 {
-      @include make-col(4);
+    @include media-breakpoint-up(lg) {
+      &--4 {
+        @include make-col(4);
+      }
+
+      &--6 {
+        @include make-col(6);
+      }
     }
 
-    &--6 {
-      @include make-col(6);
+    @include media-breakpoint-down(md) {
+      @include make-col(6)
     }
+
+    @include media-breakpoint-down(sm) {
+      @include make-col(12)
+    }
+
   }
 }

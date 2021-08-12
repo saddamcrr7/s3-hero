@@ -10,6 +10,10 @@
   position: relative;
   overflow: hidden;
 
+  @include media-breakpoint-down(sm) {
+    height: auto;
+  }
+
   &__images {
     display: none;
   }
@@ -104,16 +108,24 @@
   }
 
   &--lg {
-    height: rem(464px);
+    @include media-breakpoint-up(lg) {
+      height: rem(464px);
+    }
 
     #{$root} {
       &__bg::after {
-        right: 35%;
-        clip-path: polygon(0 0, 63% 0, 100% 100%, 0% 100%);
+        @include media-breakpoint-up(lg) {
+          right: 35%;
+          clip-path: polygon(0 0, 63% 0, 100% 100%, 0% 100%);
+        }
       }
 
       &__content {
-        padding: rem(60px) rem(65px);
+        padding: rem(30px) rem(25px);
+
+        @include media-breakpoint-up(lg) {
+          padding: rem(60px) rem(65px);
+        }
       }
 
       &__title {
@@ -124,7 +136,9 @@
   }
 
   &--md {
-    height: rem(280px);
+    @include media-breakpoint-up(lg) {
+      height: rem(280px);
+    }
 
     #{$root} {
       &__content {
@@ -139,7 +153,9 @@
   }
 
   &--sm {
-    height: rem(323px);
+    @include media-breakpoint-up(lg) {
+      height: rem(323px);
+    }
 
     #{$root} {
       &__content {
@@ -154,8 +170,11 @@
   }
 
   &:hover {
-    #{$root}{
-      &__title, &__text, &__btn {
+    #{$root} {
+
+      &__title,
+      &__text,
+      &__btn {
         transform: translateY(0);
         opacity: 1;
       }
@@ -164,7 +183,7 @@
         width: rem(50px);
       }
 
-      &__bg{
+      &__bg {
         transform: scale(1.08);
 
         &::after {

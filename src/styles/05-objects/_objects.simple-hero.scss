@@ -9,6 +9,10 @@
   position: relative;
   overflow: hidden;
 
+  @include media-breakpoint-down(sm) {
+    height: rem(500px);
+  }
+
   &__bg {
     position: absolute;
     inset: -1px -1px -1px -1px;
@@ -40,7 +44,6 @@
 
   &__title {
     color: $white;
-    font-size: rem(100px);
     font-weight: $font-weight-light;
     position: relative;
     padding-top: rem(30px);
@@ -55,6 +58,19 @@
       background: $primary;
       clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
     }
+
+    @include media-breakpoint-up(xl) {
+      font-size: rem(100px);
+      display: flex;
+    }
+  }
+
+  &__title-num {
+    @include media-breakpoint-up(xl) {
+      margin-right: 25px;
+      margin-top: -30px;
+      font-size: 120px;
+    }
   }
 
   &__title-spacer {
@@ -64,12 +80,15 @@
 
   &__text {
     color: $primary;
-    font-size: rem(24px);
+    font-size: rem(18px);
+
+    @include media-breakpoint-up(md) {
+      font-size: rem(20px);
+    }
   }
 
   &__cta {
     position: relative;
-    font-size: rem(20px);
     color: $white;
     display: inline-block;
     padding: 6px 20px;
@@ -97,6 +116,10 @@
       &::after {
         right: -80%;
       }
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: rem(20px);
     }
   }
 
