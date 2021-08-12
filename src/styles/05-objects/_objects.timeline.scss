@@ -31,7 +31,7 @@
 
   &__line {
     width: 100%;
-    max-width: calc(50% + 86px);
+    max-width: calc(50% + 110px);
 
     padding-top: 40px;
     padding-bottom: rem(40px);
@@ -75,8 +75,14 @@
     display: flex;
 
     &.is-active {
-      #{$root}__year-icon::after {
-        transform: translate(-50%, -50%) scale3d(1.300, 1.300, 1.300);
+      #{$root} {
+        &__year-icon::after {
+          transform: translate(-50%, -50%) scale3d(1.300, 1.300, 1.300);
+        }
+
+        &__year-text {
+          color: $primary;
+        }
       }
     }
   }
@@ -89,7 +95,8 @@
     padding: rem(13px);
     position: relative;
 
-    svg,image {
+    svg,
+    image {
       max-width: 100%;
       height: auto;
       fill: $white;
@@ -100,8 +107,8 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 100%;
-      height: 100%;
+      width: calc(100% - 1px);
+      height: calc(100% - 1px);
       background-color: $primary;
       transform: translate(-50%, -50%);
       border-radius: rem(40px);
@@ -112,9 +119,11 @@
   }
 
   &__year-text {
-    color: $primary;
-    font-size: rem(18px);
-    font-weight: $font-weight-bolder;
+    color: $white;
+    font-size: rem(28px);
+    line-height: 50px;
+    font-weight: $font-weight-bold;
+    transition: color 200ms linear;
   }
 
   &__content {
@@ -123,12 +132,25 @@
     padding: rem(20px);
     padding-bottom: rem(80px);
     position: relative;
+
+    &.is-active {
+      #{$root} {
+        &__text {
+          color: $white;
+        }
+
+        &__big-year {
+          color: #dedede;
+        }
+      }
+    }
   }
 
   &__text {
-    color: $white;
+    color: #979ca2;
     position: relative;
     z-index: 2;
+    transition: color 200ms linear;
   }
 
   &__big-year {
@@ -137,8 +159,9 @@
     bottom: 10px;
     font-size: rem(70px);
     line-height: rem(70px);
-    color: #dedede;
+    color: #979ca2;
     font-weight: $font-weight-heavy;
+    transition: color 200ms linear;
   }
 
 }

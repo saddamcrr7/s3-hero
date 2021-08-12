@@ -172,12 +172,15 @@ function servicesSctions() {
       ScrollTrigger.create({
         trigger: service,
         start: "top center",
-        end: "bottom center",
+        end: "bottom top",
         onEnter: () => {
           $heroTiltle.style.mixBlendMode = 'normal'
         },
         onEnterBack: () => {
           $heroTiltle.style.mixBlendMode = 'normal'
+        },
+        onLeave: () => {
+          $heroTiltle.style.mixBlendMode = 'difference'
         },
         onLeaveBack: () => {
           $heroTiltle.style.mixBlendMode = 'difference'
