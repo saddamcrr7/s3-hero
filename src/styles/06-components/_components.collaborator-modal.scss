@@ -39,7 +39,7 @@
       width: 30px;
       height: 2px;
       display: block;
-      background-color: $white;
+      background-color: $black;
     }
 
     &::before {
@@ -60,6 +60,11 @@
     opacity: 0;
     transition: 0.7s ease;
     z-index: 2;
+    overflow: auto;
+
+    @include media-breakpoint-down(md) {
+      height: 100%;
+    }
   }
 
   &__row {
@@ -68,7 +73,10 @@
 
   &__col {
     @include make-col-ready();
-    @include make-col(6);
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(6);
+    }
   }
 
   &__image {
@@ -78,6 +86,10 @@
 
   &__contacts {
     margin-top: rem(27px);
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(40px);
+    }
   }
 
   &__contact {

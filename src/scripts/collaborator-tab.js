@@ -5,6 +5,8 @@ $tabs.forEach( $tab => {
   const $panels = $tab.querySelectorAll('.c-tab__panel')
   const $body = $tab.querySelector('.c-tab__body')
 
+  $body.style.height = `${$panels[0].querySelector('.c-tab__panel-inner').clientHeight}px`
+
   $btns.forEach(($btn, i) => {
     $btn.addEventListener('click', ()=> {
       $btns.forEach(btn =>  btn.classList.remove('is-active'))
