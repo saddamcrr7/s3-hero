@@ -59,7 +59,7 @@
       clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
     }
 
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(lg) {
       font-size: rem(100px);
       display: flex;
     }
@@ -76,6 +76,10 @@
   &__title-spacer {
     position: relative;
     height: rem(105px);
+
+    @include media-breakpoint-down(lg) {
+      height: rem(100px);
+    }
   }
 
   &__text {
@@ -128,12 +132,11 @@
     top: 0;
     right: 0;
     left: 0;
+    height: 100vh !important;
     z-index: 1;
 
     #{$root}__title {
       font-size: $h1-font-size;
-      padding: 20px;
-      margin-left: -20px;
     }
     #{$root}__bg {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);

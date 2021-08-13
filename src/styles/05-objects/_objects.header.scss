@@ -125,10 +125,24 @@
 
     .c-brand__menu {
       opacity: 1;
+      transition-delay: 0.5s;
+
+      @include media-breakpoint-down(xl) {
+        transition-delay: 0.3s;
+      }
+
+      @include media-breakpoint-down(lg) {
+        transition-delay: 0.2s;
+      }
+
+      @include media-breakpoint-down(md) {
+        transition-delay: 0.1s;
+      }
     }
 
     .c-brand__split {
       opacity: 0;
+      transition-delay: 0.5s;
     }
   }
 }

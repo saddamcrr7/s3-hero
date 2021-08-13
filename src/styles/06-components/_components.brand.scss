@@ -29,6 +29,7 @@
     z-index: 2;
     opacity: 0;
     transition: 0.3s ease;
+    transition-delay: 0s;
   }
 
   @include media-breakpoint-down(sm) {

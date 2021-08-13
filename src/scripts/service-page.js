@@ -52,21 +52,39 @@ function servicesSctions() {
     onUpdate: ScrollTrigger.update
   });
 
-  gsap.to($heroTiltle, {
-    top: 100,
-    zIndex: 2,
-    ease: 'none',
 
-    scrollTrigger: {
-      trigger: $servicesContainer,
-      start: "top+=100 center",
-      end: "480 center",
-      scrub: true,
-    },
 
-    onUpdate: ScrollTrigger.update
+  if(window.innerWidth>768) {
+    gsap.to($heroTiltle, {
+      top: 100,
+      zIndex: 2,
+      ease: 'none',
 
-  });
+      scrollTrigger: {
+        trigger: $servicesContainer,
+        start: "top+=100 center",
+        end: "480 center",
+        scrub: true,
+      },
+
+      onUpdate: ScrollTrigger.update
+    });
+  }else {
+    gsap.to($heroTiltle, {
+      top: 50,
+      zIndex: 2,
+      ease: 'none',
+
+      scrollTrigger: {
+        trigger: $servicesContainer,
+        start: "top+=100 center",
+        end: "480 center",
+        scrub: true,
+      },
+
+      onUpdate: ScrollTrigger.update
+    });
+  }
 
 
   function goToSection(i, anim) {
@@ -75,13 +93,17 @@ function servicesSctions() {
         y: (i + 1) * $services[i].clientHeight,
       },
       duration: 0,
-      ease: 'none',
+      ease: 'back.out',
       onUpdate: ScrollTrigger.update
     });
 
     if (anim) {
       anim.restart();
     }
+  }
+
+  if(window,innerWidth > 768) {
+
   }
 
   gsap.utils.toArray(".o-service").forEach((service, i) => {
@@ -130,14 +152,14 @@ function servicesSctions() {
 
     gsap.set($serviceContent, {
       opacity: 0,
-      scaleX: 0.99,
+      scaleX: 0.98,
       y: 100
     })
 
     const contentTl = gsap.timeline({
       scrollTrigger: {
         trigger: service,
-        start: "top 300",
+        start: "top 200",
         end: "bottom bottom",
         scrub: true,
         invalidateOnRefresh: true
@@ -149,11 +171,14 @@ function servicesSctions() {
     })
     .to($serviceContent, {
       opacity: 1,
+      ease: 'slow( 0.1 0.1, 0.7 0.7, false)'
     })
     .to($serviceContent, {
       scaleX: 1,
-      ease: 'back.out'
+      ease: 'back.out',
+      delay: 0.8
     })
+
 
     gsap.to($serviceContent, {
       opacity: 0,

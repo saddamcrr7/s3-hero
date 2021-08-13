@@ -14,18 +14,31 @@ function cover() {
   if ($serviceCover) {
     $serviceCover.titles = $serviceCover.querySelectorAll('.o-cover__title')
 
-    $serviceCover.titles.forEach(title => {
-        gsap.from(title, {
-          scale: 0,
-          ease: 'back.out',
-          scrollTrigger: {
-            trigger: $serviceCover,
-            start: "top 100",
-            end: "bottom bottom",
-            scrub: true,
-          }
-        })
-      })
+    const titleTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: $serviceCover,
+        start: "top 100",
+        end: "bottom bottom",
+      }
+    })
+
+    titleTl.from($serviceCover.titles[0], {
+      opacity: 0,
+      scale: 0.5,
+      duration: 0.5,
+      ease: 'back.out'
+    }).from($serviceCover.titles[1], {
+      opacity: 0,
+      scale: 0.5,
+      duration: 0.5,
+      ease: 'back.out'
+    }).from($serviceCover.titles[2], {
+      opacity: 0,
+      scale: 0.5,
+      duration: 0.5,
+      ease: 'back.out'
+    })
+
   }
 
 
