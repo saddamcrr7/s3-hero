@@ -255,6 +255,11 @@ function servicesSctions() {
     }
   });
 
+
+  window.addEventListener('resize',()=> {
+    ScrollTrigger.update
+  })
+
 }
 
 window.addEventListener('load', () => {

@@ -32,16 +32,20 @@
     font-size: $h1-font-size;
     margin-bottom: 0;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(xs) {
       font-size: $h2-font-size;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: rem(40px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     &+& {
       margin-left: rem(20px);
-
-      @include media-breakpoint-down(sm) {
-        margin-top: rem(40px);
-      }
     }
   }
 

@@ -35,12 +35,13 @@
     font-family: $headings-font-family;
     background-color: $white;
     border: 3px solid $black;
-    transition: 0.5s ease;
+    transition: 0.5s linear;
 
     &.is-active {
       font-weight: $font-weight-bolder;
       color: $primary;
       border-color: $primary;
+      border-width: 5px;
     }
 
     &+& {
