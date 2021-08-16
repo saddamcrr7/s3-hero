@@ -47,6 +47,7 @@
     font-weight: $font-weight-light;
     position: relative;
     padding-top: rem(30px);
+    display: flex;
 
     &::before {
       content: '';
@@ -61,11 +62,14 @@
 
     @include media-breakpoint-up(lg) {
       font-size: rem(100px);
-      display: flex;
     }
   }
 
   &__title-num {
+    margin-right: 25px;
+    margin-top: -15px;
+    font-size: 50px;
+
     @include media-breakpoint-up(lg) {
       margin-right: 25px;
       margin-top: -30px;
