@@ -6,6 +6,14 @@
   overflow: hidden;
   will-change: top, left;
 
+  @include media-breakpoint-down(sm) {
+    height: 80px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    height: rem(100px);
+  }
+
   &__text {
     color: $white;
     letter-spacing: 1px;

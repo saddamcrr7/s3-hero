@@ -84,6 +84,11 @@
     @include media-breakpoint-down(lg) {
       height: rem(100px);
     }
+
+    @include media-breakpoint-down(sm) {
+      height: 80px;
+    }
+
   }
 
   &__text {

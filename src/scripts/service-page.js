@@ -77,9 +77,10 @@ function servicesSctions() {
 
       scrollTrigger: {
         trigger: $servicesContainer,
-        start: "top+=100 center",
-        end: "480 center",
+        start: "100 center",
+        end: "480 480",
         scrub: true,
+        markers: true
       },
 
       onUpdate: ScrollTrigger.update
