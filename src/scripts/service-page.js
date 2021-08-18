@@ -90,11 +90,13 @@ function servicesSctions() {
 
   function goToSection(i, anim) {
 
+    if(detectMobile()) {
       gsap.set("html", {
         overflow: "hidden"
       });
 
       $heroTiltle.innerHTML = "hidden"
+    }
 
 
     gsap.to("html", {
@@ -106,6 +108,7 @@ function servicesSctions() {
       overwrite: true,
       onUpdate: ScrollTrigger.update,
       onComplete: () => {
+        if(detectMobile()) {
           gsap.set("html", {
             overflow: "auto",
             delay: 2
@@ -114,6 +117,7 @@ function servicesSctions() {
           setTimeout(() => {
             $heroTiltle.innerHTML = "auto"
           }, 2000);
+        }
       }
     });
 
