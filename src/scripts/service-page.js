@@ -5,7 +5,6 @@ import {
 } from "../scripts/vendor/gsap-member/src/all";
 
 import getPosition from './utils/getPosition'
-import detectMobile from './utils/detectMobile'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -89,8 +88,7 @@ function servicesSctions() {
 
 
   function goToSection(i, anim) {
-
-    if(detectMobile()) {
+    if(window,innerWidth < 768) {
       gsap.set("body", {overflow: "hidden"});
     }
 
@@ -104,7 +102,7 @@ function servicesSctions() {
       overwrite: true,
       onUpdate: ScrollTrigger.update,
       onScrubComplete: () => {
-        if(detectMobile()) {
+        if(window,innerWidth < 768) {
           gsap.to("body", {overflow: "auto", delay: 2})
         }
       }
@@ -114,6 +112,7 @@ function servicesSctions() {
       anim.restart();
     }
   }
+
 
 
   gsap.utils.toArray(".o-service").forEach((service, i) => {
