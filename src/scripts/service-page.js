@@ -101,7 +101,7 @@ function servicesSctions() {
 
     gsap.to("html", {
       scrollTo: {
-        y: (i + 1) * $services[i].clientHeight,
+        y: (i + 1) * innerHeight,
         autoKill: false
       },
       duration: 0,
