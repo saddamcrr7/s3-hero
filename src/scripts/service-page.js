@@ -5,7 +5,7 @@ import {
 } from "../scripts/vendor/gsap-member/src/all";
 
 import getPosition from './utils/getPosition'
-import iOS from './utils/iOS'
+import isTouchDevice from './utils/isTouchDevice'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -90,7 +90,7 @@ function servicesSctions() {
 
   function goToSection(i, anim) {
 
-    if(iOS()) {
+    if(isTouchDevice()) {
       gsap.set("body", {overflow: "hidden"});
     }
 
@@ -100,13 +100,13 @@ function servicesSctions() {
         y: (i + 1) * $services[i].clientHeight,
         autoKill: false
       },
-      duration: 0,
+      duration: 0.1,
       ease: 'back.out',
       overwrite: true,
       onUpdate: ScrollTrigger.update,
-      onComplete: () => {
-        if(iOS()) {
-          gsap.set("body", {overflow: "auto"})
+      onScrubComplete: () => {
+        if(isTouchDevice()) {
+          gsap.to("body", {overflow: "auto", delay: 0.5})
         }
       }
     });
