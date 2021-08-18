@@ -5,6 +5,7 @@ import {
 } from "../scripts/vendor/gsap-member/src/all";
 
 import getPosition from './utils/getPosition'
+import iOS from './utils/iOS'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -80,7 +81,6 @@ function servicesSctions() {
         start: "100 center",
         end: "480 480",
         scrub: true,
-        markers: true
       },
 
       onUpdate: ScrollTrigger.update
@@ -89,13 +89,26 @@ function servicesSctions() {
 
 
   function goToSection(i, anim) {
+
+    if(iOS()) {
+      gsap.set("body", {overflow: "hidden"});
+    }
+
+
     gsap.to(window, {
       scrollTo: {
         y: (i + 1) * $services[i].clientHeight,
+        autoKill: false
       },
       duration: 0,
       ease: 'back.out',
-      onUpdate: ScrollTrigger.update
+      overwrite: true,
+      onUpdate: ScrollTrigger.update,
+      onComplete: () => {
+        if(iOS()) {
+          gsap.set("body", {overflow: "auto"})
+        }
+      }
     });
 
     if (anim) {
