@@ -5,7 +5,7 @@ import {
 } from "../scripts/vendor/gsap-member/src/all";
 
 import getPosition from './utils/getPosition'
-import isTouchDevice from './utils/isTouchDevice'
+import detectMobile from './utils/detectMobile'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -90,7 +90,7 @@ function servicesSctions() {
 
   function goToSection(i, anim) {
 
-    if(isTouchDevice()) {
+    if(detectMobile()) {
       gsap.set("body", {overflow: "hidden"});
     }
 
@@ -100,13 +100,12 @@ function servicesSctions() {
         y: (i + 1) * $services[i].clientHeight,
         autoKill: false
       },
-      duration: 0.1,
-      ease: 'back.out',
+      duration: 0,
       overwrite: true,
       onUpdate: ScrollTrigger.update,
       onScrubComplete: () => {
-        if(isTouchDevice()) {
-          gsap.to("body", {overflow: "auto", delay: 1})
+        if(detectMobile()) {
+          gsap.to("body", {overflow: "auto", delay: 2})
         }
       }
     });
@@ -116,9 +115,6 @@ function servicesSctions() {
     }
   }
 
-  if(window,innerWidth > 768) {
-
-  }
 
   gsap.utils.toArray(".o-service").forEach((service, i) => {
 
@@ -135,7 +131,6 @@ function servicesSctions() {
 
     ScrollTrigger.create({
       scroller: window,
-      invalidateOnRefresh: true,
       trigger: service,
       onEnter: () => {
         goToSection(i)
@@ -144,7 +139,6 @@ function servicesSctions() {
 
     ScrollTrigger.create({
       scroller: window,
-      invalidateOnRefresh: true,
       trigger: service,
       start: "bottom bottom",
       onEnterBack: () => goToSection(i),
