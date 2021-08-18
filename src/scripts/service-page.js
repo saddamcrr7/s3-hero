@@ -94,14 +94,12 @@ function servicesSctions() {
       gsap.set("html", {
         overflow: "hidden"
       });
-
-      $heroTiltle.innerHTML = "hidden"
     }
 
 
-    gsap.to("html", {
+    gsap.to(window, {
       scrollTo: {
-        y: (i + 1) * innerHeight,
+        y: (i + 1) * $services[i].clientHeight,
         autoKill: false
       },
       duration: 0,
@@ -113,10 +111,6 @@ function servicesSctions() {
             overflow: "auto",
             delay: 2
           })
-
-          setTimeout(() => {
-            $heroTiltle.innerHTML = "auto"
-          }, 2000);
         }
       }
     });
