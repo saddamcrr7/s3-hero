@@ -54,7 +54,7 @@ function servicesSctions() {
 
 
 
-  if(window.innerWidth>768) {
+  if (window.innerWidth > 768) {
     gsap.to($heroTiltle, {
       top: 100,
       zIndex: 2,
@@ -69,7 +69,7 @@ function servicesSctions() {
 
       onUpdate: ScrollTrigger.update
     });
-  }else {
+  } else {
     gsap.to($heroTiltle, {
       top: 50,
       zIndex: 2,
@@ -88,12 +88,11 @@ function servicesSctions() {
 
 
   function goToSection(i, anim) {
-    if(window,innerWidth < 768) {
-      gsap.set("body", {overflow: "hidden"});
-      $heroTiltle.innerHTML="hidden"
+    gsap.set("body", {
+      overflow: "hidden"
+    });
 
-    }
-
+    $heroTiltle.innerHTML = 'hidden'
 
     gsap.to(window, {
       scrollTo: {
@@ -103,12 +102,16 @@ function servicesSctions() {
       duration: 0,
       overwrite: true,
       onUpdate: ScrollTrigger.update,
-      onScrubComplete: () => {
-        if(window,innerWidth < 768) {
-          gsap.to("body", {overflow: "auto", delay: 2})
-          $heroTiltle.innerHTML="auto"
-        }
+      onComplete: () => {
+
+        gsap.set("body", {
+          overflow: "auto",
+          delay: 2
+        })
+
       }
+
+
     });
 
     if (anim) {
@@ -120,7 +123,7 @@ function servicesSctions() {
 
   gsap.utils.toArray(".o-service").forEach((service, i) => {
 
-    if(!service.classList.contains('is-no-pin')) {
+    if (!service.classList.contains('is-no-pin')) {
       ScrollTrigger.create({
         trigger: service,
         start: "top top",
@@ -177,17 +180,17 @@ function servicesSctions() {
     })
 
     contentTl.to($serviceContent, {
-      y: 0,
-    })
-    .to($serviceContent, {
-      opacity: 1,
-      ease: 'slow( 0.1 0.1, 0.7 0.7, false)'
-    })
-    .to($serviceContent, {
-      scaleX: 1,
-      ease: 'back.out',
-      delay: 0.8
-    })
+        y: 0,
+      })
+      .to($serviceContent, {
+        opacity: 1,
+        ease: 'slow( 0.1 0.1, 0.7 0.7, false)'
+      })
+      .to($serviceContent, {
+        scaleX: 1,
+        ease: 'back.out',
+        delay: 0.8
+      })
 
 
     gsap.to($serviceContent, {
@@ -225,7 +228,7 @@ function servicesSctions() {
 
     const triangles = service.querySelectorAll('.o-service__symbol-tringle')
 
-    if(triangles.length) {
+    if (triangles.length) {
       gsap.set(triangles[0], {
         scale: 0.46,
         x: 47,
@@ -253,9 +256,9 @@ function servicesSctions() {
       })
 
       trianglesTl.to(triangles[0], {
-       scale: 1,
-       x: 0,
-       y: 0
+        scale: 1,
+        x: 0,
+        y: 0
       }).to(triangles[1], {
         rotate: 0,
         x: 0
@@ -266,7 +269,7 @@ function servicesSctions() {
   });
 
 
-  window.addEventListener('resize',()=> {
+  window.addEventListener('resize', () => {
     ScrollTrigger.update
   })
 
