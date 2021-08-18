@@ -5,6 +5,7 @@ import {
 } from "../scripts/vendor/gsap-member/src/all";
 
 import getPosition from './utils/getPosition'
+import detectMobile from './utils/detectMobile'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -88,11 +89,13 @@ function servicesSctions() {
 
 
   function goToSection(i, anim) {
-    gsap.set("body", {
-      overflow: "hidden"
-    });
 
-    $heroTiltle.innerHTML = 'hidden'
+    if(detectMobile()) {
+      gsap.set("html", {
+        overflow: "hidden"
+      });
+    }
+
 
     gsap.to(window, {
       scrollTo: {
@@ -103,15 +106,13 @@ function servicesSctions() {
       overwrite: true,
       onUpdate: ScrollTrigger.update,
       onComplete: () => {
-
-        gsap.set("body", {
-          overflow: "auto",
-          delay: 2
-        })
-
+        if(detectMobile()) {
+          gsap.set("html", {
+            overflow: "auto",
+            delay: 2
+          })
+        }
       }
-
-
     });
 
     if (anim) {
