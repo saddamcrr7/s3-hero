@@ -90,6 +90,8 @@ function servicesSctions() {
   function goToSection(i, anim) {
     if(window,innerWidth < 768) {
       gsap.set("body", {overflow: "hidden"});
+      $heroTiltle.innerHTML="hidden"
+
     }
 
 
@@ -104,6 +106,7 @@ function servicesSctions() {
       onScrubComplete: () => {
         if(window,innerWidth < 768) {
           gsap.to("body", {overflow: "auto", delay: 2})
+          $heroTiltle.innerHTML="auto"
         }
       }
     });
