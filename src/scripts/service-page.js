@@ -106,7 +106,7 @@ function servicesSctions() {
       onUpdate: ScrollTrigger.update,
       onScrubComplete: () => {
         if(isTouchDevice()) {
-          gsap.to("body", {overflow: "auto", delay: 0.5})
+          gsap.to("body", {overflow: "auto", delay: 1})
         }
       }
     });
