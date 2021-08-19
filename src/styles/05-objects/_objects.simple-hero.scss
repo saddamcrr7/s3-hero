@@ -145,7 +145,7 @@
     z-index: 1;
 
     #{$root}__title {
-      font-size: $h1-font-size;
+      font-size: rem(40px);
       display: none;
 
       @include media-breakpoint-down(md) {
