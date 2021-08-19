@@ -4,6 +4,7 @@
   --subtitle-color: #{$black};
   --title-underline-color: #{$primary-03};
   --text-color : #{$black};
+  --title-color: #{$black};
 
   $root: &;
 
@@ -48,8 +49,8 @@
     position: relative;
     height: rem(105px);
 
-    @include media-breakpoint-down(sm) {
-      height: 0;
+    @include media-breakpoint-down(md) {
+      display: none;
     }
 
     &::after {
@@ -61,6 +62,28 @@
       height: 20px;
       background: var(--title-underline-color);
       clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+    }
+  }
+
+  &__title {
+    color: var(--title-color);
+    position: relative;
+    display: none;
+    font-size: rem(40px);
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -60px;
+      width: rem(160px);
+      height: 20px;
+      background: var(--title-underline-color);
+      clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+    }
+
+    @include media-breakpoint-down(md) {
+      display: block;
     }
   }
 
@@ -86,6 +109,7 @@
     fill: none;
 
     stroke: #959595;
+
     &--0 {
       fill: none;
       stroke: #ec7123
@@ -123,7 +147,7 @@
     --subtitle-color: #{$white};
     --title-underline-color: #{$black};
     --text-color : #{$black};
-
+    --title-color: #{$white};
   }
 
   &--grey {
@@ -132,6 +156,7 @@
     --subtitle-color: #{$black};
     --title-underline-color: #{$primary};
     --text-color : #{$black};
+    --title-color: #{$black};
 
   }
 
@@ -141,7 +166,7 @@
     --subtitle-color: #{$white};
     --title-underline-color: #{$white};
     --text-color : #{$white};
-
+    --title-color: #{$white};
 
     #{$root}__symbol {
       // filter: invert(1);

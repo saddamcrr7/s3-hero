@@ -70,21 +70,6 @@ function servicesSctions() {
 
       onUpdate: ScrollTrigger.update
     });
-  } else {
-    gsap.to($heroTiltle, {
-      top: 50,
-      zIndex: 2,
-      ease: 'none',
-
-      scrollTrigger: {
-        trigger: $servicesContainer,
-        start: "100 center",
-        end: "480 480",
-        scrub: true,
-      },
-
-      onUpdate: ScrollTrigger.update
-    });
   }
 
 
@@ -109,16 +94,7 @@ function servicesSctions() {
 
   gsap.utils.toArray(".o-service").forEach((service, i) => {
 
-    if (!service.classList.contains('is-no-pin')) {
-      ScrollTrigger.create({
-        trigger: service,
-        start: "top top",
-        end: `+=${$servicesContainer.clientHeight}`,
-        pin: true,
-        pinSpacing: false,
-        anticipatePin: 1,
-      });
-    }
+
 
     if(!detectMobile()) {
       ScrollTrigger.create({
@@ -135,6 +111,61 @@ function servicesSctions() {
         start: "bottom bottom",
         onEnterBack: () => goToSection(i),
       });
+
+      if (!service.classList.contains('is-no-pin')) {
+        ScrollTrigger.create({
+          trigger: service,
+          start: "top top",
+          end: `+=${$servicesContainer.clientHeight}`,
+          pin: true,
+          pinSpacing: false,
+          anticipatePin: 1,
+        });
+      }
+
+      const $serviceContent = service.querySelector('.o-service__content')
+
+      gsap.set($serviceContent, {
+        opacity: 0,
+        scaleX: 0.98,
+        y: 100
+      })
+
+      const contentTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: service,
+          start: "top 200",
+          end: "bottom bottom",
+          scrub: true,
+          invalidateOnRefresh: true
+        },
+      })
+
+      contentTl.to($serviceContent, {
+          y: 0,
+        })
+        .to($serviceContent, {
+          opacity: 1,
+          ease: 'slow( 0.1 0.1, 0.7 0.7, false)'
+        })
+        .to($serviceContent, {
+          scaleX: 1,
+          ease: 'back.out',
+          delay: 0.8
+        })
+
+
+      gsap.to($serviceContent, {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: service,
+          start: "center center",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true
+        },
+        onUpdate: ScrollTrigger.update
+      })
     }
 
     gsap.to($serviceBgs[i], {
@@ -146,50 +177,6 @@ function servicesSctions() {
         scrub: true,
       },
 
-      onUpdate: ScrollTrigger.update
-    })
-
-    const $serviceContent = service.querySelector('.o-service__content')
-
-    gsap.set($serviceContent, {
-      opacity: 0,
-      scaleX: 0.98,
-      y: 100
-    })
-
-    const contentTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: service,
-        start: "top 200",
-        end: "bottom bottom",
-        scrub: true,
-        invalidateOnRefresh: true
-      },
-    })
-
-    contentTl.to($serviceContent, {
-        y: 0,
-      })
-      .to($serviceContent, {
-        opacity: 1,
-        ease: 'slow( 0.1 0.1, 0.7 0.7, false)'
-      })
-      .to($serviceContent, {
-        scaleX: 1,
-        ease: 'back.out',
-        delay: 0.8
-      })
-
-
-    gsap.to($serviceContent, {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: service,
-        start: "center center",
-        end: "bottom top",
-        scrub: true,
-        invalidateOnRefresh: true
-      },
       onUpdate: ScrollTrigger.update
     })
 

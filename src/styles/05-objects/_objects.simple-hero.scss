@@ -146,6 +146,11 @@
 
     #{$root}__title {
       font-size: $h1-font-size;
+      display: none;
+
+      @include media-breakpoint-down(md) {
+        display: block;
+      }
     }
     #{$root}__bg {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);

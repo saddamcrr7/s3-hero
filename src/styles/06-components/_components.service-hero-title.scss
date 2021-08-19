@@ -6,8 +6,8 @@
   overflow: hidden;
   will-change: top, left;
 
-  @include media-breakpoint-down(sm) {
-    height: 80px;
+  @include media-breakpoint-down(md) {
+    display: none;
   }
 
   @include media-breakpoint-down(lg) {
