@@ -90,13 +90,6 @@ function servicesSctions() {
 
   function goToSection(i, anim) {
 
-    if(detectMobile()) {
-      gsap.set("html", {
-        overflow: "hidden"
-      });
-    }
-
-
     gsap.to(window, {
       scrollTo: {
         y: (i + 1) * $services[i].clientHeight,
@@ -105,14 +98,6 @@ function servicesSctions() {
       duration: 0,
       overwrite: true,
       onUpdate: ScrollTrigger.update,
-      onComplete: () => {
-        if(detectMobile()) {
-          gsap.set("html", {
-            overflow: "auto",
-            delay: 2
-          })
-        }
-      }
     });
 
     if (anim) {
@@ -135,20 +120,22 @@ function servicesSctions() {
       });
     }
 
-    ScrollTrigger.create({
-      scroller: window,
-      trigger: service,
-      onEnter: () => {
-        goToSection(i)
-      }
-    });
+    if(!detectMobile()) {
+      ScrollTrigger.create({
+        scroller: window,
+        trigger: service,
+        onEnter: () => {
+          goToSection(i)
+        }
+      });
 
-    ScrollTrigger.create({
-      scroller: window,
-      trigger: service,
-      start: "bottom bottom",
-      onEnterBack: () => goToSection(i),
-    });
+      ScrollTrigger.create({
+        scroller: window,
+        trigger: service,
+        start: "bottom bottom",
+        onEnterBack: () => goToSection(i),
+      });
+    }
 
     gsap.to($serviceBgs[i], {
       y: 0,
