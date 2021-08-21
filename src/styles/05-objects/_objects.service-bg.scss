@@ -2,6 +2,10 @@
   --main-bg-color: #{#ebebeb};
   --bg-color: #{$white};
 
+  @include media-breakpoint-down(lg) {
+   display: none;
+  }
+
 
   &__panel {
     width: 100vw;
