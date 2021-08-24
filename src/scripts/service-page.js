@@ -55,7 +55,7 @@ function servicesSctions() {
 
 
 
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 1024) {
     gsap.to($heroTiltle, {
       top: 100,
       zIndex: 2,
@@ -105,7 +105,7 @@ function servicesSctions() {
       });
     }
 
-    if(!detectMobile()) {
+    if(window.innerWidth > 1024) {
       ScrollTrigger.create({
         scroller: window,
         trigger: service,

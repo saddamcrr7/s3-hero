@@ -19,10 +19,9 @@ function vsFn() {
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: vs,
-        scrub: 1,
+        scrub: true,
         start: "top bottom",
         end: `top+=${vs.clientHeight * 2} top`,
-        markers: true
       },
     });
 
@@ -31,7 +30,8 @@ function vsFn() {
     });
 }
 
-
+window.addEventListener('load',()=> {
   if(vs) {
     vsFn()
   }
+})

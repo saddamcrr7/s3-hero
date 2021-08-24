@@ -54,7 +54,7 @@
     position: relative;
     height: rem(105px);
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       display: none;
     }
 
@@ -87,7 +87,7 @@
       clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       display: block;
     }
   }

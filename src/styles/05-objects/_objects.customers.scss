@@ -3,6 +3,11 @@
   padding-top: rem(54px + 27px);
   padding-bottom: rem(54px + 27px);
 
+  @include media-breakpoint-down(xl) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
   &__container {
     @include make-container();
 

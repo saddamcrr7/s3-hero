@@ -9,9 +9,21 @@
   overflow-y: auto;
   padding-top: rem(40px);
 
+  @include media-breakpoint-down(xl) {
+    padding-top: rem(0px);
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-top: rem(20px);
+  }
+
   &__container {
     @include make-container();
     max-width: rem(815px + $grid-gutter-width);
+
+    @include media-breakpoint-down(xxl) {
+      max-width: rem(580px + $grid-gutter-width);
+    }
   }
 
   &__row {
@@ -69,14 +81,18 @@
     }
 
     &+& {
-      margin-top: rem(30px);
+      margin-top: rem(80px);
 
-      @include media-breakpoint-up(xxl) {
-        margin-top: rem(80px);
+      @include media-breakpoint-down(xxl) {
+        margin-top: rem(60px);
       }
 
-      @include media-breakpoint-up(sm) {
-        margin-top: rem(50px);
+      @include media-breakpoint-down(xl) {
+        margin-top: rem(40px);
+      }
+
+      @include media-breakpoint-down(md) {
+        margin-top: rem(30px);
       }
     }
   }
@@ -104,6 +120,11 @@
     font-family: $headings-font-family;
     font-weight: $font-weight-bolder;
     margin-bottom: 0;
+
+    @include media-breakpoint-down(xl) {
+      font-size: rem(38px);
+      line-height: rem(38px);
+    }
 
     @include media-breakpoint-down(sm) {
       font-size: rem(25px);
@@ -150,10 +171,10 @@
     }
 
     &+& {
-      margin-top: rem(65px);
+      margin-top: rem(95px);
 
-      @include media-breakpoint-up(xl) {
-        margin-top: rem(95px);
+      @include media-breakpoint-down(xl) {
+        margin-top: rem(65px);
       }
 
       @include media-breakpoint-down(sm) {
@@ -165,8 +186,8 @@
       width: 100%;
     }
 
-    @include media-breakpoint-down(sm) {
-      width: rem(35px);
+    @include media-breakpoint-down(xl) {
+      width: rem(32px);
     }
   }
 

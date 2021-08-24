@@ -1,9 +1,9 @@
 .o-trusted {
   display: block;
-  padding-top: rem(120px);
+  padding-top: rem(80px);
   padding-bottom: rem(50px);
 
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(xxl) {
     padding-top: rem(200px);
     padding-bottom: rem(32px);
   }
@@ -20,9 +20,9 @@
   &__top {
     position: relative;
     padding-left: rem(100px);
-    margin-bottom: rem(100px);
+    margin-bottom: rem(50px);
 
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xxl) {
       margin-bottom: rem(133px);
     }
 
@@ -41,12 +41,11 @@
       height: 100%;
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(xl) {
       width: rem(120px);
       height: rem(108px);
       top: -51px;
       left: 55px;
-
     }
   }
 
@@ -72,7 +71,7 @@
     filter: saturate(0%);
     transition: filter 300ms ease 0ms;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xl) {
       height: rem(120px);
     }
 
@@ -102,7 +101,8 @@
   }
 
   &__logo {
-    max-width: 100%;
     height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
 }

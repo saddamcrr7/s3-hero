@@ -9,6 +9,10 @@ $content-width: $card-width / 2;
   overflow: hidden;
   will-change: flex-basis, width;
 
+  @include media-breakpoint-down(xl) {
+    height: 450px;
+  }
+
   @include media-breakpoint-down(md) {
     width: 100%;
     height: rem(400px);
@@ -23,9 +27,9 @@ $content-width: $card-width / 2;
     height: rem(665px);
     position: relative;
 
-    @include media-breakpoint-down(xxl) {
+    @include media-breakpoint-down(xl) {
       width: rem(1000px);
-      height: 600px;
+      height: 450px;
     }
 
     @include media-breakpoint-down(md) {
