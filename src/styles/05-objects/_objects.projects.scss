@@ -6,7 +6,7 @@
   &__container {
     @include make-container();
 
-    max-width: rem(1080px + $grid-gutter-width);
+    max-width: rem(1280px + $grid-gutter-width);
   }
 
   &__row {
