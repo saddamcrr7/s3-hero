@@ -16,6 +16,7 @@ import './scripts/timeline'
 import './scripts/project-viewer'
 import './scripts/service-page'
 import './scripts/cover'
+import './scripts/visionaries'
 
 
 
