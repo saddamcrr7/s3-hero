@@ -110,7 +110,7 @@ $content-width: $card-width / 2;
   }
 
   &__subtitle {
-    color: $primary;
+    color: $primary-02;
     font-size: rem(18px);
     margin-bottom: rem(40px);
 
@@ -125,11 +125,22 @@ $content-width: $card-width / 2;
     font-family: $RobotoFontFamily;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
-    padding-bottom: rem(20px);
-    margin-bottom: rem(20px);
+    padding-bottom: rem(15px);
+    margin-bottom: rem(22px);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      height: rem(3px);
+      width: 70%;
+      background-color: $primary-02;
+      transform: translateX(-50%);
+    }
 
     @include media-breakpoint-down(md) {
-      padding-bottom: 0;
       font-size: rem(24px);
     }
   }
