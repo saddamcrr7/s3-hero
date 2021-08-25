@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
 
   beSmall(['.js-link', 'button', '.c-collaborator'])
   beBig(['.o-header__toggler', '.o-header__brand',
-    '.c-collaborator-modal__close'
+    '.c-collaborator-modal__close', '.c-scrollToTop'
   ])
 })
 
