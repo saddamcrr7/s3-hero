@@ -78,7 +78,41 @@
       line-height: rem(335px);
       letter-spacing: -18px;
     }
+  }
 
+  &__title-big {
+    font-size: rem(58px);
+    line-height: rem(58px);
+
+    @include media-breakpoint-up(sm) {
+      font-size: rem(100px);
+      line-height: rem(100px);
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: rem(130px);
+      line-height: rem(130px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: rem(170px);
+      line-height: rem(170px);
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: rem(250px);
+      line-height: rem(250px);
+    }
+
+    @include media-breakpoint-up(xxl) {
+      font-size: rem(270px);
+      line-height: rem(270px);
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: rem(350px);
+      line-height: rem(350px);
+    }
   }
 
   &__symbol {
