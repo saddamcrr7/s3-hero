@@ -2,11 +2,10 @@
   $root: &;
 
   padding-top: rem(37px);
-  margin-bottom: rem(10px);
+  padding-bottom: rem(10px);
   background-color: $black;
   position: relative;
   z-index: 5;
-
 
   &__top {
     display: flex;
@@ -61,12 +60,20 @@
   }
 
   &__nav-title {
+    display: flex;
+    align-items: center;
     color: $grey;
     font-size: rem(40px);
     line-height: rem(36px);
     font-family: $headings-font-family;
     font-weight: $font-weight-bold;
     transition: 0.3s ease;
+  }
+
+  &__nav-title-big {
+    font-size: rem(50px);
+    line-height: rem(46px);
+    margin-top: -19px;
   }
 
   &__nav-sub {

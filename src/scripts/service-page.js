@@ -5,7 +5,8 @@ import {
 } from "../scripts/vendor/gsap-member/src/all";
 
 import getPosition from './utils/getPosition'
-import detectMobile from './utils/detectMobile'
+import getScrollbarWidth from './utils/getScrollbarWidth'
+
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -75,6 +76,8 @@ function servicesSctions() {
 
   function goToSection(i, anim) {
 
+    gsap.set("body", {overflow: "hidden", paddingRight: getScrollbarWidth});
+
     gsap.to(window, {
       scrollTo: {
         y: (i + 1) * $services[i].clientHeight,
@@ -83,6 +86,7 @@ function servicesSctions() {
       duration: 0,
       overwrite: true,
       onUpdate: ScrollTrigger.update,
+      onScrubComplete: () => gsap.set("body", {overflow: "auto",  paddingRight: 0, delay: 1.3})
     });
 
     if (anim) {
