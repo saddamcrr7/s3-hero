@@ -28,6 +28,7 @@
       content: '';
       position: absolute;
       inset: 0 0 0 0;
+      clip-path: polygon(0 0, 63% 0, 100% 100%, 0% 100%);
       background-color: rgba($primary, 0.5);
       opacity: 0;
       transition: 0.4s ease-in-out;
@@ -116,7 +117,6 @@
       &__bg::after {
         @include media-breakpoint-up(lg) {
           right: 35%;
-          clip-path: polygon(0 0, 63% 0, 100% 100%, 0% 100%);
         }
       }
 
@@ -141,6 +141,11 @@
     }
 
     #{$root} {
+      &__bg::after {
+        @include media-breakpoint-up(lg) {
+          right: 35%;
+        }
+      }
       &__content {
         padding: rem(30px) rem(25px);
       }
@@ -158,6 +163,13 @@
     }
 
     #{$root} {
+
+      &__bg::after {
+        @include media-breakpoint-up(lg) {
+          right: 3%;
+        }
+      }
+
       &__content {
         padding: rem(30px) rem(25px);
       }
