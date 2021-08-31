@@ -11,6 +11,9 @@
     max-width: 23rem;
   }
 
+  @include media-breakpoint-down(xl) {
+    max-width: 19rem;
+  }
 
 
   @include media-breakpoint-up(xl) {
@@ -57,7 +60,7 @@
     font-size: rem(52px);
     font-weight: $font-weight-bolder;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(xl) {
       font-size: rem(30px);
     }
   }
