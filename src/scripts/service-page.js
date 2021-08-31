@@ -105,7 +105,6 @@ function servicesSctions() {
         end: `+=${$servicesContainer.clientHeight}`,
         pin: true,
         pinSpacing: false,
-        anticipatePin: 1,
       });
     }
 
@@ -201,47 +200,6 @@ function servicesSctions() {
         onLeaveBack: () => {
           $heroTiltle.style.mixBlendMode = 'difference'
         }
-      })
-    }
-
-    const triangles = service.querySelectorAll('.o-service__symbol-tringle')
-
-    if (triangles.length) {
-      gsap.set(triangles[0], {
-        scale: 0.46,
-        x: 47,
-        y: 52
-      })
-
-
-      gsap.set(triangles[1], {
-        rotate: 60,
-        x: 140
-      })
-
-      gsap.set(triangles[2], {
-        x: 87,
-        y: -32
-      })
-
-      const trianglesTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: service,
-          start: "top center",
-          end: "bottom bottom",
-          scrub: true,
-        }
-      })
-
-      trianglesTl.to(triangles[0], {
-        scale: 1,
-        x: 0,
-        y: 0
-      }).to(triangles[1], {
-        rotate: 0,
-        x: 0
-      }).to(triangles[2], {
-        x: 0
       })
     }
   });

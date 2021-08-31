@@ -20,6 +20,7 @@ function parallaxBg() {
         scrub: true,
         pin: false,
       },
+      onUpdate: ScrollTrigger.update
     });
 
     tl.from(bg.image, {

@@ -23,6 +23,7 @@ function vsFn() {
         start: "top bottom",
         end: `top+=${vs.clientHeight * 2} top`,
       },
+      onUpdate: ScrollTrigger.update
     });
 
     tl.to(vs.image, {
