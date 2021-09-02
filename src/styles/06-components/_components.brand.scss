@@ -10,11 +10,11 @@
     overflow: hidden;
 
     &--1 {
-      clip-path: polygon(0 0, 0% 100%, 100% 0);
+      clip-path: polygon(0 0,0 126%,72% 0);
     }
 
     &--2 {
-      clip-path: polygon(100% 100%, 0% 100%, 100% 0);
+      clip-path: polygon(100% 100%,0 127%,66% 0);
     }
   }
 

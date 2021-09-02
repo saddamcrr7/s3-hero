@@ -29,8 +29,8 @@ function brand() {
   })
 
   gsap.to(split2, {
-    x: -180,
-    y: -180,
+    x: -250,
+    y: -100,
     ease: 'none',
 
     scrollTrigger: {
