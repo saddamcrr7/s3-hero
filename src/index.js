@@ -18,6 +18,7 @@ import './scripts/service-page'
 import './scripts/cover'
 import './scripts/visionaries'
 import './scripts/scrollToTop'
+import './scripts/footer'
 
 
 

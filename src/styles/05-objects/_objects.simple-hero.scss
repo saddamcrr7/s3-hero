@@ -9,10 +9,6 @@
   position: relative;
   overflow: hidden;
 
-  @include media-breakpoint-down(sm) {
-    height: rem(500px);
-  }
-
   &__bg {
     position: absolute;
     inset: -1px -1px -1px -1px;

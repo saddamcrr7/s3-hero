@@ -28,8 +28,20 @@ function smoothScroll(content, viewport, smoothness) {
 		},
 		height, isProxyScrolling;
 
+  let footerHeight = 0;
+
+  window.addEventListener('resize',()=> {
+    onResize();
+  })
+
 	function onResize() {
-		height = content.clientHeight  + document.querySelector('.o-footer').clientHeight;
+    if(window.innerWidth < 768) {
+      footerHeight = 0
+    }else {
+      footerHeight = document.querySelector('.o-footer').clientHeight;
+    }
+		height = content.clientHeight  + footerHeight
+    console.log(footerHeight);
 		content.style.overflow = "visible"
 		document.body.style.height = height + "px";
 	}

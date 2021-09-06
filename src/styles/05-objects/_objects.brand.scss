@@ -1,6 +1,7 @@
 .o-brand {
   display: block;
   padding: rem(54px + 27px) 0 rem(40px);
+  background-color: $white;
 
   @include media-breakpoint-down(xl) {
     padding-top: rem(45px);

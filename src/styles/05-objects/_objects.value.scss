@@ -4,6 +4,7 @@
   position: relative;
   padding-top: rem(54px + 27px);
   padding-bottom: rem(54px + 27px);
+  background-color: $white;
 
   @include media-breakpoint-down(sm) {
     height: rem(550px);
