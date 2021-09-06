@@ -15,7 +15,8 @@
     display: flex;
 
     @include media-breakpoint-down(sm) {
-      font-size: $h2-font-size;
+      font-size: 1.625rem;
+      font-weight: $font-weight-bolder;
     }
   }
 

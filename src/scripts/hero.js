@@ -51,10 +51,16 @@ function slider() {
   const prevInnerContent = sliderItems[prevIndex].querySelector(
     '.o-banner__content')
 
+  let power = window.innerWidth * 3.7
+
+  if(window.innerWidth < 768) {
+    power = window.innerWidth * 5
+  }
+
   tl.to(banners[index], {
       duration: 2,
-      width: window.innerWidth * 3.7,
-      height: window.innerWidth * 3.7,
+      width:  power,
+      height:  power,
     })
     .to(activeInnerImage, {
       delay: -2,

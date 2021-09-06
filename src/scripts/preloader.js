@@ -1,10 +1,11 @@
 const $preloader = document.querySelector('.js-preloader')
 
 window.addEventListener('load',()=> {
-  $preloader.style.opacity = '0'
+  setTimeout(() => {
+    $preloader.style.opacity = '0'
 
-  $preloader.addEventListener('transitionend', ()=> {
-    $preloader.style.display = 'none'
-  })
-
+    $preloader.addEventListener('transitionend', ()=> {
+      $preloader.style.display = 'none'
+    })
+  }, 1000);
 })
