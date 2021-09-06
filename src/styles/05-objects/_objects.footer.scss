@@ -1,11 +1,13 @@
 .o-footer {
   $root: &;
-
+  width: 100%;
   padding-top: rem(37px);
   padding-bottom: rem(10px);
   background-color: $black;
-  position: relative;
-  z-index: 5;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 
   &__top {
     display: flex;

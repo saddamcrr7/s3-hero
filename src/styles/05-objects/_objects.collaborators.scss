@@ -1,6 +1,8 @@
 .o-collaborators {
   display: block;
   padding: rem(85px) 0;
+  background-color: $white;
+
 
   &__container {
     @include make-container ();

@@ -29,7 +29,7 @@ function smoothScroll(content, viewport, smoothness) {
 		height, isProxyScrolling;
 
 	function onResize() {
-		height = content.clientHeight;
+		height = content.clientHeight  + document.querySelector('.o-footer').clientHeight;
 		content.style.overflow = "visible"
 		document.body.style.height = height + "px";
 	}

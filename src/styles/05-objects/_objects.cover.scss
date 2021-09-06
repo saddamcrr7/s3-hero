@@ -67,7 +67,8 @@
 
     #{$root} {
       &__bg::after {
-        background-color: rgba($primary, 0.7);
+        background: rgba($primary-03, 0.7);
+        filter: contrast(1.6) brightness(0.7);
       }
 
       &__triangle {

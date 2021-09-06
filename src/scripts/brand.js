@@ -36,7 +36,20 @@ function brand() {
     scrollTrigger: {
       trigger: "#main",
       start: "2px top",
-      end: `${1000} top`,
+      end: `1000 top`,
+      scrub: 0,
+      scroller: window,
+    }
+  })
+
+  gsap.to('.c-brand', {
+    display: 'none',
+    ease: 'none',
+
+    scrollTrigger: {
+      trigger: "#main",
+      start: "1000 center",
+      end: `1000 center`,
       scrub: 0,
       scroller: window,
     }

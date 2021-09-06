@@ -1,6 +1,7 @@
 .o-history {
   padding-top: rem(100px);
   padding-bottom: rem(100px);
+  background-color: $white;
 
   &__container {
     @include make-container();

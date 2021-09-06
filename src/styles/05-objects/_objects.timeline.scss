@@ -101,6 +101,7 @@
 
   &__year {
     display: flex;
+    will-change: transform;
 
     &.is-active {
       #{$root} {

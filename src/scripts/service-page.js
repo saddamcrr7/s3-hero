@@ -182,6 +182,23 @@ function servicesSctions() {
       onUpdate: ScrollTrigger.update
     })
 
+    const footerTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.o-visionaries',
+        start: "center center",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    })
+
+    footerTl.to('.o-service-bg__panel', {
+      zIndex: -2,
+    }).to('#service-hero-title', {
+      zIndex: -2,
+    }).to('#service-hero', {
+      zIndex: -2,
+    })
+
 
     if (service.classList.contains('o-service--primary')) {
       ScrollTrigger.create({
