@@ -41,11 +41,7 @@ function smoothScroll(content, viewport, smoothness) {
   }, 500);
 
 	function onResize() {
-    if(window.innerWidth < 768) {
-      footerHeight = 0
-    }else {
-      footerHeight = document.querySelector('.o-footer').clientHeight;
-    }
+
 		height = content.clientHeight  + footerHeight
 		content.style.overflow = "visible"
 		document.body.style.height = height + "px";

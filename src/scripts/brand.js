@@ -42,8 +42,8 @@ function brand() {
     }
   })
 
-  gsap.to('.c-brand', {
-    display: 'none',
+  gsap.to('.o-header__brand', {
+    pointerEvents: 'none',
     ease: 'none',
 
     scrollTrigger: {

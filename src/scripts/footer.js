@@ -1,17 +1,17 @@
-const viewportEl = document.getElementById('viewport')
-const mainEl = document.getElementById('main')
-const footerEl = document.querySelector('.o-footer')
+// const viewportEl = document.getElementById('viewport')
+// const mainEl = document.getElementById('main')
+// const footerEl = document.querySelector('.o-footer')
 
-function footer(){
-  if(window.innerWidth < 768) {
-    mainEl.appendChild(footerEl)
-  }else {
-    viewportEl.appendChild(footerEl)
-  }
-}
+// function footer(){
+//   if(window.innerWidth < 768) {
+//     mainEl.appendChild(footerEl)
+//   }else {
+//     viewportEl.appendChild(footerEl)
+//   }
+// }
 
-footer()
+// // footer()
 
-window.addEventListener('resize',()=> {
-  footer()
-})
+// // window.addEventListener('resize',()=> {
+// //   footer()
+// // })
