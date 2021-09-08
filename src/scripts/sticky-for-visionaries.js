@@ -1,7 +1,7 @@
 import {
   gsap,
   ScrollTrigger,
-} from "../scripts/vendor/gsap-member/src/all";
+} from "./vendor/gsap-member/src/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
