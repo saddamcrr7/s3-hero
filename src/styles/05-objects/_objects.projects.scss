@@ -3,6 +3,7 @@
   padding: rem(100px) 0;
   position: relative;
   background-color: $white;
+  will-change: transform;
 
   &__container {
     @include make-container();

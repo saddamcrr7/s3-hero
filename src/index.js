@@ -19,6 +19,7 @@ import './scripts/cover'
 import './scripts/visionaries'
 import './scripts/scrollToTop'
 import './scripts/footer'
+import './scripts/project-page'
 
 
 
