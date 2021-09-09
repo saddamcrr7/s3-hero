@@ -88,7 +88,7 @@
       }
 
       @include media-breakpoint-down(xl) {
-        margin-top: rem(40px);
+        margin-top: rem(42px);
       }
 
       @include media-breakpoint-down(md) {
@@ -192,6 +192,11 @@
 
     >img {
       width: 100%;
+      transition: 0.3s ease;
+
+      &:hover {
+        transform: translateX(20px) !important;
+      }
     }
 
     @include media-breakpoint-down(xl) {

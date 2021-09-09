@@ -55,10 +55,6 @@
       background: $primary;
       clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
     }
-
-    @include media-breakpoint-up(lg) {
-      font-size: rem(100px);
-    }
   }
 
   &__title-num {
@@ -68,8 +64,8 @@
 
     @include media-breakpoint-up(lg) {
       margin-right: 25px;
-      margin-top: -30px;
-      font-size: 120px;
+      margin-top: -20px;
+      font-size: 80px;
     }
   }
 

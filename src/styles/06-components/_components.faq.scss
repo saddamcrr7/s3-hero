@@ -15,6 +15,10 @@
     max-width: 19rem;
   }
 
+  @include media-breakpoint-down(lg) {
+    max-width: 15rem;
+  }
+
 
   @include media-breakpoint-up(xl) {
     &+& {

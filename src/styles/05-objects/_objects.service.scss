@@ -44,7 +44,7 @@
   }
 
   &__content {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       padding-left: rem(100px);
     }
   }
@@ -171,9 +171,5 @@
     --title-underline-color: #{$white};
     --text-color : #{$white};
     --title-color: #{$white};
-
-    #{$root}__symbol {
-      // filter: invert(1);
-    }
   }
 }

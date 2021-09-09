@@ -20,21 +20,14 @@ if($elm) {
 
     scrollTrigger: {
       trigger: '#main',
-      start: `top+=${innerHeight} center`,
-      end: "bottom center",
+      start: `${window.innerHeight} bottom`,
+      end: "bottom bottom",
       scrub: true,
     },
   });
 
 
   $elm.addEventListener('click', (e)=> {
-    gsap.to(window, {
-      scrollTo: {
-        y: 0,
-      },
-      duration: 0,
-      overwrite: true,
-      onUpdate: ScrollTrigger.update,
-    })
+    window.scrollTo(0, 0)
   })
 }

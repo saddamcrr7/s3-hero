@@ -20,25 +20,19 @@
 
   &__top {
     position: relative;
-    padding-left: rem(100px);
     margin-bottom: rem(50px);
 
     @include media-breakpoint-up(xxl) {
       margin-bottom: rem(133px);
     }
-
-    @include media-breakpoint-down(sm) {
-      padding-left: 0;
-    }
-
   }
 
   &__symbol {
     width: rem(220px);
     height: rem(188px);
     position: absolute;
-    top: -70px;
-    left: -0;
+    top: -80px;
+    left: -55px;
     z-index: 1;
 
     >img {
@@ -50,7 +44,7 @@
       width: rem(120px);
       height: rem(108px);
       top: -51px;
-      left: 55px;
+      left: -35px;
     }
 
     @include media-breakpoint-down(sm) {

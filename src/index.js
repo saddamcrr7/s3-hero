@@ -18,7 +18,6 @@ import './scripts/service-page'
 import './scripts/cover'
 import './scripts/visionaries'
 import './scripts/scrollToTop'
-import './scripts/footer'
 import './scripts/sticky-for-visionaries'
 
 
@@ -35,10 +34,10 @@ if (history.scrollRestoration) {
 }
 
 window.addEventListener('load', ()=> {
+  const stickySection =  new StickySection('.js-sticky-section')
 
   function displayMd(x) {
     if (x.matches) {
-      const stickySection =  new StickySection('.js-sticky-section')
       const b = new PanelSlider('.c-project-card', '.o-customers__row')
     }
   }

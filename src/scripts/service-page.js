@@ -26,37 +26,43 @@ function servicesSctions() {
   const $serviceBgs = document.querySelectorAll('.o-service-bg__panel')
 
 
-  $heroTiltle.style.top = `${getPosition($heroTitleSpacer).top}px`
-  $heroTiltle.style.left = `${getPosition($heroTitleSpacer).left - 20}px`
-
-  gsap.to($heroTiltle, {
-    mixBlendMode: 'difference',
-    ease: 'none',
-
-    scrollTrigger: {
-      trigger: $servicesContainer,
-      start: `top bottom-=200px`,
-      end: "10px center",
-      scrub: true,
-    },
-    onUpdate: ScrollTrigger.update
-  });
-
-  gsap.to('#main', {
-    zIndex: 2,
-
-    scrollTrigger: {
-      trigger: $servicesContainer,
-      start: `top bottom`,
-      end: "10px center",
-      scrub: true,
-    },
-    onUpdate: ScrollTrigger.update
-  });
+  function heroTitlePostion() {
+    $heroTiltle.style.top = `${getPosition($heroTitleSpacer).top}px`
+    $heroTiltle.style.left = `${getPosition($heroTitleSpacer).left - 20}px`
+  }
+  heroTitlePostion()
+  window.addEventListener('resize',()=> {
+    heroTitlePostion()
+  })
 
 
+  if (window.innerWidth > 1279) {
 
-  if (window.innerWidth > 1024) {
+    gsap.to('#main', {
+      zIndex: 2,
+
+      scrollTrigger: {
+        trigger: $servicesContainer,
+        start: `top bottom`,
+        end: "10px center",
+        scrub: true,
+      },
+      onUpdate: ScrollTrigger.update
+    });
+
+    gsap.to($heroTiltle, {
+      mixBlendMode: 'difference',
+      ease: 'none',
+
+      scrollTrigger: {
+        trigger: $servicesContainer,
+        start: `top bottom-=200px`,
+        end: "10px center",
+        scrub: true,
+      },
+      onUpdate: ScrollTrigger.update
+    });
+
     gsap.to($heroTiltle, {
       top: 100,
       zIndex: 2,
@@ -65,10 +71,22 @@ function servicesSctions() {
       scrollTrigger: {
         trigger: $servicesContainer,
         start: "top+=100 center",
-        end: "480 center",
+        end: `${innerHeight / 2} center`,
         scrub: true,
       },
 
+      onUpdate: ScrollTrigger.update
+    });
+  }else {
+    gsap.to('#main', {
+      zIndex: 3,
+
+      scrollTrigger: {
+        trigger: $servicesContainer,
+        start: `top bottom`,
+        end: "10px center",
+        scrub: true,
+      },
       onUpdate: ScrollTrigger.update
     });
   }
@@ -76,7 +94,10 @@ function servicesSctions() {
 
   function goToSection(i, anim) {
 
-    gsap.set("body", {overflow: "hidden", paddingRight: getScrollbarWidth});
+    gsap.set("body", {overflow: "hidden"});
+    gsap.set("#viewport", {paddingRight: getScrollbarWidth()});
+    gsap.set(".o-header__toggler", {x: -(getScrollbarWidth() - getScrollbarWidth() / 2)});
+    gsap.set(".c-scrollToTop", {x: -(getScrollbarWidth())});
 
     gsap.to(window, {
       scrollTo: {
@@ -86,7 +107,13 @@ function servicesSctions() {
       duration: 0,
       overwrite: true,
       onUpdate: ScrollTrigger.update,
-      onScrubComplete: () => gsap.set("body", {overflow: "auto",  paddingRight: 0, delay: 1.3})
+      onScrubComplete: () => {
+        gsap.set("body", {overflow: "auto", delay: 1.3})
+        gsap.set("#viewport", {paddingRight: 0, delay: 1.3})
+        gsap.set(".o-header__toggler", { x: 0, delay: 1.3})
+        gsap.set(".c-scrollToTop", { x: 0, delay: 1.3})
+
+      }
     });
 
     if (anim) {
@@ -108,7 +135,7 @@ function servicesSctions() {
       });
     }
 
-    if(window.innerWidth > 1024) {
+    if(window.innerWidth > 1279) {
       ScrollTrigger.create({
         scroller: window,
         trigger: service,
@@ -168,6 +195,27 @@ function servicesSctions() {
         },
         onUpdate: ScrollTrigger.update
       })
+
+
+      if (service.classList.contains('o-service--primary')) {
+        ScrollTrigger.create({
+          trigger: service,
+          start: "top center",
+          end: "bottom top",
+          onEnter: () => {
+            $heroTiltle.style.mixBlendMode = 'normal'
+          },
+          onEnterBack: () => {
+            $heroTiltle.style.mixBlendMode = 'normal'
+          },
+          onLeave: () => {
+            $heroTiltle.style.mixBlendMode = 'difference'
+          },
+          onLeaveBack: () => {
+            $heroTiltle.style.mixBlendMode = 'difference'
+          }
+        })
+      }
     }
 
     gsap.to($serviceBgs[i], {
@@ -182,43 +230,8 @@ function servicesSctions() {
       onUpdate: ScrollTrigger.update
     })
 
-    const footerTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.o-visionaries',
-        start: "center center",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    })
-
-    footerTl.to('.o-service-bg__panel', {
-      zIndex: -2,
-    }).to('#service-hero-title', {
-      zIndex: -2,
-    }).to('#service-hero', {
-      zIndex: -2,
-    })
 
 
-    if (service.classList.contains('o-service--primary')) {
-      ScrollTrigger.create({
-        trigger: service,
-        start: "top center",
-        end: "bottom top",
-        onEnter: () => {
-          $heroTiltle.style.mixBlendMode = 'normal'
-        },
-        onEnterBack: () => {
-          $heroTiltle.style.mixBlendMode = 'normal'
-        },
-        onLeave: () => {
-          $heroTiltle.style.mixBlendMode = 'difference'
-        },
-        onLeaveBack: () => {
-          $heroTiltle.style.mixBlendMode = 'difference'
-        }
-      })
-    }
   });
 
 
