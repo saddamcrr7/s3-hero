@@ -6,6 +6,7 @@ import {
 
 import getPosition from './utils/getPosition'
 import getScrollbarWidth from './utils/getScrollbarWidth'
+import getOS from './utils/getOS'
 
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -78,10 +79,13 @@ function servicesSctions() {
 
   function goToSection(i, anim) {
 
-    gsap.set("body", {overflow: "hidden"});
-    gsap.set("#viewport", {paddingRight: getScrollbarWidth()});
-    gsap.set(".o-header__toggler", {x: -(getScrollbarWidth() - getScrollbarWidth() / 2)});
-    gsap.set(".c-scrollToTop", {x: -(getScrollbarWidth())});
+    if(getOS() == 'Mac OS'|| getOS() == 'iOS') {
+      gsap.set("body", {overflow: "hidden"});
+      gsap.set("#viewport", {paddingRight: getScrollbarWidth()});
+      gsap.set(".o-header__toggler", {x: -(getScrollbarWidth() - getScrollbarWidth() / 2)});
+      gsap.set(".c-scrollToTop", {x: -(getScrollbarWidth())});
+    }
+
 
     gsap.to(window, {
       scrollTo: {
@@ -92,11 +96,12 @@ function servicesSctions() {
       overwrite: true,
       onUpdate: ScrollTrigger.update,
       onScrubComplete: () => {
-        gsap.set("body", {overflow: "auto", delay: 1.3})
-        gsap.set("#viewport", {paddingRight: 0, delay: 1.3})
-        gsap.set(".o-header__toggler", { x: 0, delay: 1.3})
-        gsap.set(".c-scrollToTop", { x: 0, delay: 1.3})
-
+        if(getOS() == 'Mac OS'|| getOS() == 'iOS') {
+          gsap.set("body", {overflow: "auto", delay: 1.3})
+          gsap.set("#viewport", {paddingRight: 0, delay: 1.3})
+          gsap.set(".o-header__toggler", { x: 0, delay: 1.3})
+          gsap.set(".c-scrollToTop", { x: 0, delay: 1.3})
+        }
       }
     });
 
@@ -139,15 +144,14 @@ function servicesSctions() {
       const $serviceContent = service.querySelector('.o-service__content')
 
       gsap.set($serviceContent, {
-        opacity: 0,
+        autoAlpha: 0,
         scaleX: 0.98,
-        y: 100
       })
 
       const contentTl = gsap.timeline({
         scrollTrigger: {
           trigger: service,
-          start: "top 200",
+          start: "top 120",
           end: "bottom bottom",
           scrub: true,
           invalidateOnRefresh: true
@@ -155,10 +159,7 @@ function servicesSctions() {
       })
 
       contentTl.to($serviceContent, {
-          y: 0,
-        })
-        .to($serviceContent, {
-          opacity: 1,
+        autoAlpha: 1,
           ease: 'slow( 0.1 0.1, 0.7 0.7, false)'
         })
         .to($serviceContent, {
@@ -169,7 +170,7 @@ function servicesSctions() {
 
 
       gsap.to($serviceContent, {
-        opacity: 0,
+        autoAlpha: 0,
         scrollTrigger: {
           trigger: service,
           start: "center center",
@@ -219,6 +220,10 @@ function servicesSctions() {
 
 window.addEventListener('load', () => {
   if ($hero) {
+    window.addEventListener('resize',()=> {
+      window.location.reload(true);
+    })
+
     servicesSctions()
   }
 })

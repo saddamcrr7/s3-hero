@@ -47,13 +47,6 @@
     }
   }
 
-  &__content {
-    @include media-breakpoint-up(lg) {
-      padding-left: rem(100px);
-    }
-  }
-
-
   &__title-spacer {
     position: relative;
     height: rem(105px);
@@ -129,6 +122,11 @@
 
   &__content {
     transform-origin: left;
+    will-change: transform, opacity, visibility;
+
+    @include media-breakpoint-up(lg) {
+      padding-left: rem(100px);
+    }
   }
 
   &__header {
