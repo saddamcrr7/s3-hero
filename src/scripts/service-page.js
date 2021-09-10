@@ -6,7 +6,6 @@ import {
 
 import getPosition from './utils/getPosition'
 import getScrollbarWidth from './utils/getScrollbarWidth'
-import getOS from './utils/getOS'
 
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -79,12 +78,10 @@ function servicesSctions() {
 
   function goToSection(i, anim) {
 
-    if(getOS() == 'Mac OS'|| getOS() == 'iOS') {
       gsap.set("body", {overflow: "hidden"});
       gsap.set("#viewport", {paddingRight: getScrollbarWidth()});
       gsap.set(".o-header__toggler", {x: -(getScrollbarWidth() - getScrollbarWidth() / 2)});
       gsap.set(".c-scrollToTop", {x: -(getScrollbarWidth())});
-    }
 
 
     gsap.to(window, {
@@ -96,12 +93,10 @@ function servicesSctions() {
       overwrite: true,
       onUpdate: ScrollTrigger.update,
       onScrubComplete: () => {
-        if(getOS() == 'Mac OS'|| getOS() == 'iOS') {
           gsap.set("body", {overflow: "auto", delay: 1.3})
           gsap.set("#viewport", {paddingRight: 0, delay: 1.3})
           gsap.set(".o-header__toggler", { x: 0, delay: 1.3})
           gsap.set(".c-scrollToTop", { x: 0, delay: 1.3})
-        }
       }
     });
 
