@@ -47,11 +47,11 @@ function servicesSctions() {
         end: "10px center",
         scrub: true,
       },
-      onUpdate: ScrollTrigger.update
     });
 
     gsap.to($heroTiltle, {
       mixBlendMode: 'difference',
+      zIndex: 2,
       ease: 'none',
 
       scrollTrigger: {
@@ -60,22 +60,8 @@ function servicesSctions() {
         end: "10px center",
         scrub: true,
       },
-      onUpdate: ScrollTrigger.update
     });
 
-    gsap.to($heroTiltle, {
-      zIndex: 2,
-      ease: 'none',
-
-      scrollTrigger: {
-        trigger: $servicesContainer,
-        start: "top+=100 center",
-        end: `${innerHeight / 2} center`,
-        scrub: true,
-      },
-
-      onUpdate: ScrollTrigger.update
-    });
   }else {
     gsap.to('#main', {
       zIndex: 3,
@@ -86,7 +72,6 @@ function servicesSctions() {
         end: "10px center",
         scrub: true,
       },
-      onUpdate: ScrollTrigger.update
     });
   }
 
@@ -192,14 +177,13 @@ function servicesSctions() {
           scrub: true,
           invalidateOnRefresh: true
         },
-        onUpdate: ScrollTrigger.update
       })
 
 
       if (service.classList.contains('o-service--primary')) {
         ScrollTrigger.create({
           trigger: service,
-          start: "top center",
+          start: "top center+=200",
           end: "bottom top",
           onEnter: () => {
             $heroTiltle.style.mixBlendMode = 'normal'
@@ -225,18 +209,11 @@ function servicesSctions() {
         end: "bottom bottom",
         scrub: true,
       },
-
-      onUpdate: ScrollTrigger.update
     })
 
 
 
   });
-
-
-  window.addEventListener('resize', () => {
-    ScrollTrigger.update
-  })
 
 }
 
