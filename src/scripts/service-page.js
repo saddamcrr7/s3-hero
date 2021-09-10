@@ -64,7 +64,6 @@ function servicesSctions() {
     });
 
     gsap.to($heroTiltle, {
-      top: 100,
       zIndex: 2,
       ease: 'none',
 

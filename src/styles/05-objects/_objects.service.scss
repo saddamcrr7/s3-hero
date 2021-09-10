@@ -9,7 +9,10 @@
   $root: &;
 
   height: 100vh;
-  display: block;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 2;
   will-change: transform;
@@ -33,6 +36,7 @@
 
   &__row {
     @include make-row();
+    align-items: center;
   }
 
   &__col {
@@ -53,6 +57,7 @@
   &__title-spacer {
     position: relative;
     height: rem(105px);
+    margin-top: 125px;
 
     @include media-breakpoint-down(lg) {
       display: none;

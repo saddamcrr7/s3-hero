@@ -6,7 +6,6 @@
   left: 0;
   right: 0;
   height: calc(100vh - 100px);
-  overflow-y: auto;
   padding-top: rem(40px);
 
   @include media-breakpoint-down(xl) {
@@ -186,7 +185,7 @@
       }
 
       @include media-breakpoint-down(md) {
-        margin-top: rem(50px);
+        margin-top: rem(40px);
       }
     }
 
