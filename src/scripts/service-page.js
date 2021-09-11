@@ -214,7 +214,9 @@ function servicesSctions() {
 window.addEventListener('load', () => {
   if ($hero) {
     window.addEventListener('resize',()=> {
-      window.location.reload(true);
+      if(window.innerWidth > 1279) {
+        window.location.reload(true);
+      }
     })
 
     servicesSctions()
