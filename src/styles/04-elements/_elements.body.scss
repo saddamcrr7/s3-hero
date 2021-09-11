@@ -19,8 +19,8 @@ body {
     bottom: 0px;
 
     @include media-breakpoint-down(lg) {
-      top: rem(0.5px);
-      bottom: 0.5px;
+      top: rem(0.1px);
+      bottom: 0.1px;
     }
   }
 }

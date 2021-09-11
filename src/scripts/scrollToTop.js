@@ -21,7 +21,7 @@ if($elm) {
     scrollTrigger: {
       trigger: '#main',
       start: `${window.innerHeight} bottom`,
-      end: "bottom bottom",
+      end: "bottom center",
       scrub: true,
     },
   });
