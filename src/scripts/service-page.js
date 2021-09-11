@@ -140,13 +140,13 @@ function servicesSctions() {
 
       gsap.set($serviceContent, {
         autoAlpha: 0,
-        scaleX: 0.98,
+        scaleX: 0.97,
       })
 
       const contentTl = gsap.timeline({
         scrollTrigger: {
           trigger: service,
-          start: "top 120",
+          start: "top 200",
           end: "bottom bottom",
           scrub: true,
           invalidateOnRefresh: true
