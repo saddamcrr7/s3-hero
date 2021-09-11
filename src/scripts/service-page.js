@@ -159,8 +159,8 @@ function servicesSctions() {
         })
         .to($serviceContent, {
           scaleX: 1,
-          ease: 'back.out',
-          delay: 0.8
+          delay: 1,
+          ease: 'slow( 0.1 0.1, 0.7 0.7, false)'
         })
 
 
