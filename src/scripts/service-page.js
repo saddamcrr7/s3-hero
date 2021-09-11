@@ -78,11 +78,7 @@ function servicesSctions() {
 
   function goToSection(i, anim) {
 
-      gsap.set("body", {overflow: "hidden"});
-      gsap.set("#viewport", {paddingRight: getScrollbarWidth()});
-      gsap.set(".o-header__toggler", {x: -(getScrollbarWidth() - getScrollbarWidth() / 2)});
-      gsap.set(".c-scrollToTop", {x: -(getScrollbarWidth())});
-
+    gsap.set("body", {overflow: "hidden"});
 
     gsap.to(window, {
       scrollTo: {
@@ -94,9 +90,6 @@ function servicesSctions() {
       onUpdate: ScrollTrigger.update,
       onScrubComplete: () => {
           gsap.set("body", {overflow: "auto", delay: 1.3})
-          gsap.set("#viewport", {paddingRight: 0, delay: 1.3})
-          gsap.set(".o-header__toggler", { x: 0, delay: 1.3})
-          gsap.set(".c-scrollToTop", { x: 0, delay: 1.3})
       }
     });
 
