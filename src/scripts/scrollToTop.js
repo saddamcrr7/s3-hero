@@ -11,20 +11,28 @@ const $elm = document.querySelector('.c-scrollToTop')
 
 if($elm) {
 
-  gsap.set($elm, {display: 'none'})
+  function scrolltodisplay() {
+    gsap.set($elm, {display: 'none'})
 
 
-  gsap.to($elm, {
-    display: 'block',
-    ease: 'none',
+    gsap.to($elm, {
+      display: 'block',
+      ease: 'none',
 
-    scrollTrigger: {
-      trigger: '#main',
-      start: `${window.innerHeight} bottom`,
-      end: "bottom center",
-      scrub: true,
-    },
-  });
+      scrollTrigger: {
+        trigger: '#main',
+        start: `${window.innerHeight} bottom`,
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  }
+
+  scrolltodisplay()
+
+  window.addEventListener('resize',()=> {
+    scrolltodisplay()
+  })
 
 
   $elm.addEventListener('click', (e)=> {

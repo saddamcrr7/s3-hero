@@ -36,6 +36,10 @@ if (history.scrollRestoration) {
 window.addEventListener('load', ()=> {
   const stickySection =  new StickySection('.js-sticky-section')
 
+  window.addEventListener('resize',()=> {
+    stickySection.init()
+  })
+
   function displayMd(x) {
     if (x.matches) {
       const b = new PanelSlider('.c-project-card', '.o-customers__row')

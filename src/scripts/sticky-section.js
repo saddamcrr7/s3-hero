@@ -33,11 +33,6 @@ class StickySection {
 
       window.addEventListener('resize',()=> {
         ScrollTrigger.update
-        if(innerWidth > 1024) {
-          st.enable()
-        }else {
-          st.disable()
-        }
       })
     });
   }

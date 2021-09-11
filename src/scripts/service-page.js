@@ -110,13 +110,22 @@ function servicesSctions() {
   gsap.utils.toArray(".o-service").forEach((service, i) => {
 
     if (!service.classList.contains('is-no-pin')) {
-      ScrollTrigger.create({
-        trigger: service,
-        start: "top top",
-        end: `+=${$servicesContainer.clientHeight}`,
-        pin: true,
-        pinSpacing: false,
-      });
+
+      function pinSection() {
+        ScrollTrigger.create({
+          trigger: service,
+          start: "top top",
+          end: `+=${$servicesContainer.clientHeight}`,
+          pin: true,
+          pinSpacing: false,
+        });
+      }
+
+      pinSection()
+
+      window.addEventListener('resize', ()=> {
+        pinSection()
+      })
     }
 
     if(window.innerWidth > 1279) {

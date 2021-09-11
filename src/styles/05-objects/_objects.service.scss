@@ -32,6 +32,11 @@
     padding-bottom: rem(100px);
     position: relative;
     z-index: 4;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: rem(40px);
+    padding-bottom: rem(0px);
+    }
   }
 
   &__row {
@@ -88,12 +93,20 @@
     @include media-breakpoint-down(lg) {
       display: block;
     }
+
+    @include media-breakpoint-down(sm) {
+      &::after  {
+        height: 15px;
+        width: 120px;
+        bottom: -30px;
+      }
+    }
   }
 
   &__symbol-wrapper {
-    width: 180px;
-    height: 180px;
-    margin-top: 70px;
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
 
     @include media-breakpoint-up(sm) {
       margin-left: auto;
@@ -137,11 +150,24 @@
   &__icon {
     padding: rem(10px);
     margin-right: rem(10px);
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100px;
+    }
   }
 
   &__subtitle {
     color: var(--subtitle-color);
     padding: rem(10px) rem(20px);
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 0;
+    }
   }
 
   &__text {

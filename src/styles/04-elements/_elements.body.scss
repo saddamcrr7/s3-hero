@@ -1,6 +1,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
   cursor: none;
   overflow-x: hidden;
 
@@ -17,10 +18,10 @@ body {
     left: 0;
     right: 0;
     bottom: 0px;
+    height: 100%;
 
     @include media-breakpoint-down(lg) {
-      top: rem(0.1px);
-      bottom: 0.1px;
+      height: calc(100% + 1px);
     }
   }
 }
