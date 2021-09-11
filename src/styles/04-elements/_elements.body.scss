@@ -17,11 +17,13 @@ body {
     top: 0px;
     left: 0;
     right: 0;
+    bottom: 0;
     height: 100%;
 
     @include media-breakpoint-down(lg) {
       top: 0.5px;
       bottom: 0.5px;
+      height: auto;
     }
   }
 }
