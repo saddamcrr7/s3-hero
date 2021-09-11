@@ -13,5 +13,14 @@ body {
 
   #viewport {
     background-color: $white;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+
+    @include media-breakpoint-down(lg) {
+      top: rem(0.5px);
+      bottom: 0.5px;
+    }
   }
 }
