@@ -12,6 +12,14 @@ function vsFn() {
     vs.Bg = vs.querySelector('.o-visionaries__bg')
     vs.image = vs.querySelector('.o-visionaries__bg-image-wrap')
 
+    gsap.set(vs.image, {
+      zIndex: 0
+    })
+
+    gsap.set(vs.Bg, {
+      zIndex: 0
+    })
+
 
     var tl = gsap.timeline({
       scrollTrigger: {

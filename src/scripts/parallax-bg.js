@@ -14,6 +14,14 @@ function parallaxBg() {
   gsap.utils.toArray(".o-bg").forEach((bg, i) => {
     bg.image = bg.querySelector('.o-bg__image-wrap')
 
+    gsap.set(bg, {
+      zIndex: 0
+    })
+
+    gsap.set(bg.image, {
+      zIndex: 0
+    })
+
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: bg,
