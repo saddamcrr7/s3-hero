@@ -85,7 +85,7 @@ function servicesSctions() {
         y: (i + 1) * $services[i].clientHeight,
         autoKill: false
       },
-      duration: 0,
+      duration: 0.5,
       overwrite: true,
       onUpdate: ScrollTrigger.update,
       onScrubComplete: () => {

@@ -1,5 +1,6 @@
 .o-visionaries {
   display: block;
+  overflow: hidden;
   position: relative;
   z-index: 5;
 
@@ -9,6 +10,7 @@
     position: absolute;
     inset: 0 0 0 0;
     overflow: hidden;
+    z-index: 0;
   }
 
   &__bg-image-wrap {

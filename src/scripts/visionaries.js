@@ -12,9 +12,6 @@ function vsFn() {
     vs.Bg = vs.querySelector('.o-visionaries__bg')
     vs.image = vs.querySelector('.o-visionaries__bg-image-wrap')
 
-    gsap.set(vs.image, {
-      y: -vs.text.clientHeight
-    })
 
     var tl = gsap.timeline({
       scrollTrigger: {
@@ -26,17 +23,28 @@ function vsFn() {
       onUpdate: ScrollTrigger.update
     });
 
-    tl.to(vs.image, {
-      y: vs.text.clientHeight / 1.4,
-    });
+
+    if(window.innerWidth > 769) {
+      gsap.set(vs.image, {
+        y: -vs.text.clientHeight
+      })
+
+      tl.to(vs.image, {
+        y: vs.text.clientHeight / 1.4,
+      });
+    }else {
+      gsap.set(vs.image, {
+        y: -vs.text.clientHeight / 1.8
+      })
+
+      tl.to(vs.image, {
+        y: vs.text.clientHeight / 2.2,
+      });
+    }
 }
 
 window.addEventListener('load',()=> {
   if(vs) {
     vsFn()
-
-    window.addEventListener('resize',()=> {
-      vsFn()
-    })
   }
 })

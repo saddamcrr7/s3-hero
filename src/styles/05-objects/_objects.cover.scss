@@ -65,13 +65,12 @@
       padding-bottom: rem(70px);
     }
 
+    .o-bg__overlay {
+      background: rgba($primary-02, 0.6);
+      filter: contrast(1.1) brightness(0.8) hue-rotate(10deg);
+    }
 
     #{$root} {
-      &__bg::after {
-        background: rgba($primary-02, 0.6);
-        filter: contrast(1.1) brightness(0.8) hue-rotate(10deg);
-      }
-
       &__triangle {
           width: rem(80px);
           height: rem(80px);
