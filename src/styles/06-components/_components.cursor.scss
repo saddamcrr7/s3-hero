@@ -40,6 +40,10 @@
       height: rem(4px);
     }
   }
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }
 
 .pswp {

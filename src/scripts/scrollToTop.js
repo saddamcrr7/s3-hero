@@ -17,6 +17,8 @@ if($elm) {
 
     gsap.to($elm, {
       display: 'block',
+      bottom: 20,
+      right: 20,
       ease: 'none',
 
       scrollTrigger: {

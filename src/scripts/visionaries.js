@@ -34,5 +34,9 @@ function vsFn() {
 window.addEventListener('load',()=> {
   if(vs) {
     vsFn()
+
+    window.addEventListener('resize',()=> {
+      vsFn()
+    })
   }
 })

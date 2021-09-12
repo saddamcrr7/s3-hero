@@ -44,6 +44,11 @@
     mix-blend-mode: darken;
     background-color: $white;
 
+    @media (min-width: 374px) {
+      font-size: rem(68px);
+      line-height: rem(68px);
+    }
+
     @include media-breakpoint-up(sm) {
       font-size: rem(100px);
       line-height: rem(100px);
@@ -83,6 +88,11 @@
   &__title-big {
     font-size: rem(58px);
     line-height: rem(58px);
+
+    @media (min-width: 374px) {
+      font-size: rem(70px);
+      line-height: rem(70px);
+    }
 
     @include media-breakpoint-up(sm) {
       font-size: rem(100px);
@@ -125,9 +135,6 @@
 
     > img {
       max-width: 100%;
-    }
-
-    @include media-breakpoint-up(xl) {
     }
   }
 }
