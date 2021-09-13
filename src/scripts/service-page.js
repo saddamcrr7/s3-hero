@@ -115,7 +115,7 @@ function servicesSctions() {
       })
 
       window.addEventListener('resize', ()=> {
-        // tl.scrollTrigger.refresh();
+        tl.scrollTrigger.refresh();
       })
     }
 
