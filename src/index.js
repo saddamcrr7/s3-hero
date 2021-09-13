@@ -19,7 +19,6 @@ import './scripts/cover'
 import './scripts/visionaries'
 import './scripts/scrollToTop'
 import './scripts/sticky-for-visionaries'
-import './scripts/vendor/inobounce/inobounce'
 
 import PanelSlider from './scripts/project-cards'
 import StickySection from './scripts/sticky-section'
@@ -53,18 +52,4 @@ window.addEventListener('load', ()=> {
 
 })
 
-// Prevents window from moving on touch on older browsers.
-window.addEventListener('touchmove', function (event) {
-  event.preventDefault()
-}, false)
-
-// Allows content to move on touch.
-document.querySelector('#viewport').addEventListener('touchmove', function (event) {
-  event.stopPropagation()
-}, false)
-
-// Prevents window from moving on touch on newer browsers.
-window.addEventListener('touchmove', function (event) {
-  event.preventDefault()
-}, {passive: false})
 
