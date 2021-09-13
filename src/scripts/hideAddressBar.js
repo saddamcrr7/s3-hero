@@ -1,5 +1,4 @@
 
-
 function hideAddressBar()
 {
     if(!window.location.hash)
