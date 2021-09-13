@@ -19,9 +19,7 @@ import './scripts/cover'
 import './scripts/visionaries'
 import './scripts/scrollToTop'
 import './scripts/sticky-for-visionaries'
-// import './scripts/hideAddressBar'
-
-
+import './scripts/vendor/inobounce/inobounce'
 
 import PanelSlider from './scripts/project-cards'
 import StickySection from './scripts/sticky-section'

@@ -19,7 +19,6 @@ body {
     right: 0;
     bottom: 0;
     height: 100%;
-    -webkit-overflow-scrolling: touch;
 
 
     @include media-breakpoint-down(lg) {

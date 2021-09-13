@@ -52,7 +52,7 @@ function vsFn() {
 }
 
 window.addEventListener('load',()=> {
-  if(vs && window.innerWidth > 769) {
+  if(vs) {
     vsFn()
   }
 })

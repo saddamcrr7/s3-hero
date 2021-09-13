@@ -7,9 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 window.addEventListener('load', () => {
-  if(window.innerWidth > 769) {
     parallaxBg()
-  }
 })
 
 function parallaxBg() {
