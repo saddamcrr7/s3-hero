@@ -38,7 +38,7 @@ if($elm) {
 
 
   $elm.addEventListener('click', (e)=> {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 1)
     ScrollTrigger.update
   })
 }
