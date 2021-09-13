@@ -34,6 +34,7 @@
     position: relative;
     mix-blend-mode: screen;
     z-index: 2;
+    will-change: opacity;
   }
 
   &__title {
@@ -45,6 +46,7 @@
     font-weight: $font-weight-bolder;
     mix-blend-mode: darken;
     background-color: $white;
+    will-change: opacity;
 
     @media (min-width: 374px) {
       font-size: rem(68px);

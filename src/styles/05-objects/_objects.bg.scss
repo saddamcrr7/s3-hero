@@ -11,6 +11,7 @@
     inset: 0 0 0 0;
     background-image: radial-gradient(circle at left, rgba(0, 0, 0, 0.55) 66%, rgba(38, 38, 38, 0.75) 100%);
     z-index: 2;
+    will-change: opacity;
   }
 
   &__image-wrap {
