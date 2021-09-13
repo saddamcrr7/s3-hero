@@ -147,3 +147,7 @@
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
+
+/*! iNoBounce - v0.2.0
+* https://github.com/lazd/iNoBounce/
+* Copyright (c) 2013 Larry Davis <lazdnet@gmail.com>; Licensed BSD */
