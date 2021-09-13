@@ -68,17 +68,20 @@
     .o-bg__overlay {
       background: rgba($primary-02, 0.6);
       filter: contrast(1.1) brightness(0.8) hue-rotate(10deg);
+      -webkit-transform: translateZ(0);
+      -webkit-perspective: 1000;
+      -webkit-backface-visibility: hidden;
     }
 
     #{$root} {
       &__triangle {
-          width: rem(80px);
-          height: rem(80px);
-          position: absolute;
-          top: -(80px / 2);
-          transform: rotate(45deg);
-          background-color: $white;
-          z-index: 5;
+        width: rem(80px);
+        height: rem(80px);
+        position: absolute;
+        top: -(80px / 2);
+        transform: rotate(45deg);
+        background-color: $white;
+        z-index: 5;
       }
     }
   }
