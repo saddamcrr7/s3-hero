@@ -10,7 +10,7 @@
   z-index: 5;
 
   &--service {
-    height: 100vh;
+    height: var(--app-height);
     display: flex;
     align-items: center;
     justify-content: center;

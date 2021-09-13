@@ -2,6 +2,7 @@
 import './styles/main.scss';
 
 import './scripts/preloader'
+import './scripts/app-height'
 import './scripts/smoth-scroll'
 import './scripts/header'
 import './scripts/brand'
