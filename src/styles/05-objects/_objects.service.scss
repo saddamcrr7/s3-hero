@@ -78,6 +78,7 @@
     position: relative;
     display: none;
     font-size: rem(40px);
+    letter-spacing: .5px;
 
     &::after {
       content: '';
