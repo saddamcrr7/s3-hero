@@ -6,6 +6,7 @@ import {
 import getPosition from './utils/getPosition'
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
 
 function cover() {
   const $serviceCover = document.querySelector('.o-cover--service')

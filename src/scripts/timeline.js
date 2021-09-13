@@ -5,6 +5,7 @@ import {
 
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
 
 window.addEventListener('load', () => {
   timeline()

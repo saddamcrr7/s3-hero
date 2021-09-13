@@ -5,6 +5,7 @@ import {
 } from "../scripts/vendor/gsap-member/src/all";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
 
 
 const $elm = document.querySelector('.c-scrollToTop')
@@ -31,10 +32,6 @@ if($elm) {
   }
 
   scrolltodisplay()
-
-  window.addEventListener('resize',()=> {
-    scrolltodisplay()
-  })
 
 
   $elm.addEventListener('click', (e)=> {

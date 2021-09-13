@@ -4,6 +4,7 @@ import {
 } from "./vendor/gsap-member/src/all";
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
 
 window.addEventListener('load', () => {
   const $elm = document.querySelector('.js-sticky-for-visionaries')

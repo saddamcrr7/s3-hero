@@ -4,6 +4,7 @@ import {
 } from "../scripts/vendor/gsap-member/src/all";
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
 
 
 window.addEventListener('load', () => {

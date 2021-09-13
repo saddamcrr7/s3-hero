@@ -26,6 +26,7 @@ import StickySection from './scripts/sticky-section'
 
 
 
+
 if (history.scrollRestoration) {
   history.scrollRestoration = 'manual';
 } else {
@@ -36,10 +37,6 @@ if (history.scrollRestoration) {
 
 window.addEventListener('load', ()=> {
   const stickySection =  new StickySection('.js-sticky-section')
-
-  window.addEventListener('resize',()=> {
-    stickySection.init()
-  })
 
   function displayMd(x) {
     if (x.matches) {

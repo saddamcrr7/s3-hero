@@ -4,6 +4,7 @@ import {
 } from "../scripts/vendor/gsap-member/src/all";
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
 
 class StickySection {
   constructor(elms, options) {
@@ -20,8 +21,9 @@ class StickySection {
 
   animation() {
     this.$elms.forEach((spacer, i) => {
-      const st = ScrollTrigger.create({
-        trigger: spacer,
+      const tl = gsap.timeline( {
+        scrollTrigger: {
+          trigger: spacer,
           start: "top top",
           end: "bottom top",
           scrub: true,
@@ -29,10 +31,11 @@ class StickySection {
           pinSpacing: false,
           anticipatePin: 1,
           invalidateOnRefresh: true,
-      });
+        }
+      })
 
-      window.addEventListener('resize',()=> {
-        ScrollTrigger.update
+      window.addEventListener('resize', ()=> {
+        tl.scrollTrigger.refresh();
       })
     });
   }

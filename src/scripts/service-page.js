@@ -5,8 +5,8 @@ import {
 } from "../scripts/vendor/gsap-member/src/all";
 
 import getPosition from './utils/getPosition'
-import getScrollbarWidth from './utils/getScrollbarWidth'
 
+ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -104,20 +104,18 @@ function servicesSctions() {
 
     if (!service.classList.contains('is-no-pin')) {
 
-      function pinSection() {
-        ScrollTrigger.create({
+      const tl = gsap.timeline( {
+        scrollTrigger: {
           trigger: service,
           start: "top top",
           end: `+=${$servicesContainer.clientHeight}`,
           pin: true,
           pinSpacing: false,
-        });
-      }
-
-      pinSection()
+        }
+      })
 
       window.addEventListener('resize', ()=> {
-        pinSection()
+        // tl.scrollTrigger.refresh();
       })
     }
 
