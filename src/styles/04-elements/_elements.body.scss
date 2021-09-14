@@ -20,12 +20,5 @@ body {
     bottom: 0;
     height: 100%;
     -webkit-overflow-scrolling: touch;
-
-
-    @include media-breakpoint-down(lg) {
-      top: 0.5px;
-      bottom: 0.5px;
-      height: auto;
-    }
   }
 }
