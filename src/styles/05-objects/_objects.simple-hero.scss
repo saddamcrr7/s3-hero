@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: var(--app-height);
+  height: 100vh;
   position: relative;
   overflow: hidden;
 
@@ -134,7 +134,7 @@
     top: 0;
     right: 0;
     left: 0;
-    height: var(--app-height) !important;
+    height: 100vh !important;
     z-index: 1;
 
     #{$root}__title {

@@ -16,7 +16,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: var(--app-height);
+    height: 100vh;
     padding-top: rem(90px);
     will-change: transform;
   }
@@ -29,7 +29,7 @@
     right: 0;
     bottom: 0;
     width: 100vw;
-    height: var(--app-height);
+    height: 100vh;
 
     &::before {
       content: '';

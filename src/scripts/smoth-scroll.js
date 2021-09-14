@@ -28,7 +28,6 @@ function smoothScroll(content, viewport, smoothness) {
 		},
 		height, isProxyScrolling;
 
-  let footerHeight = 0;
 
   window.addEventListener('resize',()=> {
     onResize();
@@ -44,7 +43,7 @@ function smoothScroll(content, viewport, smoothness) {
 
 	function onResize() {
 
-		height = content.clientHeight  + footerHeight
+		height = content.clientHeight
 		content.style.overflow = "visible"
 		document.body.style.height = height + "px";
 	}

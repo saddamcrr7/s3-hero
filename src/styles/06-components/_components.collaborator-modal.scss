@@ -1,7 +1,7 @@
 .c-collaborator-modal {
   $root:  &;
   width: 100vw;
-  height: var(--app-height);
+  height: 100vh;
   padding: $grid-gutter-width;
   display: flex;
   align-items: center;
