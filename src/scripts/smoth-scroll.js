@@ -31,6 +31,8 @@ function smoothScroll(content, viewport, smoothness) {
   let footerHeight = 0;
 
   window.addEventListener('resize',()=> {
+    onResize();
+
     setTimeout(() => {
       onResize();
     }, 100);
@@ -90,8 +92,10 @@ function smoothScroll(content, viewport, smoothness) {
 	});
 
   window.addEventListener('resize', ()=> {
+      ST.refresh();
+
       setTimeout(() => {
-        ST.refresh(true);
+        ST.refresh();
       }, 120);
   })
 
