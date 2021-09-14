@@ -31,10 +31,6 @@ function smoothScroll(content, viewport, smoothness) {
 
   window.addEventListener('resize',()=> {
     onResize();
-
-    setTimeout(() => {
-      onResize();
-    }, 100);
   })
 
   setTimeout(() => {
@@ -92,10 +88,6 @@ function smoothScroll(content, viewport, smoothness) {
 
   window.addEventListener('resize', ()=> {
       ST.refresh();
-
-      setTimeout(() => {
-        ST.refresh();
-      }, 120);
   })
 
   let progress
