@@ -22,7 +22,7 @@ body {
     -webkit-overflow-scrolling: touch;
 
     @include media-breakpoint-down(lg) {
-      height: calc(100% + 1px);
+      height: 100vh;
       top: 0;
       bottom: auto;
     }
