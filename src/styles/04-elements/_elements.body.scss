@@ -8,8 +8,12 @@ body {
   &.is-blocked,
   &.is-modal-open,
   &.is-gradpanel-open,
-  &.is-nav-mobile-open {
+  &.is-nav-open {
     overflow: hidden;
+
+    .c-scrollToTop {
+      display: none !important;
+    }
   }
 
   #viewport {
