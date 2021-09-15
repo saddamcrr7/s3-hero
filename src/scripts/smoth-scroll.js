@@ -35,7 +35,7 @@ function smoothScroll(content, viewport, smoothness) {
 
   setTimeout(() => {
     onResize();
-  }, 10);
+  }, 100);
 
 	function onResize() {
 
