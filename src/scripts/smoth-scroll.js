@@ -31,6 +31,8 @@ function smoothScroll(content, viewport, smoothness) {
 
   window.addEventListener('resize',()=> {
     onResize();
+    removeScroll();
+		requestAnimationFrame(removeScroll);
   })
 
   setTimeout(() => {
@@ -89,16 +91,6 @@ function smoothScroll(content, viewport, smoothness) {
   window.addEventListener('resize', ()=> {
       ST.refresh();
   })
-
-  let progress
-
-  ScrollTrigger.addEventListener("refreshInit", () => {
-    progress = ST.progress
-  });
-
-  ScrollTrigger.addEventListener("refresh", () => {
-    ST.scroll(progress * ScrollTrigger.maxScroll(window))
-  });
 
   return ST
 }
