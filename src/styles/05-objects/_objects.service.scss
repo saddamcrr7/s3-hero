@@ -20,6 +20,8 @@
 
   @include media-breakpoint-down(lg) {
     background-color: var(--bg-color);
+    height: auto;
+    min-height: 100vh;
   }
 
 
