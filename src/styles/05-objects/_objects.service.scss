@@ -33,8 +33,8 @@
     z-index: 4;
 
     @include media-breakpoint-down(sm) {
-      padding-top: rem(40px);
-    padding-bottom: rem(0px);
+      padding-top: rem(20px);
+      padding-bottom: rem(20px);
     }
   }
 
