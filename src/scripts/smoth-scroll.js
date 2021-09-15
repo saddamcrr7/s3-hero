@@ -29,12 +29,6 @@ function smoothScroll(content, viewport, smoothness) {
 		height, isProxyScrolling;
 
 
-  window.addEventListener('resize',()=> {
-    onResize();
-    removeScroll();
-		requestAnimationFrame(removeScroll);
-  })
-
   setTimeout(() => {
     onResize();
   }, 100);
@@ -44,13 +38,11 @@ function smoothScroll(content, viewport, smoothness) {
 		content.style.overflow = "visible"
 		document.body.style.height = height + "px";
 	}
-
 	ScrollTrigger.addEventListener("refreshInit", onResize);
 	ScrollTrigger.addEventListener("refresh", () => {
 		removeScroll();
 		requestAnimationFrame(removeScroll);
 	})
-
 	ScrollTrigger.defaults({scroller: content});
 	ScrollTrigger.prototype.update = p => p; // works around an issue in ScrollTrigger 3.6.1 and earlier (fixed in 3.6.2, so this line could be deleted if you're using 3.6.2 or later)
 
@@ -90,21 +82,8 @@ function smoothScroll(content, viewport, smoothness) {
 	});
 
   window.addEventListener('resize', ()=> {
+      onResize();
       ST.refresh();
-      ScrollTrigger.scrollerProxy(content, {
-        scrollTop(value) {
-          if (arguments.length) {
-            isProxyScrolling = true; // otherwise, if snapping was applied (or anything that attempted to SET the scroll proxy's scroll position), we'd set the scroll here which would then (on the next tick) update the content tween/ScrollTrigger which would try to smoothly animate to that new value, thus the scrub tween would impede the progress. So we use this flag to respond accordingly in the ScrollTrigger's onUpdate and effectively force the scrub to its end immediately.
-            setProp(-value);
-            setScroll(value);
-            return;
-          }
-          return -getProp("y");
-        },
-        getBoundingClientRect() {
-          return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-        }
-      });
   })
 
   return ST
