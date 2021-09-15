@@ -86,5 +86,15 @@ function smoothScroll(content, viewport, smoothness) {
       ST.refresh();
   })
 
+  let progress
+
+  ScrollTrigger.addEventListener("refreshInit", () => {
+    progress = ST.progress
+  });
+
+  ScrollTrigger.addEventListener("refresh", () => {
+    ST.scroll(progress * ScrollTrigger.maxScroll(window))
+  });
+
   return ST
 }
