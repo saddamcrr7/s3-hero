@@ -72,12 +72,30 @@
     color: $white;
     font-weight: $font-weight-normal;
     margin-bottom: 0;
+    padding-top: 1.875rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: rem(30px);
+      width: rem(60px);
+      height: rem(10px);
+      background: $primary;
+      clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+    }
   }
 
   &__text {
     color: $primary;
     margin-top: rem(10px);
     margin-bottom: 0;
+    font-size: rem(18px);
+
+    @include media-breakpoint-up(md) {
+      font-size: rem(24px);
+    }
   }
 
   &__cta {

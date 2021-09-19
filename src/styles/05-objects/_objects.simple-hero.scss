@@ -78,10 +78,25 @@
       height: rem(100px);
     }
 
+    @include media-breakpoint-down(md) {
+      visibility: hidden;
+    }
+
     @include media-breakpoint-down(sm) {
       height: 80px;
     }
 
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: rem(-4px);
+      left: 2.875rem;
+      width: rem(60px);
+      height: rem(10px);
+      background: $primary;
+      clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+    }
   }
 
   &__text {
