@@ -46,10 +46,10 @@
     font-size: rem(18px);
     max-width: rem(1080px);
     text-align: center;
-    margin-top: rem(80px);
+    margin-top: rem(135px);
     margin-bottom: 0;
     padding-bottom: 0;
-    padding-bottom: 70px;
+    padding-bottom: 65px;
     position: relative;
 
     &::after {
@@ -62,10 +62,6 @@
       height: rem(4px);
       background-color: $primary-03;
       border-radius: 4px;
-    }
-
-    @include media-breakpoint-down(xl) {
-      margin-top: rem(60px);
     }
   }
 
