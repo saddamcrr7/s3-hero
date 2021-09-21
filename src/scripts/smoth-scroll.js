@@ -38,6 +38,7 @@ function smoothScroll(content, viewport, smoothness) {
 		content.style.overflow = "visible"
 		document.body.style.height = height + "px";
 	}
+  onResize();
 	ScrollTrigger.addEventListener("refreshInit", onResize);
 	ScrollTrigger.addEventListener("refresh", () => {
 		removeScroll();
