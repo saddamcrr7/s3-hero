@@ -1,11 +1,15 @@
 .c-collaborator {
   $root: &;
 
-  height: rem(314px);
+  height: 29rem;
   position: relative;
-  margin-bottom: rem(15px);
+  margin-bottom: rem(40px);
   background-color: $primary;
   overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    height: 20rem;
+  }
 
 
   &__image {

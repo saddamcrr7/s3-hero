@@ -16,11 +16,11 @@
   }
 
   &__row {
-    @include make-row($gutter: 15px);
+    @include make-row($gutter: 40px);
   }
 
   &__col {
-    @include make-col-ready($gutter: 15px);
+    @include make-col-ready($gutter: 40px);
 
     @include media-breakpoint-up(md) {
       @include make-col(6);
