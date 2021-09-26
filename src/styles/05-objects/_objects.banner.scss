@@ -70,10 +70,11 @@
 
   &__title {
     color: $white;
-    font-weight: $font-weight-normal;
-    margin-bottom: 0;
-    padding-top: 1.875rem;
+    font-weight: $font-weight-light;
+    letter-spacing: .5px;
     position: relative;
+    padding-top: rem(30px);
+    display: flex;
 
     &::before {
       content: '';
@@ -87,10 +88,20 @@
     }
   }
 
+  &__title-num {
+    margin-right: 25px;
+    margin-top: -15px;
+    font-size: 50px;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: 25px;
+      margin-top: -20px;
+      font-size: 80px;
+    }
+  }
+
   &__text {
     color: $primary;
-    margin-top: rem(10px);
-    margin-bottom: 0;
     font-size: rem(18px);
 
     @include media-breakpoint-up(md) {
@@ -99,13 +110,11 @@
   }
 
   &__cta {
-    font-size: rem(13px);
-    color: $white;
-    padding: 8px 16px;
-    margin-top: 10px;
-    display: inline-block;
-    border: 1px solid #d3d3d3;
     position: relative;
+    color: $white;
+    display: inline-block;
+    padding: 6px 20px;
+    border: 1px solid $white;
     overflow: hidden;
 
     &::after {
@@ -127,8 +136,12 @@
       color: $white;
 
       &::after {
-        right: -70%;
+        right: -80%;
       }
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: rem(20px);
     }
   }
 }
