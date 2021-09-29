@@ -1,12 +1,12 @@
 .o-history {
-  padding-top: rem(100px);
+  padding-top: rem(50px);
   padding-bottom: rem(100px);
   background-color: $white;
 
   &__container {
     @include make-container();
     max-width: rem(1200px + $grid-gutter-width);
-    padding-bottom: rem(60px);
+    padding-bottom: rem(27px);
   }
 
   &__title {
@@ -30,6 +30,6 @@
     font-size: rem(18px);
     font-weight: $font-weight-bold;
     text-transform: uppercase;
-    margin-top: rem(30px);
+    margin-top: rem(10px);
   }
 }

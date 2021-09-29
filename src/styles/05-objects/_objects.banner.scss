@@ -17,7 +17,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding-top: rem(90px);
+    padding-top: rem(65px);
     will-change: transform;
   }
 
@@ -53,7 +53,7 @@
 
   &__container {
     @include make-container();
-    @include make-container-max-widths();
+    max-width: rem(1200px + $grid-gutter-width);
 
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@
       content: '';
       position: absolute;
       top: 0;
-      left: rem(30px);
+      left: 0;
       width: rem(60px);
       height: rem(10px);
       background: $primary;
