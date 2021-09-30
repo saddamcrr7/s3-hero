@@ -18,7 +18,7 @@
   &__container-projects {
     width: 100%;
     overflow: hidden;
-    margin-top: rem(27px);
+    margin-top: rem(27px + 16px);
 
     @include media-breakpoint-down(md) {
       padding: 0 rem($grid-gutter-width / 2);
