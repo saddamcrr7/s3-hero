@@ -14,6 +14,7 @@ let index = -1
 const sliderItems = document.querySelectorAll('.o-hero__slider-item')
 const banners = document.querySelectorAll('.o-banner')
 
+gsap.ticker.lagSmoothing(0);
 
 function slider() {
   index++
@@ -109,20 +110,20 @@ function slider() {
       height: 0,
     })
 
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      tl.paused()
-      videoElm.play()
-    } else {
-      tl.timeScale(tl.timeScale() || 0.001).resume()
-            videoElm.play()
-      // if (index == sliderItems.length - 1) {
-      //   tl.pause()
-      // } else {
-      //   tl.resume()
-      // }
-    }
-  })
+  // document.addEventListener('visibilitychange', () => {
+  //   if (document.hidden) {
+  //     tl.paused()
+  //     videoElm.pause()
+  //   } else {
+  //     tl.resume()
+  //     videoElm.play()
+  //     // if (index == sliderItems.length - 1) {
+  //     //   tl.pause()
+  //     // } else {
+  //     //   tl.resume()
+  //     // }
+  //   }
+  // })
 
   // if (index == sliderItems.length - 1) {
   //   setTimeout(() => {
@@ -152,19 +153,19 @@ if (banners.length) {
     // }, 0)
 
 
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        interval.pause()
-      } else {
-        interval.resume()
+    // document.addEventListener('visibilitychange', () => {
+    //   if (document.hidden) {
+    //     interval.pause()
+    //   } else {
+    //     interval.resume()
 
-        // if (index == sliderItems.length - 1) {
-        //   interval.pause()
-        // }else {
-        //   interval.resume()
-        // }
-      }
-    });
+    //     // if (index == sliderItems.length - 1) {
+    //     //   interval.pause()
+    //     // }else {
+    //     //   interval.resume()
+    //     // }
+    //   }
+    // });
 
   })
 }
