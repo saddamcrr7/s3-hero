@@ -19,7 +19,7 @@ function slider() {
   index++
 
   if (index == sliderItems.length) {
-    index = sliderItems.length
+    index = 0
   }
 
   sliderItems[index].classList.add('is-active')
@@ -43,9 +43,9 @@ function slider() {
 
   const activeInner = sliderItems[index].querySelector('.o-banner__inner')
   const prevInner = sliderItems[prevIndex].querySelector('.o-banner__inner')
-  const activeInnerImage = sliderItems[index].querySelector('.o-banner__image')
+  const activeInnerImage = sliderItems[index].querySelector('.o-banner__video-wrap-inner')
   const prevInnerImage = sliderItems[prevIndex].querySelector(
-    '.o-banner__image')
+    '.o-banner__video-wrap-inner')
   const activeInnerContent = sliderItems[index].querySelector(
     '.o-banner__content')
   const prevInnerContent = sliderItems[prevIndex].querySelector(
@@ -56,6 +56,10 @@ function slider() {
   if(window.innerWidth < 768) {
     power = window.innerWidth * 5
   }
+
+  const videoElm = banners[index].querySelector('.o-banner__video')
+
+  videoElm.play()
 
   tl.to(banners[index], {
       duration: 2,
@@ -107,21 +111,24 @@ function slider() {
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-      tl.pause()
+      tl.paused()
+      videoElm.play()
     } else {
-      if (index == sliderItems.length - 1) {
-        tl.pause()
-      } else {
-        tl.resume()
-      }
+      tl.timeScale(tl.timeScale() || 0.001).resume()
+            videoElm.play()
+      // if (index == sliderItems.length - 1) {
+      //   tl.pause()
+      // } else {
+      //   tl.resume()
+      // }
     }
   })
 
-  if (index == sliderItems.length - 1) {
-    setTimeout(() => {
-      tl.pause()
-    }, 3000)
-  }
+  // if (index == sliderItems.length - 1) {
+  //   setTimeout(() => {
+  //     tl.pause()
+  //   }, 3000)
+  // }
 
 }
 
@@ -137,23 +144,25 @@ if (banners.length) {
       slider()
     }, 6000)
 
-    let interval1 = new RecurringTimer(() => {
-      if (index == sliderItems.length - 1) {
-        interval.pause()
-        interval1.pause()
-      }
-    }, 0)
+    // let interval1 = new RecurringTimer(() => {
+    //   if (index == sliderItems.length - 1) {
+    //     interval.pause()
+    //     interval1.pause()
+    //   }
+    // }, 0)
 
 
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         interval.pause()
       } else {
-        if (index == sliderItems.length - 1) {
-          interval.pause()
-        }else {
-          interval.resume()
-        }
+        interval.resume()
+
+        // if (index == sliderItems.length - 1) {
+        //   interval.pause()
+        // }else {
+        //   interval.resume()
+        // }
       }
     });
 

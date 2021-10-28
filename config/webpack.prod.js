@@ -38,7 +38,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpe?g|gif)$/,
+        test: /\.(png|svg|jpe?g|gif|mp4)$/,
         use: [
           {
             loader: "file-loader", // This will resolves import/require() on a file into a url and emits the file into the output directory.
@@ -55,7 +55,7 @@ module.exports = {
         use: {
           loader: "html-loader",
           options: {
-            attrs: ["img:src", ":data-src"],
+            attrs: ["img:src", "video:src", ":data-src"],
             minimize: true
           }
         }
