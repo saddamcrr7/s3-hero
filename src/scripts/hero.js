@@ -40,7 +40,9 @@ function slider() {
     banners[prevIndex].classList.remove('is-active')
   }, 2000)
 
-  let tl = gsap.timeline();
+  let tl = gsap.timeline({
+    repeatRefresh: true
+  });
 
   const activeInner = sliderItems[index].querySelector('.o-banner__inner')
   const prevInner = sliderItems[prevIndex].querySelector('.o-banner__inner')
@@ -110,26 +112,6 @@ function slider() {
       height: 0,
     })
 
-  // document.addEventListener('visibilitychange', () => {
-  //   if (document.hidden) {
-  //     tl.paused()
-  //     videoElm.pause()
-  //   } else {
-  //     tl.resume()
-  //     videoElm.play()
-  //     // if (index == sliderItems.length - 1) {
-  //     //   tl.pause()
-  //     // } else {
-  //     //   tl.resume()
-  //     // }
-  //   }
-  // })
-
-  // if (index == sliderItems.length - 1) {
-  //   setTimeout(() => {
-  //     tl.pause()
-  //   }, 3000)
-  // }
 
 }
 
@@ -145,27 +127,6 @@ if (banners.length) {
       slider()
     }, 6000)
 
-    // let interval1 = new RecurringTimer(() => {
-    //   if (index == sliderItems.length - 1) {
-    //     interval.pause()
-    //     interval1.pause()
-    //   }
-    // }, 0)
-
-
-    // document.addEventListener('visibilitychange', () => {
-    //   if (document.hidden) {
-    //     interval.pause()
-    //   } else {
-    //     interval.resume()
-
-    //     // if (index == sliderItems.length - 1) {
-    //     //   interval.pause()
-    //     // }else {
-    //     //   interval.resume()
-    //     // }
-    //   }
-    // });
 
   })
 }
