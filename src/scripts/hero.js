@@ -73,25 +73,25 @@ function slider() {
       delay: -2,
       duration: 1.5,
       scale: 1.1,
-      ease: "expoScale(1, 1.1, power3.out)",
+      ease: "expoScale(1, 1.1, expo.out)",
     })
     .to(activeInnerContent, {
       delay: -2,
       duration: 1.5,
       scale: 1,
-      ease: "expoScale(0.9, 1, power3.out)",
+      ease: "expoScale(0.9, 1, expo.out)",
     })
     .to(activeInnerImage, {
       delay: -.5,
       duration: 4.5,
       scale: 1.7,
-      ease: "expoScale(1.1, 1.2)",
+      ease: "expoScale(1.1, 1.7)",
     })
     .to(activeInner, {
-      delay: -.1,
+      delay: -.05,
       duration: 2,
       scale: 7,
-      ease: "expoScale(1, 7)",
+      ease: "expoScale(1, 7, expo.out)",
     })
     .to(prevInner, {
       delay: -4,
