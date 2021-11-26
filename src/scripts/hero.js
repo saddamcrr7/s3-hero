@@ -20,7 +20,7 @@ function slider() {
   index++
 
   if (index == sliderItems.length) {
-    index = sliderItems.length
+    index = 0
   }
 
   sliderItems[index].classList.add('is-active')
@@ -114,16 +114,17 @@ function slider() {
       height: 0,
     })
 
-
-    if (index == sliderItems.length - 1) {
-      setTimeout(() => {
-        tl.pause()
-      }, 3000)
-    }
-
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        tl.paused()
+        videoElm.pause()
+      }else {
+        tl.resume()
+        videoElm.play()
+      }
+    })
 
 }
-
 
 
 
@@ -137,12 +138,13 @@ if (banners.length) {
     }, 6000)
 
 
-    let interval1 = new RecurringTimer(() => {
-      if (index == sliderItems.length - 1) {
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
         interval.pause()
-        interval1.pause()
+      } else {
+        interval.resume()
       }
-    }, 0)
+    });
 
   })
 }
