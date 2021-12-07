@@ -75,6 +75,16 @@
       clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
       transition: width 0.3s;
     }
+
+    &.has-child {
+      display: flex;
+
+      >span {
+        font-size: rem(24px);
+        margin-top: -8px;
+        margin-left: 4px;
+      }
+    }
   }
 
   &__text {
