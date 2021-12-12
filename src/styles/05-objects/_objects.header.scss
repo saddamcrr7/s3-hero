@@ -95,6 +95,10 @@
     overflow: hidden;
     transition: 0.5s cubic-bezier(.39, .58, .28, 1.02) 1s;
     will-change: width;
+
+    @include media-breakpoint-down(sm) {
+      transition: 0.5s cubic-bezier(.39, .58, .28, 1.02) 0.7s;
+    }
   }
 
   &__menu {
