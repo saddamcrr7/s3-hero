@@ -38,7 +38,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpe?g|gif|mp4)$/,
+        test: /\.(png|svg|jpe?g|gif|mp4|mov)$/,
         use: [
           {
             loader: "file-loader", // This will resolves import/require() on a file into a url and emits the file into the output directory.
