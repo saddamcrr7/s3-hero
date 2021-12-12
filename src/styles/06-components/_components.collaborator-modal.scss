@@ -49,6 +49,11 @@
     &::after {
       transform: rotate(-45deg) translate(6px, -8px);
     }
+
+    @include media-breakpoint-down(sm) {
+      top: $grid-gutter-width  / 2;
+      right: $grid-gutter-width;
+    }
   }
 
   &__container {

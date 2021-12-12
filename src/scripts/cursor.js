@@ -1,19 +1,35 @@
+import detectMobile from './utils/detectMobile';
+
+
+
+window.addEventListener('load', () => {
+  init()
+
+  window.addEventListener('resize', () => {
+    init()
+  })
+})
+
 const $cursor = document.querySelector('.c-cursor')
 const $viewport = document.querySelector('#viewport')
 
-window.addEventListener('load', () => {
-  $viewport.addEventListener('mousemove', (e) => {
-    $cursor.setAttribute('style',
-    `transform: translate(${e.clientX-7}px, ${e.clientY-7}px);`)
-  })
 
-  beSmall(['.js-link', 'button', '.c-collaborator'])
-  beBig(['.o-header__toggler', '.o-header__brand',
-    '.c-collaborator-modal__close', '.c-scrollToTop'
-  ])
-})
+function init() {
+  if(detectMobile()) {
+    $cursor.style.display = 'none'
+  }else {
 
+    $viewport.addEventListener('mousemove', (e) => {
+      $cursor.setAttribute('style',
+      `transform: translate(${e.clientX-7}px, ${e.clientY-7}px); display: block;`)
+    })
 
+    beSmall(['.js-link', 'button', '.c-collaborator'])
+    beBig(['.o-header__toggler', '.o-header__brand',
+      '.c-collaborator-modal__close', '.c-scrollToTop'
+    ])
+  }
+}
 
 
 function beSmall(domArr) {
@@ -30,7 +46,7 @@ function beSmall(domArr) {
       })
     }
 
-  });
+  })
 }
 
 function beBig(domArr) {
@@ -48,5 +64,5 @@ function beBig(domArr) {
       })
     }
 
-  });
+  })
 }

@@ -80,7 +80,7 @@
         border-radius: none;
         transform-origin: center;
         transform: scale(0.0);
-        will-change: transform, opacity;
+        will-change: transform;
       }
 
     }
@@ -110,6 +110,10 @@
       &__toggler-dot--bg {
         &::after {
           transition: 1.5s cubic-bezier(.39, .58, .28, 1.02) 0s;
+
+          @include media-breakpoint-down(xs) {
+            transition: 1.2s cubic-bezier(.39, .58, .28, 1.02) 0s;
+          }
         }
       }
     }
@@ -121,6 +125,14 @@
         &::after {
           transform: scale(100);
           background-color: $primary-02;
+
+          @include media-breakpoint-down(sm) {
+            transform: scale(45);
+          }
+
+          @include media-breakpoint-down(xs) {
+            transform: scale(20);
+          }
         }
       }
 
