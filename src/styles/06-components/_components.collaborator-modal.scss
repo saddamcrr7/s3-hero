@@ -59,7 +59,7 @@
   &__container {
     width: 100%;
     max-width: rem(1080px);
-    max-height: calc(100vh - 100px);
+    height: calc(100vh - 100px);
     padding: $grid-gutter-width;
     position: relative;
     background-color: $white;
@@ -67,10 +67,6 @@
     transition: 0.7s ease;
     z-index: 2;
     overflow: auto;
-
-    @include media-breakpoint-down(md) {
-      height: 100%;
-    }
   }
 
   &__row {

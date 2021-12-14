@@ -24,7 +24,7 @@ function init() {
       `transform: translate(${e.clientX-7}px, ${e.clientY-7}px); display: block;`)
     })
 
-    beSmall(['.js-link', 'button', '.c-collaborator'])
+    beSmall(['.js-link', 'button', '.c-collaborator', '.o-connect__contact'])
     beBig(['.o-header__toggler', '.o-header__brand',
       '.c-collaborator-modal__close', '.c-scrollToTop'
     ])
