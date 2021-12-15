@@ -1,0 +1,120 @@
+.o-sayhello {
+  $root: &;
+
+  display: block;
+  padding: rem(110px) 0;
+  background-color: #1b1a19;
+
+  &__container {
+    @include make-container();
+    @include make-container-max-widths();
+  }
+
+  &__row {
+    @include make-row();
+  }
+
+  &__col {
+    @include make-col-ready();
+    @include make-col(6);
+  }
+
+  &__title {
+    color: $white;
+    font-size: $h1-font-size;
+    font-weight: $font-weight-bold;
+  }
+
+  &__form {
+    margin-top: rem(50px);
+  }
+
+  &__input {
+    color: $white;
+    width: 100%;
+    padding: rem(16px) 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #696969;
+
+    &+& {
+      margin-top: rem(24px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn {
+    font-weight: $font-weight-bold;
+    margin-top: rem(27px);
+    padding: rem(18px) rem(80px);
+    border: none;
+    background: $white;
+  }
+
+
+  &__map {
+    position: relative;
+  }
+
+  &__map-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__map-point {
+    position: absolute;
+    top: 29%;
+    left: 32%;
+
+    &:hover {
+      #{$root} {
+        &__map-text {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &__map-point-icon {
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__map-text {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%;
+    width: rem(275px);
+    font-size: rem(17px);
+    line-height: rem(22px);
+    font-weight: $font-weight-medium;
+    padding: rem(16px);
+    border-radius: rem(5px);
+    background-color: $white;
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+    visibility: hidden;
+    will-change: opacity, transform;
+    transition: 0.5s cubic-bezier(.39,.58,.28,1.02);
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: rem(-8px);
+      left: 50%;
+      width: rem(16px);
+      height: rem(16px);
+      transform: translateX(-50%) rotate(-45deg);
+      background-color: $white;
+    }
+  }
+
+}
