@@ -59,6 +59,10 @@
 
     &+& {
       margin-left: rem(95px);
+
+      @include media-breakpoint-down(xs) {
+        margin-left: rem(35px);
+      }
     }
 
     &:hover {
@@ -99,6 +103,11 @@
       border: 2px solid $white;
       border-radius: 100%;
       transition: 0.5s cubic-bezier(.39,.58,.28,1.02);
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: rem(43px);
+      height: rem(43px);
     }
   }
 

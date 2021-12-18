@@ -16,13 +16,20 @@
 
   &__col {
     @include make-col-ready();
-    @include make-col(6);
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(6);
+    }
   }
 
   &__title {
     color: $white;
     font-size: $h1-font-size;
     font-weight: $font-weight-bold;
+
+    @include media-breakpoint-down(md) {
+      font-size: rem(40px);
+    }
   }
 
   &__form {
@@ -57,6 +64,10 @@
 
   &__map {
     position: relative;
+
+    @include media-breakpoint-down(md) {
+      margin-top: rem(40px);
+    }
   }
 
   &__map-image {
@@ -81,7 +92,9 @@
   }
 
   &__map-point-icon {
-
+    @include media-breakpoint-down(xs) {
+      width: 80px;
+    }
     img {
       max-width: 100%;
       height: auto;
