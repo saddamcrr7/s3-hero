@@ -62,6 +62,10 @@
     align-items: center;
     justify-content: space-between;
 
+    @include media-breakpoint-down(sm) {
+      align-items: flex-start;
+    }
+
     &:nth-child(1) {
       #{$root}__link {
         transition-delay: .30s;
@@ -224,6 +228,10 @@
 
     @include media-breakpoint-down(xl) {
       width: rem(32px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: rem(30px);
     }
   }
 

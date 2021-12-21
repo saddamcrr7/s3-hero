@@ -162,4 +162,17 @@
     }
   }
 
+  &__copyright {
+    display: block;
+    font-size: rem(12px);
+    color: $grey;
+    letter-spacing: 0.75px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 120px;
+    padding-bottom: rem(40px);
+  }
+
 }
