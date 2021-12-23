@@ -113,7 +113,7 @@
     #{$root} {
       &__toggler-dot--bg {
         &::after {
-          transition: 1.5s cubic-bezier(.39, .58, .28, 1.02) 0s;
+          transition: 2s cubic-bezier(.39, .58, .28, 1.02) 0s;
 
           @include media-breakpoint-down(xs) {
             transition: 1.2s cubic-bezier(.39, .58, .28, 1.02) 0s;

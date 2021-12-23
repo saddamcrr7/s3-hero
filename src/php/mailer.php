@@ -2,7 +2,7 @@
 if (isset($_POST['Email'])) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "marat@s-3.co";
+    $email_to = "info@s-3.co";
     $email_subject = "Connect Mail from S3";
 
     function problem($error)
