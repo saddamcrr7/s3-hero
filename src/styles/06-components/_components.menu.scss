@@ -232,6 +232,10 @@
 
     @include media-breakpoint-down(sm) {
       width: rem(30px);
+
+      &--linkdin {
+        margin-right: rem(-5px);
+      }
     }
   }
 

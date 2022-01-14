@@ -15,6 +15,10 @@
     padding-top: rem(27px);
     padding-bottom: rem(37px);
     border-bottom: 1px solid $grey;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 0;
+    }
   }
 
   &__logo {
@@ -23,6 +27,10 @@
 
     @include media-breakpoint-down(sm) {
       max-width: rem(150px);
+    }
+
+    @include media-breakpoint-down(xs) {
+      max-width: rem(120px);
     }
   }
 
@@ -159,6 +167,14 @@
 
     &--linkdin {
       width: rem(45px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: rem(30px);
+
+      &--linkdin {
+        width: rem(42px);
+      }
     }
   }
 

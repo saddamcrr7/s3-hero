@@ -111,12 +111,17 @@
   }
 
   &__contact {
+    color: $dark;
     display: flex;
     align-items: center;
     flex: auto;
 
     &+& {
       margin-top: rem(10px);
+    }
+
+    &:hover {
+      color: $primary-03;
     }
   }
 
