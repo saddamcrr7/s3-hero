@@ -228,14 +228,15 @@
 
     @include media-breakpoint-down(xl) {
       width: rem(32px);
+
+      &--linkdin {
+        margin-right: rem(-6px);
+        width: rem(42px) !important;
+      }
     }
 
     @include media-breakpoint-down(sm) {
       width: rem(30px);
-
-      &--linkdin {
-        margin-right: rem(-5px);
-      }
     }
   }
 
