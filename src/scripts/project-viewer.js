@@ -1,6 +1,7 @@
-window.addEventListener('load', () => {
-  projectViewer()
-})
+
+
+projectViewer()
+
 
 function projectViewer() {
 
@@ -14,35 +15,42 @@ function projectViewer() {
       const $images = $project.querySelectorAll('.c-project__image')
       const $btn = $project.querySelector('.c-project__btn')
 
-      if ($images.length) {
+      window.addEventListener('load', () => {
 
-        function openPhotoSwipe() {
-          const items = [];
-
-          $images.forEach($image => {
-
-            items.push({
-              src: $image.src,
-              w: $image.naturalWidth,
-              h: $image.naturalHeight
-            })
-          })
-
-          const options = {
-            index: 0,
-            bgOpacity: 0.8,
-            shareEl: false,
-          };
-
-          new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options)
-            .init();
-        }
-
-        $btn.addEventListener('click', () => {
-          openPhotoSwipe()
+        $images.forEach(image => {
+          image.src = image.dataset.src
         })
 
-      }
+        if ($images.length) {
+          function openPhotoSwipe() {
+            const items = [];
+  
+            $images.forEach($image => {
+              items.push({
+                src: $image.dataset.src,
+                w: $image.naturalWidth,
+                h: $image.naturalHeight
+              })
+            })
+  
+            const options = {
+              index: 0,
+              bgOpacity: 0.8,
+              shareEl: false,
+            };
+  
+            new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options)
+              .init();
+          }
+  
+          $btn.addEventListener('click', () => {
+            openPhotoSwipe()
+          })
+  
+        }
+      })
+
+      
     })
   }
 }
