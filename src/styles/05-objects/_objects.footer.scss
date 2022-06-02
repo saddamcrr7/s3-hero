@@ -128,10 +128,13 @@
   }
 
   &__ctas {
+    padding-top: rem(15px);
+  }
+
+  &__ctas-top {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    padding: rem(15px) 0;
+    align-items: center;
   }
 
   &__cta {
@@ -178,6 +181,15 @@
     }
   }
 
+  &__proud {
+    padding-top: rem(15px);
+  }
+
+  &__proud-text {
+    color: $white;
+    margin-bottom: 0;
+  } 
+
   &__copyright {
     font-size: rem(12px);
     color: $white;
@@ -188,6 +200,11 @@
 
     > a {
       display: inline-block;
+    }
+
+
+    @include media-breakpoint-up(lg) {
+      margin-top: rem(-30px);
     }
   }
 
