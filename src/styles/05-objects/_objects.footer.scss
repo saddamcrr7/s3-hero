@@ -183,6 +183,40 @@
 
   &__proud {
     padding-top: rem(15px);
+
+    >a {
+      position: relative;
+
+      &:hover {
+        #{$root}__proud-image {
+          &--hover {
+            opacity: 1;
+          }
+    
+          &--primary {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__proud-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+    will-change: transform;
+
+    &--hover {
+      z-index: 2;
+      opacity: 0;
+    }
+
+    &--primary {
+      z-index: 1;
+    }
+
   }
 
   &__proud-text {
@@ -191,7 +225,7 @@
   } 
 
   &__copyright {
-    font-size: rem(12px);
+    font-size: rem(10px);
     color: $white;
     letter-spacing: 0.75px;
     text-align: center;
@@ -200,12 +234,9 @@
 
     > a {
       display: inline-block;
+      font-size: rem(12px);
     }
 
-
-    @include media-breakpoint-up(lg) {
-      margin-top: rem(-30px);
-    }
   }
 
 }
