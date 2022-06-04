@@ -1,4 +1,14 @@
 /*!
+ * GSAP 3.7.0
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2021, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
  * CSSPlugin 3.7.0
  * https://greensock.com
  *
@@ -9,20 +19,10 @@
 */
 
 /*!
- * CSSRulePlugin 3.7.0
+ * matrix 3.7.0
  * https://greensock.com
  *
- * @license Copyright 2008-2021, GreenSock. All rights reserved.
- * Subject to the terms at https://greensock.com/standard-license or for
- * Club GreenSock members, the agreement issued with that membership.
- * @author: Jack Doyle, jack@greensock.com
-*/
-
-/*!
- * CustomEase 3.7.0
- * https://greensock.com
- *
- * @license Copyright 2008-2021, GreenSock. All rights reserved.
+ * Copyright 2008-2021, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -39,7 +39,7 @@
  */
 
 /*!
- * EasePack 3.7.0
+ * CSSRulePlugin 3.7.0
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
@@ -59,10 +59,20 @@
 */
 
 /*!
- * GSAP 3.7.0
+ * EasePack 3.7.0
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
+ * paths 3.7.0
+ * https://greensock.com
+ *
+ * Copyright 2008-2021, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -109,6 +119,16 @@
 */
 
 /*!
+ * strings: 3.7.0
+ * https://greensock.com
+ *
+ * Copyright 2008-2021, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
  * TextPlugin 3.7.0
  * https://greensock.com
  *
@@ -119,30 +139,10 @@
 */
 
 /*!
- * matrix 3.7.0
+ * CustomEase 3.7.0
  * https://greensock.com
  *
- * Copyright 2008-2021, GreenSock. All rights reserved.
- * Subject to the terms at https://greensock.com/standard-license or for
- * Club GreenSock members, the agreement issued with that membership.
- * @author: Jack Doyle, jack@greensock.com
-*/
-
-/*!
- * paths 3.7.0
- * https://greensock.com
- *
- * Copyright 2008-2021, GreenSock. All rights reserved.
- * Subject to the terms at https://greensock.com/standard-license or for
- * Club GreenSock members, the agreement issued with that membership.
- * @author: Jack Doyle, jack@greensock.com
-*/
-
-/*!
- * strings: 3.7.0
- * https://greensock.com
- *
- * Copyright 2008-2021, GreenSock. All rights reserved.
+ * @license Copyright 2008-2021, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
