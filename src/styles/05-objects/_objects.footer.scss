@@ -185,6 +185,7 @@
     padding-top: rem(15px);
 
     >a {
+      display: inline-block;
       position: relative;
 
       &:hover {
@@ -221,11 +222,12 @@
 
   &__proud-text {
     color: $white;
+    font-size: rem(12px);
     margin-bottom: 0;
   } 
 
   &__copyright {
-    font-size: rem(10px);
+    font-size: rem(12px);
     color: $white;
     letter-spacing: 0.75px;
     text-align: center;
