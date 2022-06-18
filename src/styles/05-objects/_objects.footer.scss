@@ -110,6 +110,10 @@
 
   &__office {
     padding: rem(15px) 0;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
   }
 
   &__office-title {
@@ -129,6 +133,10 @@
 
   &__ctas {
     padding-top: rem(15px);
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
   }
 
   &__ctas-top {
@@ -184,9 +192,15 @@
   &__proud {
     padding-top: rem(15px);
 
+    @include media-breakpoint-down(xs) {
+      text-align: center;
+    }
+
     >a {
       display: inline-block;
       position: relative;
+      width: rem(128px);
+      height: rem(36px);
 
       &:hover {
         #{$root}__proud-image {
